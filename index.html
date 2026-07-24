@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roadmap Informatika Kelas IX — Perjalanan Belajar 1 Tahun</title>
+<meta name="description" content="Roadmap pembelajaran Informatika Kelas IX SMP/MTs selama 1 tahun penuh, berbasis Buku Siswa Kurikulum Merdeka (Kemendikbudristek 2022).">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- AOS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<!-- Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+<!-- Styles -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/roadmap.css">
+</head>
+<body>
+
+<!-- ============ Loading Screen ============ -->
+<div id="loading-screen" aria-hidden="true">
+  <div class="loader-node">
+    <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="26"></circle></svg>
+  </div>
+  <span class="loader-text">Memuat Roadmap…</span>
+</div>
+
+<div class="bg-mesh"></div>
+<div class="bg-noise"></div>
+
+<!-- ============ Navbar ============ -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-badge"><i class="fa-solid fa-bolt"></i></span>
+      Informatika<span style="color:var(--accent-2)">IX</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#roadmap">Roadmap</a></li>
+      <li><a href="#statistik">Statistik</a></li>
+      <li><a href="#perjalanan">Peta Perjalanan</a></li>
+      <li><a href="bab1.html">Mulai Belajar</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn theme-toggle" aria-label="Ganti mode gelap/terang"><i class="fa-solid fa-sun"></i></button>
+      <button class="nav-toggle" aria-label="Buka menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ Hero ============ -->
+<header class="hero">
+  <span class="hero-eyebrow" data-aos="fade-down"><i class="fa-solid fa-satellite-dish"></i> Kurikulum Merdeka · Kelas IX</span>
+  <h1 data-aos="fade-up" data-aos-delay="80">
+    🚀 Roadmap Pembelajaran <span class="gradient-text">Informatika Kelas IX</span>
+  </h1>
+  <p class="subtitle" data-aos="fade-up" data-aos-delay="160">
+    Selamat datang di perjalanan belajar Informatika selama satu tahun. Setiap langkah akan membangun kemampuan
+    berpikir komputasional, kreativitas, kolaborasi, serta keterampilan digital untuk menghadapi masa depan.
+  </p>
+  <div class="hero-actions" data-aos="fade-up" data-aos-delay="220">
+    <a href="bab1.html" class="btn btn-primary"><i class="fa-solid fa-play"></i> Mulai Belajar</a>
+    <a href="#roadmap" class="btn btn-ghost"><i class="fa-solid fa-arrow-down"></i> Scroll ke Roadmap</a>
+  </div>
+
+  <div class="hero-stats" id="hero-stats-preview" data-aos="fade-up" data-aos-delay="280">
+    <div class="hero-stat"><span class="num">9</span><span class="label">Bab</span></div>
+    <div class="hero-stat"><span class="num">26<span class="unit">pekan</span></span><span class="label">Pertemuan</span></div>
+    <div class="hero-stat"><span class="num">2</span><span class="label">Semester</span></div>
+    <div class="hero-stat"><span class="num">4</span><span class="label">Proyek IoT</span></div>
+  </div>
+
+  <div class="scroll-cue"><i class="fa-solid fa-chevron-down"></i> Gulir</div>
+</header>
+
+<main>
+
+  <!-- ============ Roadmap Section ============ -->
+  <section class="section roadmap-section" id="roadmap">
+    <div class="section-inner">
+      <div class="section-head" data-aos="fade-up">
+        <span class="section-eyebrow">Peta Jalur Belajar</span>
+        <h2>Roadmap Satu Tahun Penuh</h2>
+        <p>9 bab tersusun mengikuti jejak jalur sirkuit — susuri satu per satu dari Semester Ganjil hingga Semester Genap.</p>
+      </div>
+
+      <div class="semester-tabs" data-aos="fade-up">
+        <button class="semester-tab active" data-filter="all">Semua</button>
+        <button class="semester-tab ganjil" data-filter="ganjil">Semester Ganjil</button>
+        <button class="semester-tab genap" data-filter="genap">Semester Genap</button>
+      </div>
+
+      <div class="circuit-track" id="circuit-track">
+        <svg class="circuit-line-svg" id="circuit-svg"></svg>
+        <!-- BAB cards di-render oleh js/roadmap.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Statistik / Dashboard ============ -->
+  <section class="section" id="statistik">
+    <div class="section-inner">
+      <div class="section-head" data-aos="fade-up">
+        <span class="section-eyebrow">Dashboard</span>
+        <h2>Statistik Pembelajaran</h2>
+        <p>Dihitung otomatis dari isi Buku Siswa Informatika Kelas IX.</p>
+      </div>
+      <div class="dash-grid" id="dash-grid"><!-- diisi oleh js/roadmap.js --></div>
+    </div>
+  </section>
+
+  <!-- ============ Peta Perjalanan Belajar (mini flow) ============ -->
+  <section class="section" id="perjalanan">
+    <div class="section-inner">
+      <div class="section-head" data-aos="fade-up">
+        <span class="section-eyebrow">Ringkasan Alur</span>
+        <h2>Peta Perjalanan Belajar</h2>
+        <p>BAB 1 hingga BAB 9 — klik nomor bab untuk melompat langsung ke materinya.</p>
+      </div>
+      <div class="flow-strip" id="flow-strip" data-aos="zoom-in"><!-- diisi oleh js/roadmap.js --></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="site-footer">
+  <p class="footer-quote" data-aos="fade-up">
+    "Jangan hanya menjadi <span>pengguna</span> teknologi.<br>Belajarlah menjadi <span>pencipta</span> teknologi."
+  </p>
+  <p class="footer-sub">— Semangat belajar Informatika Kelas IX —</p>
+  <div class="footer-links">
+    <a href="index.html">Roadmap</a>
+    <a href="bab1.html">Bab 1</a>
+    <a href="bab7.html">Bab 7</a>
+    <a href="bab9.html">Bab 9</a>
+  </div>
+  <p class="footer-meta">Sumber materi: Buku Siswa Informatika SMP/MTs Kelas IX, Kemendikbudristek © 2022</p>
+</footer>
+
+<button class="fab" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.1/sweetalert2.all.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/roadmap.js"></script>
+<script>
+  AOS.init({ duration: 700, once: true, offset: 60 });
+</script>
+</body>
+</html>

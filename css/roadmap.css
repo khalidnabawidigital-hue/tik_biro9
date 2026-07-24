@@ -1,0 +1,182 @@
+/* ============================================================
+   roadmap.css — Peta Perjalanan Belajar 1 Tahun
+   Signature element: "circuit trace" connecting BAB nodes
+   ============================================================ */
+
+.roadmap-section{ padding-top:60px; }
+
+/* Semester toggle pills */
+.semester-tabs{
+  display:flex; justify-content:center; gap:10px; margin-bottom:56px;
+  background:var(--glass); border:1px solid var(--glass-border);
+  padding:6px; border-radius:100px; max-width:420px; margin-left:auto; margin-right:auto;
+}
+.semester-tab{
+  flex:1; padding:11px 20px; border-radius:100px; text-align:center;
+  font-size:14px; font-weight:600; color:var(--text-muted);
+  transition:all var(--transition); position:relative; z-index:1;
+}
+.semester-tab.active{ color:#fff; }
+.semester-tab.active.ganjil{ background:var(--grad-ganjil); }
+.semester-tab.active.genap{ background:var(--grad-genap); }
+
+/* ---------- Circuit trace wrapper ---------- */
+.circuit-track{
+  position:relative;
+  max-width:900px; margin:0 auto;
+}
+
+/* SVG trace line running through the middle, node-to-node */
+.circuit-line-svg{
+  position:absolute; top:0; left:50%; transform:translateX(-50%);
+  width:6px; height:100%; z-index:0; overflow:visible;
+}
+.circuit-line-svg path{
+  fill:none; stroke:var(--glass-border-hi); stroke-width:3;
+}
+.circuit-line-svg path.progress{
+  stroke:url(#circuitGradient);
+  stroke-dasharray:8 0;
+  filter:drop-shadow(0 0 6px rgba(0,217,192,0.5));
+  transition:stroke-dashoffset 1.2s ease;
+}
+
+.bab-row{
+  position:relative; z-index:1;
+  display:flex; align-items:center; gap:40px;
+  margin-bottom:56px;
+}
+.bab-row:nth-child(even){ flex-direction:row-reverse; }
+
+/* Node marker on the trace */
+.bab-node{
+  position:relative; flex:0 0 auto;
+  width:64px; height:64px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--bg-surface); border:2px solid var(--glass-border-hi);
+  font-family:var(--font-mono); font-weight:700; font-size:18px; color:var(--text-muted);
+  transition:all var(--transition);
+}
+.bab-node .pulse{
+  position:absolute; inset:-8px; border-radius:50%;
+  border:2px solid var(--accent-2); opacity:0;
+}
+.bab-row.reveal.in-view .bab-node{
+  border-color:var(--accent-2); color:var(--accent-2); box-shadow:0 0 20px rgba(0,217,192,0.35);
+}
+.bab-row.reveal.in-view .bab-node .pulse{
+  animation:nodePulse 2.2s ease-out infinite;
+}
+@keyframes nodePulse{
+  0%{ opacity:0.6; transform:scale(1); }
+  100%{ opacity:0; transform:scale(1.6); }
+}
+.bab-node.no-jp{ border-style:dashed; }
+
+/* ---------- Card ---------- */
+.bab-card{
+  flex:1 1 auto; min-width:0;
+  background:var(--glass); border:1px solid var(--glass-border);
+  border-radius:var(--r-lg); padding:30px;
+  backdrop-filter:blur(16px);
+  transition:transform var(--transition), border-color var(--transition), background var(--transition), box-shadow var(--transition);
+  position:relative; overflow:hidden;
+}
+.bab-card::before{
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background:var(--card-accent, var(--grad-primary));
+  opacity:0.9;
+}
+.bab-card:hover{
+  transform:translateY(-6px);
+  border-color:var(--glass-border-hi);
+  box-shadow:var(--shadow-soft);
+}
+.bab-card.suplemen{ border-style:dashed; }
+
+.bab-card-top{
+  display:flex; align-items:flex-start; justify-content:space-between; gap:14px; margin-bottom:16px;
+}
+.bab-card-icon{
+  width:52px; height:52px; border-radius:14px; flex:0 0 auto;
+  display:flex; align-items:center; justify-content:center; font-size:22px; color:#fff;
+  background:var(--card-accent, var(--grad-primary));
+}
+.bab-tag{
+  font-family:var(--font-mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+  padding:5px 11px; border-radius:100px; background:var(--glass-strong); color:var(--text-muted); white-space:nowrap;
+}
+.bab-tag.sulit{ color:var(--accent-danger); }
+.bab-tag.sedang{ color:var(--accent-warn); }
+.bab-tag.mudah{ color:var(--accent-2); }
+
+.bab-card h3{ font-size:1.25rem; margin-bottom:6px; }
+.bab-card .bab-desc{ color:var(--text-muted); font-size:14.5px; margin-bottom:18px; }
+
+.bab-meta-row{
+  display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px;
+}
+.meta-chip{
+  display:flex; align-items:center; gap:6px;
+  font-size:12.5px; color:var(--text-muted);
+  background:var(--glass-strong); border:1px solid var(--glass-border);
+  padding:6px 11px; border-radius:8px;
+}
+.meta-chip i{ color:var(--accent-2); font-size:11px; }
+
+.bab-card-details{
+  display:grid; gap:12px; font-size:13.5px; color:var(--text-mid);
+  margin-bottom:20px;
+}
+.bab-card-details .detail-block b{
+  display:block; color:var(--text-hi); font-size:12px; text-transform:uppercase; letter-spacing:0.04em;
+  margin-bottom:4px; font-family:var(--font-mono); font-weight:600;
+}
+.bab-card-details ul{ padding-left:0; }
+.bab-card-details li{
+  position:relative; padding-left:16px; margin-bottom:3px; color:var(--text-muted);
+}
+.bab-card-details li::before{
+  content:''; position:absolute; left:0; top:9px; width:5px; height:5px; border-radius:50%;
+  background:var(--accent-2);
+}
+
+/* Progress bar */
+.progress-wrap{ margin-bottom:20px; }
+.progress-label{ display:flex; justify-content:space-between; font-size:12px; color:var(--text-faint); margin-bottom:6px; font-family:var(--font-mono); }
+.progress-track{ height:8px; border-radius:100px; background:var(--glass-strong); overflow:hidden; }
+.progress-fill{
+  height:100%; border-radius:100px; background:var(--card-accent, var(--grad-primary));
+  width:0%; transition:width 1s ease;
+}
+
+/* Supplement callout (Bab 4/5/6 external refresh box) */
+.supplement-box{
+  margin-top:4px; margin-bottom:18px;
+  border:1px dashed var(--accent-warn);
+  background:rgba(255,180,84,0.07);
+  border-radius:var(--r-sm); padding:14px 16px;
+  font-size:12.5px; color:var(--text-muted);
+}
+.supplement-box b{ color:var(--accent-warn); display:flex; align-items:center; gap:6px; margin-bottom:5px; font-size:12px; text-transform:uppercase; letter-spacing:0.04em; }
+
+/* ---------- Peta perjalanan mini (BAB1 -> BAB9 flow) ---------- */
+.flow-strip{
+  display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:0;
+  margin-top:20px;
+}
+.flow-node{
+  width:46px; height:46px; border-radius:50%;
+  background:var(--glass); border:1px solid var(--glass-border);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-mono); font-weight:700; font-size:14px; color:var(--text-muted);
+  transition:all var(--transition);
+}
+.flow-node:hover{ border-color:var(--accent-2); color:var(--accent-2); transform:scale(1.1); }
+.flow-arrow{ color:var(--text-faint); font-size:13px; margin:0 4px; }
+
+@media (max-width:820px){
+  .bab-row, .bab-row:nth-child(even){ flex-direction:column; align-items:stretch; gap:16px; }
+  .circuit-line-svg{ left:32px; }
+  .bab-node{ width:52px; height:52px; align-self:flex-start; margin-left:6px; }
+}
