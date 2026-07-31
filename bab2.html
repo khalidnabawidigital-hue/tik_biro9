@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bab 2 — Berpikir Komputasional | Informatika Kelas IX</title>
+<meta name="description" content="Materi Bab 2 Informatika Kelas IX: Berpikir Komputasional — struktur data graf & tree, ekspresi & operasi logika, serta algoritma. Berbasis Buku Siswa Kurikulum Merdeka.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- AOS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<!-- Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+<!-- Styles -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/roadmap.css">
+<link rel="stylesheet" href="css/materi.css">
+</head>
+<body>
+
+<!-- ============ Loading Screen ============ -->
+<div id="loading-screen" aria-hidden="true">
+  <div class="loader-node">
+    <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="26"></circle></svg>
+  </div>
+  <span class="loader-text">Memuat Materi…</span>
+</div>
+
+<div class="bg-mesh"></div>
+<div class="bg-noise"></div>
+
+<!-- ============ Navbar ============ -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-badge"><i class="fa-solid fa-bolt"></i></span>
+      Informatika<span style="color:var(--accent-2)">IX</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#roadmap">Roadmap</a></li>
+      <li><a href="index.html#statistik">Statistik</a></li>
+      <li><a href="index.html#perjalanan">Peta Perjalanan</a></li>
+      <li><a href="bab1.html">Mulai Belajar</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn theme-toggle" aria-label="Ganti mode gelap/terang"><i class="fa-solid fa-sun"></i></button>
+      <button class="nav-toggle" aria-label="Buka menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ============ Breadcrumb ============ -->
+  <div class="materi-breadcrumb" data-aos="fade-up">
+    <a href="index.html">Roadmap</a>
+    <i class="fa-solid fa-chevron-right"></i>
+    <a href="index.html#roadmap">Semester Ganjil</a>
+    <i class="fa-solid fa-chevron-right"></i>
+    <span class="current">Bab 2 — Berpikir Komputasional</span>
+  </div>
+
+  <!-- ============ Header Bab ============ -->
+  <section class="materi-hero">
+    <div class="materi-hero-top">
+      <div>
+        <span class="materi-hero-badge" data-aos="fade-up">
+          <span class="num-badge">2</span> Bab 2 · Semester Ganjil
+        </span>
+        <h1 data-aos="fade-up" data-aos-delay="80">
+          <i class="fa-solid fa-sitemap" style="color:var(--accent-1-soft);"></i>
+          Berpikir <span class="gradient-text">Komputasional</span>
+        </h1>
+        <p class="lede" data-aos="fade-up" data-aos-delay="140">
+          Mendalami struktur data graf & pohon (tree), ekspresi dan operasi logika, serta algoritma sebagai
+          dasar berpikir sistematis untuk menyelesaikan persoalan sehari-hari — landasan bagi seluruh
+          elemen Informatika lainnya.
+        </p>
+      </div>
+    </div>
+
+    <div class="materi-meta-row" data-aos="fade-up" data-aos-delay="180">
+      <span class="materi-chip"><i class="fa-solid fa-layer-group"></i> Tingkat: Sedang</span>
+      <span class="materi-chip"><i class="fa-solid fa-clock"></i> 3 Pertemuan · 6 JP</span>
+      <span class="materi-chip"><i class="fa-solid fa-flask"></i> Praktikum: Hitam Putih, Jalar Keluar</span>
+      <span class="materi-chip warn"><i class="fa-solid fa-bookmark"></i> Sumber: Buku Siswa Kemendikbudristek 2022</span>
+    </div>
+
+    <nav class="materi-toc" data-aos="fade-up" data-aos-delay="220" aria-label="Navigasi materi">
+      <a href="#capaian"><i class="fa-solid fa-bullseye"></i> Capaian</a>
+      <a href="#struktur-data"><i class="fa-solid fa-diagram-project"></i> Struktur Data</a>
+      <a href="#logika"><i class="fa-solid fa-code-branch"></i> Ekspresi Logika</a>
+      <a href="#algoritma"><i class="fa-solid fa-list-ol"></i> Algoritma</a>
+      <a href="#praktikum"><i class="fa-solid fa-flask"></i> Praktikum</a>
+      <a href="#quiz"><i class="fa-solid fa-clipboard-question"></i> Kuis</a>
+      <a href="#refleksi"><i class="fa-solid fa-comment-dots"></i> Refleksi</a>
+    </nav>
+  </section>
+
+  <!-- ============ Capaian Pembelajaran ============ -->
+  <section class="capaian-box" id="capaian">
+    <div class="capaian-card" data-aos="fade-up">
+      <div class="cap-icon"><i class="fa-solid fa-bullseye"></i></div>
+      <div class="cap-txt">
+        <span>Capaian Pembelajaran</span>
+        <p>Siswa mampu menganalisis persoalan menggunakan struktur data graf/pohon dan menyusun algoritma penyelesaiannya.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Apa yang Dipelajari & Kompetensi ============ -->
+  <section class="materi-section" id="ringkasan">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num">i</span> Gambaran Umum</span>
+      <h2>Apa yang Dipelajari & Kompetensi yang Diperoleh</h2>
+      <p>Tiga materi inti bab ini saling terkait: representasi data, cara berpikir logis, lalu menuangkannya menjadi langkah algoritma.</p>
+    </div>
+    <div class="materi-grid-2">
+      <div class="info-card" data-aos="fade-up">
+        <div class="ic-top">
+          <div class="ic-icon"><i class="fa-solid fa-book-open"></i></div>
+          <h3>Apa yang Dipelajari</h3>
+        </div>
+        <p>Tiga topik utama yang membangun kemampuan berpikir komputasional siswa kelas IX.</p>
+        <ul>
+          <li>Struktur Data (Graf & Tree)</li>
+          <li>Ekspresi & Operasi Logika</li>
+          <li>Algoritma</li>
+        </ul>
+      </div>
+      <div class="info-card cyan" data-aos="fade-up" data-aos-delay="100">
+        <div class="ic-top">
+          <div class="ic-icon"><i class="fa-solid fa-medal"></i></div>
+          <h3>Kompetensi yang Diperoleh</h3>
+        </div>
+        <p>Setelah menuntaskan bab ini, siswa diharapkan mampu:</p>
+        <ul>
+          <li>Merepresentasikan data dengan graf & tree</li>
+          <li>Menyusun ekspresi logika</li>
+          <li>Menyusun algoritma runtut</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 1. Struktur Data: Graf & Tree ============ -->
+  <section class="materi-section" id="struktur-data">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num">1</span> Materi Pertama</span>
+      <h2>Struktur Data: Graf & Tree (Pohon)</h2>
+      <p>Struktur data adalah cara menyimpan & mengorganisasi data agar mudah diakses dan diolah. Graf dan tree
+      membantu kita memodelkan hubungan antarobjek — mulai dari peta jalan hingga struktur folder di komputer.</p>
+    </div>
+
+    <div data-tabs data-aos="fade-up">
+      <div class="materi-tabs">
+        <button class="materi-tab-btn active" data-tab-target="graf">🔗 Graf</button>
+        <button class="materi-tab-btn" data-tab-target="tree">🌳 Tree (Pohon)</button>
+      </div>
+
+      <!-- Panel: Graf -->
+      <div class="materi-tab-panel active" data-tab-panel="graf">
+        <div class="materi-grid-2" style="margin-top:22px;">
+          <div class="info-card">
+            <div class="ic-top">
+              <div class="ic-icon"><i class="fa-solid fa-share-nodes"></i></div>
+              <h3>Apa itu Graf?</h3>
+            </div>
+            <p>Graf adalah struktur data yang terdiri atas <strong style="color:var(--text-hi)">simpul (vertex/node)</strong>
+            dan <strong style="color:var(--text-hi)">sisi (edge)</strong> yang menghubungkan antarsimpul. Hubungan
+            antarsimpul bisa satu arah maupun dua arah, dan tidak harus berbentuk hierarki.</p>
+            <ul>
+              <li>Simpul = objek/titik (contoh: kota, halaman web, akun media sosial)</li>
+              <li>Sisi = penghubung/relasi antarsimpul (contoh: jalan, tautan, pertemanan)</li>
+              <li>Contoh nyata: peta rute bus, jaringan pertemanan, peta jaringan internet</li>
+            </ul>
+          </div>
+          <div class="diagram-card">
+            <div class="diagram-label"><span>Contoh Graf — Peta Rute Antar Kota</span></div>
+            <div class="diagram-svg-wrap">
+              <svg viewBox="0 0 420 260" width="420" height="260">
+                <line class="edge-line" x1="80" y1="60" x2="210" y2="40"></line>
+                <line class="edge-line" x1="80" y1="60" x2="70" y2="180"></line>
+                <line class="edge-line" x1="210" y1="40" x2="330" y2="70"></line>
+                <line class="edge-line" x1="210" y1="40" x2="200" y2="170"></line>
+                <line class="edge-line" x1="70" y1="180" x2="200" y2="170"></line>
+                <line class="edge-line" x1="200" y1="170" x2="330" y2="200"></line>
+                <line class="edge-line" x1="330" y1="70" x2="330" y2="200"></line>
+
+                <circle class="node-circle" cx="80" cy="60" r="26"></circle>
+                <text class="node-text" x="80" y="65">A</text>
+                <circle class="node-circle" cx="210" cy="40" r="26"></circle>
+                <text class="node-text" x="210" y="45">B</text>
+                <circle class="node-circle" cx="330" cy="70" r="26"></circle>
+                <text class="node-text" x="330" y="75">C</text>
+                <circle class="node-circle" cx="70" cy="180" r="26"></circle>
+                <text class="node-text" x="70" y="185">D</text>
+                <circle class="node-circle" cx="200" cy="170" r="26"></circle>
+                <text class="node-text" x="200" y="175">E</text>
+                <circle class="node-circle" cx="330" cy="200" r="26"></circle>
+                <text class="node-text" x="330" y="205">F</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel: Tree -->
+      <div class="materi-tab-panel" data-tab-panel="tree">
+        <div class="materi-grid-2" style="margin-top:22px;">
+          <div class="info-card cyan">
+            <div class="ic-top">
+              <div class="ic-icon"><i class="fa-solid fa-sitemap"></i></div>
+              <h3>Apa itu Tree (Pohon)?</h3>
+            </div>
+            <p>Tree adalah <strong style="color:var(--text-hi)">graf khusus tanpa siklus (loop)</strong> yang tersusun
+            hierarkis: ada satu <strong style="color:var(--text-hi)">simpul akar (root)</strong>, lalu bercabang ke
+            <strong style="color:var(--text-hi)">simpul anak (child)</strong>, hingga berakhir di <strong style="color:var(--text-hi)">simpul daun (leaf)</strong> yang tidak punya cabang lagi.</p>
+            <ul>
+              <li>Root = simpul teratas/awal (contoh: folder utama)</li>
+              <li>Child & Parent = hubungan simpul turunan dan induknya</li>
+              <li>Leaf = simpul ujung tanpa anak</li>
+              <li>Contoh nyata: struktur folder komputer, silsilah keluarga, bagan organisasi</li>
+            </ul>
+          </div>
+          <div class="diagram-card">
+            <div class="diagram-label"><span>Contoh Tree — Struktur Folder</span></div>
+            <div class="diagram-svg-wrap">
+              <svg viewBox="0 0 420 260" width="420" height="260">
+                <line class="edge-line" x1="210" y1="40" x2="100" y2="130"></line>
+                <line class="edge-line" x1="210" y1="40" x2="210" y2="130"></line>
+                <line class="edge-line" x1="210" y1="40" x2="320" y2="130"></line>
+                <line class="edge-line" x1="100" y1="130" x2="60" y2="220"></line>
+                <line class="edge-line" x1="100" y1="130" x2="140" y2="220"></line>
+                <line class="edge-line" x1="320" y1="130" x2="320" y2="220"></line>
+
+                <circle class="node-circle root" cx="210" cy="40" r="27"></circle>
+                <text class="node-text root-text" x="210" y="45">Tugas</text>
+                <circle class="node-circle" cx="100" cy="130" r="25"></circle>
+                <text class="node-text" x="100" y="135">Bab1</text>
+                <circle class="node-circle" cx="210" cy="130" r="25"></circle>
+                <text class="node-text" x="210" y="135">Bab2</text>
+                <circle class="node-circle" cx="320" cy="130" r="25"></circle>
+                <text class="node-text" x="320" y="135">Bab3</text>
+                <circle class="node-circle leaf" cx="60" cy="220" r="22"></circle>
+                <text class="node-text" x="60" y="225" style="font-size:11px">materi</text>
+                <circle class="node-circle leaf" cx="140" cy="220" r="22"></circle>
+                <text class="node-text" x="140" y="225" style="font-size:11px">tugas</text>
+                <circle class="node-circle leaf" cx="320" cy="220" r="22"></circle>
+                <text class="node-text" x="320" y="225" style="font-size:11px">catatan</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. Ekspresi & Operasi Logika ============ -->
+  <section class="materi-section" id="logika">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num">2</span> Materi Kedua</span>
+      <h2>Ekspresi & Operasi Logika</h2>
+      <p>Ekspresi logika adalah pernyataan yang hasilnya hanya <strong style="color:var(--accent-2-soft)">BENAR (True)</strong>
+      atau <strong style="color:var(--accent-danger)">SALAH (False)</strong>. Operasi logika menggabungkan beberapa
+      pernyataan untuk mengambil keputusan — dasar dari setiap kondisi (if) dalam program komputer.</p>
+    </div>
+
+    <div class="logic-ops-grid" data-aos="fade-up">
+      <div class="op-card">
+        <div class="op-sym">AND</div>
+        <div class="op-name">DAN (∧)</div>
+        <div class="op-desc">Benar hanya jika kedua pernyataan benar</div>
+      </div>
+      <div class="op-card">
+        <div class="op-sym">OR</div>
+        <div class="op-name">ATAU (∨)</div>
+        <div class="op-desc">Benar jika salah satu pernyataan benar</div>
+      </div>
+      <div class="op-card">
+        <div class="op-sym">NOT</div>
+        <div class="op-name">INGKARAN (¬)</div>
+        <div class="op-desc">Membalik nilai kebenaran pernyataan</div>
+      </div>
+      <div class="op-card">
+        <div class="op-sym">XOR</div>
+        <div class="op-name">EKSKLUSIF ATAU</div>
+        <div class="op-desc">Benar jika kedua nilai berbeda</div>
+      </div>
+    </div>
+
+    <div class="truth-wrap" data-aos="fade-up" data-aos-delay="80">
+      <table class="truth-table">
+        <thead>
+          <tr><th>P</th><th>Q</th><th>P AND Q</th><th>P OR Q</th><th>NOT P</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="val-true">Benar</td><td class="val-true">Benar</td><td class="val-true">Benar</td><td class="val-true">Benar</td><td class="val-false">Salah</td></tr>
+          <tr><td class="val-true">Benar</td><td class="val-false">Salah</td><td class="val-false">Salah</td><td class="val-true">Benar</td><td class="val-false">Salah</td></tr>
+          <tr><td class="val-false">Salah</td><td class="val-true">Benar</td><td class="val-false">Salah</td><td class="val-true">Benar</td><td class="val-true">Benar</td></tr>
+          <tr><td class="val-false">Salah</td><td class="val-false">Salah</td><td class="val-false">Salah</td><td class="val-false">Salah</td><td class="val-true">Benar</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="logic-quiz" data-aos="fade-up" data-aos-delay="120">
+      <p class="lq-q">🎯 Uji Pemahaman: Nilai <em>x = 7</em>. Berapakah hasil dari ekspresi <code>(x &gt; 5) AND (x &lt; 10)</code>?</p>
+      <div class="lq-options">
+        <button class="lq-opt" data-correct="true" data-msg-correct="Tepat! 7 lebih dari 5 (benar) DAN 7 kurang dari 10 (benar), sehingga hasil AND-nya Benar.">Benar</button>
+        <button class="lq-opt" data-correct="false" data-msg-wrong="Coba cek lagi kedua syaratnya satu per satu, lalu gabungkan dengan operator AND.">Salah</button>
+        <button class="lq-opt" data-correct="false" data-msg-wrong="Coba cek lagi kedua syaratnya satu per satu, lalu gabungkan dengan operator AND.">Tidak dapat ditentukan</button>
+      </div>
+      <p class="lq-feedback"></p>
+    </div>
+  </section>
+
+  <!-- ============ 3. Algoritma ============ -->
+  <section class="materi-section" id="algoritma">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num">3</span> Materi Ketiga</span>
+      <h2>Algoritma</h2>
+      <p>Algoritma adalah <strong style="color:var(--text-hi)">urutan langkah logis dan runtut</strong> untuk
+      menyelesaikan suatu persoalan. Algoritma yang baik bersifat jelas, terurut, terbatas (berhenti pada
+      suatu saat), dan efektif — bisa dijalankan oleh manusia maupun komputer.</p>
+    </div>
+
+    <div class="materi-grid-2" data-aos="fade-up">
+      <div class="info-card">
+        <div class="ic-top">
+          <div class="ic-icon"><i class="fa-solid fa-list-check"></i></div>
+          <h3>Ciri Algoritma yang Baik</h3>
+        </div>
+        <ul>
+          <li>Jelas & tidak ambigu di setiap langkah</li>
+          <li>Memiliki urutan yang pasti (sequence)</li>
+          <li>Berhingga — pasti berhenti setelah langkah tertentu</li>
+          <li>Efektif — setiap langkah dapat benar-benar dikerjakan</li>
+        </ul>
+      </div>
+      <div class="info-card cyan">
+        <div class="ic-top">
+          <div class="ic-icon"><i class="fa-solid fa-shuffle"></i></div>
+          <h3>Bentuk Penyajian Algoritma</h3>
+        </div>
+        <ul>
+          <li>Kalimat deskriptif (uraian langkah berurutan)</li>
+          <li>Pseudocode (mirip kode, bahasa sederhana)</li>
+          <li>Flowchart / diagram alir (bentuk visual simbol)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flowchart-card" data-aos="fade-up" data-aos-delay="80">
+      <div class="diagram-label"><span>Contoh Algoritma — Menentukan Bilangan Genap/Ganjil</span></div>
+      <div class="algo-steps">
+        <div class="algo-step">
+          <div class="algo-num">1</div>
+          <div class="algo-body">
+            <h4>Mulai</h4>
+            <p>Siapkan sebuah bilangan yang akan diperiksa.</p>
+          </div>
+        </div>
+        <div class="algo-step">
+          <div class="algo-num">2</div>
+          <div class="algo-body">
+            <h4>Masukkan Bilangan</h4>
+            <p>Baca/terima nilai bilangan dari pengguna, simpan sebagai <em>n</em>.</p>
+          </div>
+        </div>
+        <div class="algo-step">
+          <div class="algo-num">3</div>
+          <div class="algo-body">
+            <h4>Periksa Sisa Bagi</h4>
+            <p>Hitung sisa hasil bagi <em>n</em> dengan 2 (n mod 2).</p>
+          </div>
+        </div>
+        <div class="algo-step">
+          <div class="algo-num">4</div>
+          <div class="algo-body">
+            <h4>Ambil Keputusan</h4>
+            <p>Jika sisa bagi sama dengan 0, maka bilangan tersebut Genap. Jika tidak, maka bilangan tersebut Ganjil.</p>
+          </div>
+        </div>
+        <div class="algo-step">
+          <div class="algo-num">5</div>
+          <div class="algo-body">
+            <h4>Tampilkan Hasil & Selesai</h4>
+            <p>Tampilkan status bilangan (Genap/Ganjil), lalu algoritma berhenti.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Praktikum ============ -->
+  <section class="materi-section" id="praktikum">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-flask" style="font-size:10px"></i></span> Praktikum</span>
+      <h2>Aktivitas Praktik di Bab Ini</h2>
+      <p>Dua aktivitas unplugged untuk melatih intuisi berpikir komputasional tanpa harus di depan komputer.</p>
+    </div>
+
+    <div class="praktikum-grid">
+      <div class="praktikum-card" data-aos="fade-up">
+        <span class="pk-tag"><i class="fa-solid fa-circle-half-stroke"></i> Aktivitas 1</span>
+        <h3>Hitam Putih</h3>
+        <p>Melatih penerapan operasi logika (AND, OR, NOT) melalui permainan pola hitam-putih, sebelum
+        dituangkan menjadi ekspresi logika tertulis.</p>
+        <div class="pk-checklist">
+          <div class="pk-check-item"><span class="box"><i class="fa-solid fa-check"></i></span><span class="lbl">Bentuk kelompok kecil (3–4 siswa)</span></div>
+          <div class="pk-check-item"><span class="box"><i class="fa-solid fa-check"></i></span><span class="lbl">Susun pola kartu hitam/putih sesuai instruksi</span></div>
+          <div class="pk-check-item"><span class="box"><i class="fa-solid fa-check"></i></span><span class="lbl">Tuliskan aturan pola sebagai ekspresi logika</span></div>
+          <div class="pk-check-item"><span class="box"><i class="fa-solid fa-check"></i></span><span class="lbl">Presentasikan hasil ke kelompok lain</span></div>
+        </div>
+        <div class="pk-progress-bar"><div class="pk-progress-fill"></div></div>
+        <p class="pk-progress-txt">0/4 langkah selesai (0%)</p>
+      </div>
+
+      <div class="praktikum-card" data-aos="fade-up" data-aos-delay="100">
+        <span class="pk-tag"><i class="fa-solid fa-route"></i> Aktivitas 2</span>
+        <h3>Jalar Keluar</h3>
+        <p>Menyusun langkah algoritma untuk menemukan jalur keluar dari sebuah labirin sederhana yang
+        direpresentasikan sebagai graf simpul dan sisi.</p>
+        <div class="pk-checklist">
+          <div class="pk-check-item"><span class="box"><i class="fa-solid fa-check"></i></span><span class="lbl">Gambarkan labirin sebagai graf (simpul & sisi)</span></div>
+          <div class="pk-check-item"><span class="box"><i class="fa-solid fa-check"></i></span><span class="lbl">Tentukan simpul awal dan simpul keluar</span></div>
+          <div class="pk-check-item"><span class="box"><i class="fa-solid fa-check"></i></span><span class="lbl">Susun algoritma langkah demi langkah menuju keluar</span></div>
+          <div class="pk-check-item"><span class="box"><i class="fa-solid fa-check"></i></span><span class="lbl">Uji algoritma dengan menelusuri graf bersama teman</span></div>
+        </div>
+        <div class="pk-progress-bar"><div class="pk-progress-fill"></div></div>
+        <p class="pk-progress-txt">0/4 langkah selesai (0%)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Kata Kunci ============ -->
+  <section class="materi-section" id="kata-kunci">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-key" style="font-size:10px"></i></span> Kata Kunci</span>
+      <h2>Istilah Penting Bab Ini</h2>
+    </div>
+    <div class="kata-kunci-wrap" data-aos="fade-up">
+      <span class="kk-chip">Berpikir komputasional</span>
+      <span class="kk-chip">Penyelesaian masalah</span>
+      <span class="kk-chip">Algoritma</span>
+      <span class="kk-chip">Struktur data</span>
+      <span class="kk-chip">Graf</span>
+      <span class="kk-chip">Tree / Pohon</span>
+      <span class="kk-chip">Ekspresi logika</span>
+      <span class="kk-chip">Operasi logika</span>
+    </div>
+  </section>
+
+  <!-- ============ Kuis Evaluasi ============ -->
+  <section class="materi-section" id="quiz">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-clipboard-question" style="font-size:10px"></i></span> Evaluasi</span>
+      <h2>Kuis: Uji Pemahaman Bab 2</h2>
+      <p>15 soal pilihan ganda mencakup Struktur Data, Ekspresi &amp; Operasi Logika, dan Algoritma. Jawab semua
+      soal lalu klik <strong style="color:var(--text-hi)">Periksa Jawaban</strong> untuk melihat skormu.</p>
+    </div>
+
+    <div class="quiz-score-banner" id="quiz-score-banner" data-aos="fade-up">
+      <div class="qsb-icon"><i class="fa-solid fa-trophy"></i></div>
+      <div class="qsb-body">
+        <span class="qsb-label">Skor Kuis</span>
+        <strong id="qsb-score">0 / 15</strong>
+      </div>
+      <p class="qsb-msg" id="qsb-msg">Jawab semua soal di bawah, lalu periksa hasilnya di sini.</p>
+    </div>
+
+    <div class="quiz-wrap" id="quiz-container" data-aos="fade-up" data-aos-delay="80">
+      <!-- 15 soal dirender otomatis oleh js/materi.js -->
+    </div>
+
+    <div class="quiz-actions" data-aos="fade-up">
+      <button class="btn btn-primary" id="quiz-check-btn"><i class="fa-solid fa-check-double"></i> Periksa Jawaban</button>
+      <button class="btn btn-ghost" id="quiz-reset-btn"><i class="fa-solid fa-rotate-left"></i> Ulangi Kuis</button>
+      <span class="quiz-progress-txt" id="quiz-progress-txt">0/15 soal terjawab</span>
+    </div>
+  </section>
+
+  <!-- ============ Refleksi ============ -->
+  <section class="materi-section" id="refleksi">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-comment-dots" style="font-size:10px"></i></span> Refleksi</span>
+      <h2>Yuk, Refleksikan!</h2>
+    </div>
+    <div class="refleksi-card" data-aos="fade-up">
+      <div class="rf-icon"><i class="fa-solid fa-lightbulb"></i></div>
+      <div class="rf-body">
+        <h3>Manfaat Berpikir Komputasional pada Masalah Sehari-hari</h3>
+        <p>Berpikir komputasional bukan hanya untuk pemrograman — cara ini membantu kita memecah masalah rumit
+        menjadi bagian kecil, mengenali pola, dan menyusun langkah penyelesaian yang runtut dalam kehidupan
+        sehari-hari.</p>
+        <div class="refleksi-questions">
+          <div class="rf-q"><i class="fa-solid fa-circle-question"></i> Masalah sehari-hari apa yang pernah kamu selesaikan dengan menyusun langkah-langkah runtut seperti algoritma?</div>
+          <div class="rf-q"><i class="fa-solid fa-circle-question"></i> Bagaimana graf atau tree dapat membantu menggambarkan hubungan pada situasi di sekitarmu (misalnya rute ke sekolah)?</div>
+          <div class="rf-q"><i class="fa-solid fa-circle-question"></i> Kapan kamu menggunakan logika AND/OR/NOT saat mengambil keputusan tanpa sadar?</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Navigasi Bab Sebelum/Sesudah ============ -->
+  <nav class="materi-bottom-nav" aria-label="Navigasi antar bab">
+    <a href="bab1.html" class="bn-link prev" data-aos="fade-up">
+      <span class="bn-arrow"><i class="fa-solid fa-arrow-left"></i></span>
+      <span class="bn-txt"><span>Sebelumnya</span><strong>Bab 1 — Informatika SMP</strong></span>
+    </a>
+    <a href="bab3.html" class="bn-link next" data-aos="fade-up">
+      <span class="bn-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+      <span class="bn-txt"><span>Selanjutnya</span><strong>Bab 3 — Teknologi Informasi & Komunikasi</strong></span>
+    </a>
+  </nav>
+
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="site-footer">
+  <p class="footer-quote" data-aos="fade-up">
+    "Jangan hanya menjadi <span>pengguna</span> teknologi.<br>Belajarlah menjadi <span>pencipta</span> teknologi."
+  </p>
+  <p class="footer-sub">— Semangat belajar Informatika Kelas IX —</p>
+  <div class="footer-links">
+    <a href="index.html">Roadmap</a>
+    <a href="bab1.html">Bab 1</a>
+    <a href="bab7.html">Bab 7</a>
+    <a href="bab9.html">Bab 9</a>
+  </div>
+  <p class="footer-meta">Sumber materi: Buku Siswa Informatika SMP/MTs Kelas IX, Kemendikbudristek © 2022</p>
+</footer>
+
+<button class="fab" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.1/sweetalert2.all.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/materi.js"></script>
+<script>
+  AOS.init({ duration: 700, once: true, offset: 60 });
+</script>
+</body>
+</html>
