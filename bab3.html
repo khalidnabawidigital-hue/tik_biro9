@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bab 3 — Teknologi Informasi & Komunikasi | Informatika Kelas IX</title>
+<meta name="description" content="Materi Bab 3 Informatika Kelas IX: Teknologi Informasi & Komunikasi — integrasi konten aplikasi perkantoran (dokumen, lembar kerja, presentasi), blog, dan vlog. Berbasis Buku Siswa Kurikulum Merdeka.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- AOS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<!-- Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+<!-- Styles -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/roadmap.css">
+<link rel="stylesheet" href="css/materi.css">
+</head>
+<body>
+
+<!-- ============ Loading Screen ============ -->
+<div id="loading-screen" aria-hidden="true">
+  <div class="loader-node">
+    <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="26"></circle></svg>
+  </div>
+  <span class="loader-text">Memuat Materi…</span>
+</div>
+
+<div class="bg-mesh"></div>
+<div class="bg-noise"></div>
+
+<!-- ============ Navbar ============ -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-badge"><i class="fa-solid fa-bolt"></i></span>
+      Informatika<span style="color:var(--accent-2)">IX</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#roadmap">Roadmap</a></li>
+      <li><a href="index.html#statistik">Statistik</a></li>
+      <li><a href="index.html#perjalanan">Peta Perjalanan</a></li>
+      <li><a href="bab1.html">Mulai Belajar</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn theme-toggle" aria-label="Ganti mode gelap/terang"><i class="fa-solid fa-sun"></i></button>
+      <button class="nav-toggle" aria-label="Buka menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ============ Breadcrumb ============ -->
+  <div class="materi-breadcrumb" data-aos="fade-up">
+    <a href="index.html">Roadmap</a>
+    <i class="fa-solid fa-chevron-right"></i>
+    <a href="index.html#roadmap">Semester Ganjil</a>
+    <i class="fa-solid fa-chevron-right"></i>
+    <span class="current">Bab 3 — Teknologi Informasi & Komunikasi</span>
+  </div>
+
+  <!-- ============ Header Bab ============ -->
+  <section class="materi-hero">
+    <div class="materi-hero-top">
+      <div>
+        <span class="materi-hero-badge" data-aos="fade-up">
+          <span class="num-badge">3</span> Bab 3 · Semester Ganjil
+        </span>
+        <h1 data-aos="fade-up" data-aos-delay="80">
+          <i class="fa-solid fa-display" style="color:var(--accent-1-soft);"></i>
+          Teknologi Informasi & <span class="gradient-text">Komunikasi</span>
+        </h1>
+        <p class="lede" data-aos="fade-up" data-aos-delay="140">
+          Belajar mengintegrasikan konten lintas aplikasi perkantoran — dokumen, lembar kerja, dan presentasi —
+          menjadi satu kesatuan yang rapi, lalu membangun eksistensi digital yang positif lewat blog dan vlog.
+        </p>
+      </div>
+    </div>
+
+    <div class="materi-meta-row" data-aos="fade-up" data-aos-delay="180">
+      <span class="materi-chip"><i class="fa-solid fa-layer-group"></i> Tingkat: Sedang</span>
+      <span class="materi-chip"><i class="fa-solid fa-clock"></i> 3 Pertemuan · 6 JP</span>
+      <span class="materi-chip"><i class="fa-solid fa-flask"></i> Praktikum: Laporan Keuangan Sederhana, Blog & Vlog Sederhana</span>
+      <span class="materi-chip warn"><i class="fa-solid fa-bookmark"></i> Sumber: Buku Siswa Kemendikbudristek 2022</span>
+    </div>
+
+    <nav class="materi-toc" data-aos="fade-up" data-aos-delay="220" aria-label="Navigasi materi">
+      <a href="#capaian"><i class="fa-solid fa-bullseye"></i> Capaian</a>
+      <a href="#integrasi"><i class="fa-solid fa-object-group"></i> Integrasi Konten</a>
+      <a href="#blog"><i class="fa-solid fa-blog"></i> Blog</a>
+      <a href="#vlog"><i class="fa-solid fa-video"></i> Vlog</a>
+      <a href="#praktikum"><i class="fa-solid fa-flask"></i> Praktikum</a>
+      <a href="#quiz"><i class="fa-solid fa-clipboard-question"></i> Kuis</a>
+      <a href="#refleksi"><i class="fa-solid fa-comment-dots"></i> Refleksi</a>
+    </nav>
+  </section>
+
+  <!-- ============ Capaian Pembelajaran ============ -->
+  <section class="capaian-box" id="capaian">
+    <div class="capaian-card" data-aos="fade-up">
+      <div class="cap-icon"><i class="fa-solid fa-bullseye"></i></div>
+      <div class="cap-txt">
+        <span>Capaian Pembelajaran</span>
+        <p>Siswa mampu mengintegrasikan konten lintas aplikasi perkantoran serta membuat blog dan vlog sederhana.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Apa yang Dipelajari & Kompetensi ============ -->
+  <section class="materi-section" id="ringkasan">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num">i</span> Gambaran Umum</span>
+      <h2>Apa yang Dipelajari & Kompetensi yang Diperoleh</h2>
+      <p>Tiga materi inti bab ini saling terkait: menyatukan konten dari berbagai aplikasi perkantoran, lalu
+      menuangkan hasil karya dan gagasan ke ruang digital lewat blog dan vlog.</p>
+    </div>
+    <div class="materi-grid-2">
+      <div class="info-card" data-aos="fade-up">
+        <div class="ic-top">
+          <div class="ic-icon"><i class="fa-solid fa-book-open"></i></div>
+          <h3>Apa yang Dipelajari</h3>
+        </div>
+        <p>Tiga topik utama yang membangun kemampuan literasi TIK siswa kelas IX.</p>
+        <ul>
+          <li>Integrasi Konten Aplikasi Perkantoran</li>
+          <li>Blog</li>
+          <li>Vlog</li>
+        </ul>
+      </div>
+      <div class="info-card cyan" data-aos="fade-up" data-aos-delay="100">
+        <div class="ic-top">
+          <div class="ic-icon"><i class="fa-solid fa-medal"></i></div>
+          <h3>Kompetensi yang Diperoleh</h3>
+        </div>
+        <p>Setelah menuntaskan bab ini, siswa diharapkan mampu:</p>
+        <ul>
+          <li>Mengintegrasikan dokumen–lembar kerja–presentasi</li>
+          <li>Membuat & mengelola blog</li>
+          <li>Memproduksi vlog sederhana</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 1. Integrasi Konten Aplikasi Perkantoran ============ -->
+  <section class="materi-section" id="integrasi">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num">1</span> Materi Pertama</span>
+      <h2>Integrasi Konten Aplikasi Perkantoran</h2>
+      <p>Dalam bekerja sehari-hari, data dari satu aplikasi sering dibutuhkan di aplikasi lain — misalnya angka
+      dari lembar kerja perlu tampil di dokumen laporan, atau grafik dari lembar kerja perlu muncul di slide
+      presentasi. Kemampuan mengintegrasikan konten membuat pekerjaan lebih efisien dan datanya tetap konsisten.</p>
+    </div>
+
+    <div class="materi-grid-2" data-aos="fade-up">
+      <div class="info-card">
+        <div class="ic-top">
+          <div class="ic-icon"><i class="fa-solid fa-file-lines"></i></div>
+          <h3>Tiga Aplikasi Perkantoran</h3>
+        </div>
+        <p>Ketiga aplikasi ini punya peran berbeda, namun konten di dalamnya dapat saling dihubungkan.</p>
+        <ul>
+          <li><strong style="color:var(--text-hi)">Dokumen</strong> (pengolah kata) — untuk surat, laporan, makalah</li>
+          <li><strong style="color:var(--text-hi)">Lembar Kerja</strong> (spreadsheet) — untuk data angka, tabel, grafik</li>
+          <li><strong style="color:var(--text-hi)">Presentasi</strong> (slide) — untuk memaparkan gagasan secara visual</li>
+        </ul>
+      </div>
+      <div class="info-card cyan">
+        <div class="ic-top">
+          <div class="ic-icon"><i class="fa-solid fa-link"></i></div>
+          <h3>Metode Integrasi Konten</h3>
+        </div>
+        <p>Ada beberapa cara memindahkan konten antaraplikasi, tergantung apakah data perlu tetap "terhubung".</p>
+        <ul>
+          <li><strong style="color:var(--text-hi)">Copy-Paste biasa</strong> — konten disalin sebagai teks/gambar statis</li>
+          <li><strong style="color:var(--text-hi)">Paste Special / Link</strong> — konten tetap terhubung ke sumber asli, otomatis ter-update</li>
+          <li><strong style="color:var(--text-hi)">Embed Objek (OLE)</strong> — objek tertanam dan bisa diedit langsung dari aplikasi tujuan</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="diagram-card" data-aos="fade-up" data-aos-delay="80">
+      <div class="diagram-label"><span>Alur Integrasi Konten — Buku Tahunan Kelas</span></div>
+      <div class="diagram-svg-wrap">
+        <svg viewBox="0 0 420 260" width="420" height="260">
+          <line class="edge-line" x1="80" y1="60" x2="210" y2="130"></line>
+          <line class="edge-line" x1="210" y1="60" x2="210" y2="130"></line>
+          <line class="edge-line" x1="340" y1="60" x2="210" y2="130"></line>
+          <line class="edge-line" x1="210" y1="130" x2="210" y2="210"></line>
+
+          <circle class="node-circle" cx="80" cy="60" r="26"></circle>
+          <text class="node-text" x="80" y="65" style="font-size:11px">Dokumen</text>
+          <circle class="node-circle" cx="210" cy="60" r="26"></circle>
+          <text class="node-text" x="210" y="65" style="font-size:10px">Lembar Kerja</text>
+          <circle class="node-circle" cx="340" cy="60" r="26"></circle>
+          <text class="node-text" x="340" y="65" style="font-size:10px">Presentasi</text>
+          <circle class="node-circle root" cx="210" cy="210" r="30"></circle>
+          <text class="node-text root-text" x="210" y="205" style="font-size:11px">Buku</text>
+          <text class="node-text root-text" x="210" y="220" style="font-size:11px">Tahunan</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="logic-quiz" data-aos="fade-up" data-aos-delay="120">
+      <p class="lq-q">🎯 Uji Pemahaman: Jika data pada lembar kerja diubah dan tabel di dokumen laporan ikut
+      berubah otomatis, teknik apa yang digunakan?</p>
+      <div class="lq-options">
+        <button class="lq-opt" data-correct="false" data-msg-wrong="Copy-paste biasa menghasilkan salinan statis yang tidak ikut berubah jika sumbernya diedit.">Copy-Paste biasa</button>
+        <button class="lq-opt" data-correct="true" data-msg-correct="Tepat! Paste Special / Link menjaga konten tetap terhubung ke sumber aslinya sehingga otomatis ter-update.">Paste Special / Link</button>
+        <button class="lq-opt" data-correct="false" data-msg-wrong="Screenshot hanya menyalin gambar tampilan, tidak terhubung ke data sumber.">Screenshot tampilan</button>
+      </div>
+      <p class="lq-feedback"></p>
+    </div>
+  </section>
+
+  <!-- ============ 2. Blog ============ -->
+  <section class="materi-section" id="blog">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num">2</span> Materi Kedua</span>
+      <h2>Blog</h2>
+      <p>Blog (dari kata "web log") adalah situs web pribadi atau kelompok berisi tulisan yang diterbitkan
+      secara berkala, biasanya disusun terbalik berdasarkan waktu — tulisan terbaru tampil paling atas.
+      Blog menjadi salah satu cara paling sederhana untuk membangun eksistensi digital.</p>
+    </div>
+
+    <div class="materi-grid-2" data-aos="fade-up">
+      <div class="info-card">
+        <div class="ic-top">
+          <div class="ic-icon"><i class="fa-solid fa-blog"></i></div>
+          <h3>Karakteristik Blog</h3>
+        </div>
+        <ul>
+          <li>Postingan tersusun kronologis terbalik (terbaru di atas)</li>
+          <li>Ada kolom komentar untuk interaksi pembaca</li>
+          <li>Konten dikelompokkan lewat kategori & tag</li>
+          <li>Dapat dibuat lewat platform seperti Blogger atau WordPress</li>
+        </ul>
+      </div>
+      <div class="info-card cyan">
+        <div class="ic-top">
+          <div class="ic-icon"><i class="fa-solid fa-pen-nib"></i></div>
+          <h3>Anatomi Postingan Blog yang Baik</h3>
+        </div>
+        <ul>
+          <li>Judul yang menarik dan mewakili isi</li>
+          <li>Isi terstruktur dengan subjudul & paragraf singkat</li>
+          <li>Gambar atau ilustrasi pendukung</li>
+          <li>Mencantumkan sumber referensi yang jelas</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="logic-quiz" data-aos="fade-up" data-aos-delay="80">
+      <p class="lq-q">🎯 Uji Pemahaman: Postingan blog biasanya ditampilkan dengan urutan seperti apa?</p>
+      <div class="lq-options">
+        <button class="lq-opt" data-correct="false" data-msg-wrong="Bukan alfabet judul, melainkan berdasarkan waktu penerbitan.">Alfabetis berdasarkan judul</button>
+        <button class="lq-opt" data-correct="true" data-msg-correct="Tepat! Postingan terbaru tampil paling atas, sehingga disebut kronologis terbalik.">Kronologis terbalik (terbaru di atas)</button>
+        <button class="lq-opt" data-correct="false" data-msg-wrong="Blog tidak diurutkan acak; ada urutan waktu yang konsisten.">Acak setiap kali dibuka</button>
+      </div>
+      <p class="lq-feedback"></p>
+    </div>
+  </section>
+
+  <!-- ============ 3. Vlog ============ -->
+  <section class="materi-section" id="vlog">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num">3</span> Materi Ketiga</span>
+      <h2>Vlog</h2>
+      <p>Vlog (video blog) adalah bentuk blog dalam format video, berisi rekaman aktivitas, gagasan, atau
+      tutorial yang dibagikan lewat platform seperti YouTube. Membuat vlog yang baik memerlukan perencanaan
+      matang, bukan sekadar merekam secara asal.</p>
+    </div>
+
+    <div class="materi-grid-2" data-aos="fade-up">
+      <div class="info-card">
+        <div class="ic-top">
+          <div class="ic-icon"><i class="fa-solid fa-clapperboard"></i></div>
+          <h3>Apa itu Vlog?</h3>
+        </div>
+        <ul>
+          <li>Konten video berisi cerita, opini, atau tutorial</li>
+          <li>Dipublikasikan lewat platform berbagi video</li>
+          <li>Menekankan kepribadian & gaya bertutur pembuatnya</li>
+          <li>Contoh nyata: vlog perjalanan, vlog tutorial, vlog keseharian</li>
+        </ul>
+      </div>
+      <div class="info-card cyan">
+        <div class="ic-top">
+          <div class="ic-icon"><i class="fa-solid fa-video"></i></div>
+          <h3>Peralatan Dasar Vlogging</h3>
+        </div>
+        <ul>
+          <li>Kamera atau ponsel dengan kualitas rekam yang memadai</li>
+          <li>Mikrofon tambahan untuk kejernihan suara</li>
+          <li>Pencahayaan yang cukup</li>
+          <li>Tripod/penyangga & aplikasi penyunting video</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flowchart-card" data-aos="fade-up" data-aos-delay="80">
+      <div class="diagram-label"><span>Alur Produksi Vlog Sederhana</span></div>
+      <div class="algo-steps">
+        <div class="algo-step">
+          <div class="algo-num">1</div>
+          <div class="algo-body">
+            <h4>Pra-Produksi</h4>
+            <p>Tentukan ide, buat naskah singkat atau storyboard, dan siapkan peralatan.</p>
+          </div>
+        </div>
+        <div class="algo-step">
+          <div class="algo-num">2</div>
+          <div class="algo-body">
+            <h4>Produksi</h4>
+            <p>Lakukan pengambilan gambar (syuting) sesuai rencana, ambil beberapa take jika perlu.</p>
+          </div>
+        </div>
+        <div class="algo-step">
+          <div class="algo-num">3</div>
+          <div class="algo-body">
+            <h4>Pasca-Produksi</h4>
+            <p>Sunting video: potong bagian yang tidak perlu, tambahkan musik/teks, lalu ekspor.</p>
+          </div>
+        </div>
+        <div class="algo-step">
+          <div class="algo-num">4</div>
+          <div class="algo-body">
+            <h4>Publikasi</h4>
+            <p>Unggah video ke platform pilihan dengan judul, deskripsi, dan thumbnail yang menarik.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Praktikum ============ -->
+  <section class="materi-section" id="praktikum">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-flask" style="font-size:10px"></i></span> Praktikum</span>
+      <h2>Aktivitas Praktik di Bab Ini</h2>
+      <p>Dua aktivitas untuk melatih langsung keterampilan mengintegrasikan konten serta membangun eksistensi
+      digital lewat blog dan vlog.</p>
+    </div>
+
+    <div class="praktikum-grid">
+      <div class="praktikum-card" data-aos="fade-up">
+        <span class="pk-tag"><i class="fa-solid fa-file-invoice-dollar"></i> Aktivitas 1</span>
+        <h3>Laporan Keuangan Sederhana</h3>
+        <p>Mengintegrasikan tabel dan grafik dari lembar kerja ke dalam dokumen laporan, lalu menampilkan
+        ringkasannya pada slide presentasi.</p>
+        <div class="pk-checklist">
+          <div class="pk-check-item"><span class="box"><i class="fa-solid fa-check"></i></span><span class="lbl">Susun data pemasukan & pengeluaran di lembar kerja</span></div>
+          <div class="pk-check-item"><span class="box"><i class="fa-solid fa-check"></i></span><span class="lbl">Buat grafik ringkasan dari data tersebut</span></div>
+          <div class="pk-check-item"><span class="box"><i class="fa-solid fa-check"></i></span><span class="lbl">Tautkan tabel & grafik ke dokumen laporan</span></div>
+          <div class="pk-check-item"><span class="box"><i class="fa-solid fa-check"></i></span><span class="lbl">Ringkas hasilnya dalam 1 slide presentasi</span></div>
+        </div>
+        <div class="pk-progress-bar"><div class="pk-progress-fill"></div></div>
+        <p class="pk-progress-txt">0/4 langkah selesai (0%)</p>
+      </div>
+
+      <div class="praktikum-card" data-aos="fade-up" data-aos-delay="100">
+        <span class="pk-tag"><i class="fa-solid fa-video"></i> Aktivitas 2</span>
+        <h3>Blog & Vlog Sederhana</h3>
+        <p>Membuat satu postingan blog dan satu video vlog pendek bertema keseharian di sekolah, lengkap
+        dengan tahap perencanaan hingga publikasi.</p>
+        <div class="pk-checklist">
+          <div class="pk-check-item"><span class="box"><i class="fa-solid fa-check"></i></span><span class="lbl">Tentukan tema & buat draf tulisan blog</span></div>
+          <div class="pk-check-item"><span class="box"><i class="fa-solid fa-check"></i></span><span class="lbl">Terbitkan postingan blog dengan gambar pendukung</span></div>
+          <div class="pk-check-item"><span class="box"><i class="fa-solid fa-check"></i></span><span class="lbl">Buat storyboard singkat & rekam video vlog</span></div>
+          <div class="pk-check-item"><span class="box"><i class="fa-solid fa-check"></i></span><span class="lbl">Sunting dan unggah vlog ke platform pilihan</span></div>
+        </div>
+        <div class="pk-progress-bar"><div class="pk-progress-fill"></div></div>
+        <p class="pk-progress-txt">0/4 langkah selesai (0%)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Kata Kunci ============ -->
+  <section class="materi-section" id="kata-kunci">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-key" style="font-size:10px"></i></span> Kata Kunci</span>
+      <h2>Istilah Penting Bab Ini</h2>
+    </div>
+    <div class="kata-kunci-wrap" data-aos="fade-up">
+      <span class="kk-chip">Integrasi konten</span>
+      <span class="kk-chip">Embed / OLE</span>
+      <span class="kk-chip">Dokumen</span>
+      <span class="kk-chip">Lembar kerja</span>
+      <span class="kk-chip">Presentasi</span>
+      <span class="kk-chip">Blog</span>
+      <span class="kk-chip">Vlog</span>
+      <span class="kk-chip">Pra-produksi</span>
+      <span class="kk-chip">Pasca-produksi</span>
+      <span class="kk-chip">Etika digital</span>
+    </div>
+  </section>
+
+  <!-- ============ Kuis Evaluasi ============ -->
+  <section class="materi-section" id="quiz">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-clipboard-question" style="font-size:10px"></i></span> Evaluasi</span>
+      <h2>Kuis: Uji Pemahaman Bab 3</h2>
+      <p>15 soal pilihan ganda mencakup Integrasi Konten Aplikasi Perkantoran, Blog, dan Vlog. Jawab semua
+      soal lalu klik <strong style="color:var(--text-hi)">Periksa Jawaban</strong> untuk melihat skormu.</p>
+    </div>
+
+    <div class="quiz-score-banner" id="quiz-score-banner" data-aos="fade-up">
+      <div class="qsb-icon"><i class="fa-solid fa-trophy"></i></div>
+      <div class="qsb-body">
+        <span class="qsb-label">Skor Kuis</span>
+        <strong id="qsb-score">0 / 15</strong>
+      </div>
+      <p class="qsb-msg" id="qsb-msg">Jawab semua soal di bawah, lalu periksa hasilnya di sini.</p>
+    </div>
+
+    <div class="quiz-wrap" id="quiz-container" data-aos="fade-up" data-aos-delay="80">
+      <!-- 15 soal dirender otomatis oleh js/materi.js -->
+    </div>
+
+    <div class="quiz-actions" data-aos="fade-up">
+      <button class="btn btn-primary" id="quiz-check-btn"><i class="fa-solid fa-check-double"></i> Periksa Jawaban</button>
+      <button class="btn btn-ghost" id="quiz-reset-btn"><i class="fa-solid fa-rotate-left"></i> Ulangi Kuis</button>
+      <span class="quiz-progress-txt" id="quiz-progress-txt">0/15 soal terjawab</span>
+    </div>
+  </section>
+
+  <!-- ============ Refleksi ============ -->
+  <section class="materi-section" id="refleksi">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-comment-dots" style="font-size:10px"></i></span> Refleksi</span>
+      <h2>Yuk, Refleksikan!</h2>
+    </div>
+    <div class="refleksi-card" data-aos="fade-up">
+      <div class="rf-icon"><i class="fa-solid fa-lightbulb"></i></div>
+      <div class="rf-body">
+        <h3>Etika Berbagi Konten di Ruang Digital</h3>
+        <p>Membuat blog dan vlog berarti membagikan sebagian hidup kita ke ruang publik. Diperlukan kesadaran
+        untuk menjaga privasi, menghormati hak cipta, serta bertanggung jawab atas setiap konten yang
+        dipublikasikan.</p>
+        <div class="refleksi-questions">
+          <div class="rf-q"><i class="fa-solid fa-circle-question"></i> Informasi pribadi seperti apa yang sebaiknya tidak kamu bagikan di blog atau vlog?</div>
+          <div class="rf-q"><i class="fa-solid fa-circle-question"></i> Bagaimana cara memastikan gambar, musik, atau kutipan yang kamu gunakan tidak melanggar hak cipta?</div>
+          <div class="rf-q"><i class="fa-solid fa-circle-question"></i> Apa dampaknya jika sebuah konten yang sudah diunggah ternyata menyinggung orang lain?</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Navigasi Bab Sebelum/Sesudah ============ -->
+  <nav class="materi-bottom-nav" aria-label="Navigasi antar bab">
+    <a href="bab2.html" class="bn-link prev" data-aos="fade-up">
+      <span class="bn-arrow"><i class="fa-solid fa-arrow-left"></i></span>
+      <span class="bn-txt"><span>Sebelumnya</span><strong>Bab 2 — Berpikir Komputasional</strong></span>
+    </a>
+    <a href="bab4.html" class="bn-link next" data-aos="fade-up">
+      <span class="bn-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+      <span class="bn-txt"><span>Selanjutnya</span><strong>Bab 4</strong></span>
+    </a>
+  </nav>
+
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="site-footer">
+  <p class="footer-quote" data-aos="fade-up">
+    "Jangan hanya menjadi <span>pengguna</span> teknologi.<br>Belajarlah menjadi <span>pencipta</span> teknologi."
+  </p>
+  <p class="footer-sub">— Semangat belajar Informatika Kelas IX —</p>
+  <div class="footer-links">
+    <a href="index.html">Roadmap</a>
+    <a href="bab1.html">Bab 1</a>
+    <a href="bab7.html">Bab 7</a>
+    <a href="bab9.html">Bab 9</a>
+  </div>
+  <p class="footer-meta">Sumber materi: Buku Siswa Informatika SMP/MTs Kelas IX, Kemendikbudristek © 2022</p>
+</footer>
+
+<button class="fab" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.1/sweetalert2.all.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/materi.js"></script>
+<script>
+  AOS.init({ duration: 700, once: true, offset: 60 });
+</script>
+</body>
+</html>
