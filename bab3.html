@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bab 3 — Teknologi Informasi & Komunikasi | Informatika Kelas IX</title>
+<meta name="description" content="Materi Bab 3 Informatika Kelas IX: Teknologi Informasi & Komunikasi — integrasi konten aplikasi perkantoran (dokumen, lembar kerja, presentasi), blog, dan vlog. Berbasis Buku Siswa Kurikulum Merdeka.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- AOS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<!-- Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+<!-- Styles -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/roadmap.css">
+<link rel="stylesheet" href="css/materi.css">
+<style>
+  .qz-card{background:rgba(127,127,127,.06);border:1px solid rgba(127,127,127,.18);border-radius:16px;padding:20px 22px;margin-bottom:16px;}
+  .qz-head{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;}
+  .qz-num{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:var(--accent-1-soft, #6c5ce7);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:13px;font-weight:700;}
+  .qz-text{font-weight:600;color:var(--text-hi);line-height:1.5;}
+  .qz-options{display:grid;gap:10px;padding-left:40px;}
+  .qz-option{display:flex;align-items:center;gap:10px;text-align:left;background:rgba(127,127,127,.05);border:1px solid rgba(127,127,127,.2);border-radius:10px;padding:10px 14px;cursor:pointer;font-family:inherit;font-size:14.5px;color:inherit;transition:.15s ease;}
+  .qz-option:hover{border-color:var(--accent-1-soft, #6c5ce7);}
+  .qz-option .qz-dot{flex:0 0 auto;width:16px;height:16px;border-radius:50%;border:2px solid rgba(127,127,127,.4);}
+  .qz-option.selected{border-color:var(--accent-1-soft, #6c5ce7);background:rgba(108,92,231,.12);}
+  .qz-option.selected .qz-dot{background:var(--accent-1-soft, #6c5ce7);border-color:var(--accent-1-soft, #6c5ce7);}
+  .qz-option.correct{border-color:var(--accent-2-soft, #00b894);background:rgba(0,184,148,.14);}
+  .qz-option.correct .qz-dot{background:var(--accent-2-soft, #00b894);border-color:var(--accent-2-soft, #00b894);}
+  .qz-option.wrong{border-color:var(--accent-danger, #e74c3c);background:rgba(231,76,60,.12);}
+  .qz-option.wrong .qz-dot{background:var(--accent-danger, #e74c3c);border-color:var(--accent-danger, #e74c3c);}
+  .qz-option:disabled{cursor:default;}
+  .qz-explain{display:none;margin:12px 0 0 40px;padding:10px 14px;border-left:3px solid var(--accent-1-soft, #6c5ce7);background:rgba(127,127,127,.05);border-radius:0 8px 8px 0;font-size:13.5px;color:var(--text-hi);}
+  .qz-explain.show{display:block;}
+</style>
+</head>
+<body>
+
+<!-- ============ Loading Screen ============ -->
+<div id="loading-screen" aria-hidden="true">
+  <div class="loader-node">
+    <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="26"></circle></svg>
+  </div>
+  <span class="loader-text">Memuat Materi…</span>
+</div>
+
+<div class="bg-mesh"></div>
+<div class="bg-noise"></div>
+
+<!-- ============ Navbar ============ -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-badge"><i class="fa-solid fa-bolt"></i></span>
+      Informatika<span style="color:var(--accent-2)">IX</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#roadmap">Roadmap</a></li>
+      <li><a href="index.html#statistik">Statistik</a></li>
+      <li><a href="index.html#perjalanan">Peta Perjalanan</a></li>
+      <li><a href="bab1.html">Mulai Belajar</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn theme-toggle" aria-label="Ganti mode gelap/terang"><i class="fa-solid fa-sun"></i></button>
+      <button class="nav-toggle" aria-label="Buka menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ============ Breadcrumb ============ -->
+  <div class="materi-breadcrumb" data-aos="fade-up">
+    <a href="index.html">Roadmap</a>
+    <i class="fa-solid fa-chevron-right"></i>
+    <a href="index.html#roadmap">Semester Ganjil</a>
+    <i class="fa-solid fa-chevron-right"></i>
+    <span class="current">Bab 3 — Teknologi Informasi & Komunikasi</span>
+  </div>
+
+  <!-- ============ Header Bab ============ -->
+  <section class="materi-hero">
+    <div class="materi-hero-top">
+      <div>
+        <span class="materi-hero-badge" data-aos="fade-up">
+          <span class="num-badge">3</span> Bab 3 · Semester Ganjil
+        </span>
+        <h1 data-aos="fade-up" data-aos-delay="80">
+          <i class="fa-solid fa-display" style="color:var(--accent-1-soft);"></i>
+          Teknologi Informasi & <span class="gradient-text">Komunikasi</span>
+        </h1>
+        <p class="lede" data-aos="fade-up" data-aos-delay="140">
+          Belajar mengintegrasikan konten lintas aplikasi perkantoran — dokumen, lembar kerja, dan presentasi —
+          menjadi satu kesatuan yang rapi, lalu membangun eksistensi digital yang positif lewat blog dan vlog.
+        </p>
+      </div>
+    </div>
+
+    <div class="materi-meta-row" data-aos="fade-up" data-aos-delay="180">
+      <span class="materi-chip"><i class="fa-solid fa-layer-group"></i> Tingkat: Sedang</span>
+      <span class="materi-chip"><i class="fa-solid fa-clock"></i> 3 Pertemuan · 6 JP</span>
+      <span class="materi-chip"><i class="fa-solid fa-flask"></i> Praktikum: Laporan Keuangan Sederhana, Blog & Vlog Sederhana</span>
+      <span class="materi-chip warn"><i class="fa-solid fa-bookmark"></i> Sumber: Buku Siswa Kemendikbudristek 2022</span>
+    </div>
+
+    <nav class="materi-toc" data-aos="fade-up" data-aos-delay="220" aria-label="Navigasi materi">
+      <a href="#capaian"><i class="fa-solid fa-bullseye"></i> Capaian</a>
+      <a href="#integrasi"><i class="fa-solid fa-object-group"></i> Integrasi Konten</a>
+      <a href="#blog"><i class="fa-solid fa-blog"></i> Blog</a>
+      <a href="#vlog"><i class="fa-solid fa-video"></i> Vlog</a>
+      <a href="#praktikum"><i class="fa-solid fa-flask"></i> Praktikum</a>
+      <a href="#quiz"><i class="fa-solid fa-clipboard-question"></i> Kuis</a>
+      <a href="#refleksi"><i class="fa-solid fa-comment-dots"></i> Refleksi</a>
+    </nav>
+  </section>
+
+  <!-- ============ Capaian Pembelajaran ============ -->
+  <section class="capaian-box" id="capaian">
+    <div class="capaian-card" data-aos="fade-up">
+      <div class="cap-icon"><i class="fa-solid fa-bullseye"></i></div>
+      <div class="cap-txt">
+        <span>Capaian Pembelajaran</span>
+        <p>Siswa mampu mengintegrasikan konten lintas aplikasi perkantoran serta membuat blog dan vlog sederhana.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Apa yang Dipelajari & Kompetensi ============ -->
+  <section class="materi-section" id="ringkasan">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num">i</span> Gambaran Umum</span>
+      <h2>Apa yang Dipelajari & Kompetensi yang Diperoleh</h2>
+      <p>Tiga materi inti bab ini saling terkait: menyatukan konten dari berbagai aplikasi perkantoran, lalu
+      menuangkan hasil karya dan gagasan ke ruang digital lewat blog dan vlog.</p>
+    </div>
+    <div class="materi-grid-2">
+      <div class="info-card" data-aos="fade-up">
+        <div class="ic-top">
+          <div class="ic-icon"><i class="fa-solid fa-book-open"></i></div>
+          <h3>Apa yang Dipelajari</h3>
+        </div>
+        <p>Tiga topik utama yang membangun kemampuan literasi TIK siswa kelas IX.</p>
+        <ul>
+          <li>Integrasi Konten Aplikasi Perkantoran</li>
+          <li>Blog</li>
+          <li>Vlog</li>
+        </ul>
+      </div>
+      <div class="info-card cyan" data-aos="fade-up" data-aos-delay="100">
+        <div class="ic-top">
+          <div class="ic-icon"><i class="fa-solid fa-medal"></i></div>
+          <h3>Kompetensi yang Diperoleh</h3>
+        </div>
+        <p>Setelah menuntaskan bab ini, siswa diharapkan mampu:</p>
+        <ul>
+          <li>Mengintegrasikan dokumen–lembar kerja–presentasi</li>
+          <li>Membuat & mengelola blog</li>
+          <li>Memproduksi vlog sederhana</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 1. Integrasi Konten Aplikasi Perkantoran ============ -->
+  <section class="materi-section" id="integrasi">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num">1</span> Materi Pertama</span>
+      <h2>Integrasi Konten Aplikasi Perkantoran</h2>
+      <p>Dalam bekerja sehari-hari, data dari satu aplikasi sering dibutuhkan di aplikasi lain — misalnya angka
+      dari lembar kerja perlu tampil di dokumen laporan, atau grafik dari lembar kerja perlu muncul di slide
+      presentasi. Kemampuan mengintegrasikan konten membuat pekerjaan lebih efisien dan datanya tetap konsisten.</p>
+    </div>
+
+    <div class="materi-grid-2" data-aos="fade-up">
+      <div class="info-card">
+        <div class="ic-top">
+          <div class="ic-icon"><i class="fa-solid fa-file-lines"></i></div>
+          <h3>Tiga Aplikasi Perkantoran</h3>
+        </div>
+        <p>Ketiga aplikasi ini punya peran berbeda, namun konten di dalamnya dapat saling dihubungkan.</p>
+        <ul>
+          <li><strong style="color:var(--text-hi)">Dokumen</strong> (pengolah kata) — untuk surat, laporan, makalah</li>
+          <li><strong style="color:var(--text-hi)">Lembar Kerja</strong> (spreadsheet) — untuk data angka, tabel, grafik</li>
+          <li><strong style="color:var(--text-hi)">Presentasi</strong> (slide) — untuk memaparkan gagasan secara visual</li>
+        </ul>
+      </div>
+      <div class="info-card cyan">
+        <div class="ic-top">
+          <div class="ic-icon"><i class="fa-solid fa-link"></i></div>
+          <h3>Metode Integrasi Konten</h3>
+        </div>
+        <p>Ada beberapa cara memindahkan konten antaraplikasi, tergantung apakah data perlu tetap "terhubung".</p>
+        <ul>
+          <li><strong style="color:var(--text-hi)">Copy-Paste biasa</strong> — konten disalin sebagai teks/gambar statis</li>
+          <li><strong style="color:var(--text-hi)">Paste Special / Link</strong> — konten tetap terhubung ke sumber asli, otomatis ter-update</li>
+          <li><strong style="color:var(--text-hi)">Embed Objek (OLE)</strong> — objek tertanam dan bisa diedit langsung dari aplikasi tujuan</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="diagram-card" data-aos="fade-up" data-aos-delay="80">
+      <div class="diagram-label"><span>Alur Integrasi Konten — Buku Tahunan Kelas</span></div>
+      <div class="diagram-svg-wrap">
+        <svg viewBox="0 0 420 260" width="420" height="260">
+          <line class="edge-line" x1="80" y1="60" x2="210" y2="130"></line>
+          <line class="edge-line" x1="210" y1="60" x2="210" y2="130"></line>
+          <line class="edge-line" x1="340" y1="60" x2="210" y2="130"></line>
+          <line class="edge-line" x1="210" y1="130" x2="210" y2="210"></line>
+
+          <circle class="node-circle" cx="80" cy="60" r="26"></circle>
+          <text class="node-text" x="80" y="65" style="font-size:11px">Dokumen</text>
+          <circle class="node-circle" cx="210" cy="60" r="26"></circle>
+          <text class="node-text" x="210" y="65" style="font-size:10px">Lembar Kerja</text>
+          <circle class="node-circle" cx="340" cy="60" r="26"></circle>
+          <text class="node-text" x="340" y="65" style="font-size:10px">Presentasi</text>
+          <circle class="node-circle root" cx="210" cy="210" r="30"></circle>
+          <text class="node-text root-text" x="210" y="205" style="font-size:11px">Buku</text>
+          <text class="node-text root-text" x="210" y="220" style="font-size:11px">Tahunan</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="logic-quiz" data-aos="fade-up" data-aos-delay="120">
+      <p class="lq-q">🎯 Uji Pemahaman: Jika data pada lembar kerja diubah dan tabel di dokumen laporan ikut
+      berubah otomatis, teknik apa yang digunakan?</p>
+      <div class="lq-options">
+        <button class="lq-opt" data-correct="false" data-msg-wrong="Copy-paste biasa menghasilkan salinan statis yang tidak ikut berubah jika sumbernya diedit.">Copy-Paste biasa</button>
+        <button class="lq-opt" data-correct="true" data-msg-correct="Tepat! Paste Special / Link menjaga konten tetap terhubung ke sumber aslinya sehingga otomatis ter-update.">Paste Special / Link</button>
+        <button class="lq-opt" data-correct="false" data-msg-wrong="Screenshot hanya menyalin gambar tampilan, tidak terhubung ke data sumber.">Screenshot tampilan</button>
+      </div>
+      <p class="lq-feedback"></p>
+    </div>
+  </section>
+
+  <!-- ============ 2. Blog ============ -->
+  <section class="materi-section" id="blog">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num">2</span> Materi Kedua</span>
+      <h2>Blog</h2>
+      <p>Blog (dari kata "web log") adalah situs web pribadi atau kelompok berisi tulisan yang diterbitkan
+      secara berkala, biasanya disusun terbalik berdasarkan waktu — tulisan terbaru tampil paling atas.
+      Blog menjadi salah satu cara paling sederhana untuk membangun eksistensi digital.</p>
+    </div>
+
+    <div class="materi-grid-2" data-aos="fade-up">
+      <div class="info-card">
+        <div class="ic-top">
+          <div class="ic-icon"><i class="fa-solid fa-blog"></i></div>
+          <h3>Karakteristik Blog</h3>
+        </div>
+        <ul>
+          <li>Postingan tersusun kronologis terbalik (terbaru di atas)</li>
+          <li>Ada kolom komentar untuk interaksi pembaca</li>
+          <li>Konten dikelompokkan lewat kategori & tag</li>
+          <li>Dapat dibuat lewat platform seperti Blogger atau WordPress</li>
+        </ul>
+      </div>
+      <div class="info-card cyan">
+        <div class="ic-top">
+          <div class="ic-icon"><i class="fa-solid fa-pen-nib"></i></div>
+          <h3>Anatomi Postingan Blog yang Baik</h3>
+        </div>
+        <ul>
+          <li>Judul yang menarik dan mewakili isi</li>
+          <li>Isi terstruktur dengan subjudul & paragraf singkat</li>
+          <li>Gambar atau ilustrasi pendukung</li>
+          <li>Mencantumkan sumber referensi yang jelas</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="logic-quiz" data-aos="fade-up" data-aos-delay="80">
+      <p class="lq-q">🎯 Uji Pemahaman: Postingan blog biasanya ditampilkan dengan urutan seperti apa?</p>
+      <div class="lq-options">
+        <button class="lq-opt" data-correct="false" data-msg-wrong="Bukan alfabet judul, melainkan berdasarkan waktu penerbitan.">Alfabetis berdasarkan judul</button>
+        <button class="lq-opt" data-correct="true" data-msg-correct="Tepat! Postingan terbaru tampil paling atas, sehingga disebut kronologis terbalik.">Kronologis terbalik (terbaru di atas)</button>
+        <button class="lq-opt" data-correct="false" data-msg-wrong="Blog tidak diurutkan acak; ada urutan waktu yang konsisten.">Acak setiap kali dibuka</button>
+      </div>
+      <p class="lq-feedback"></p>
+    </div>
+  </section>
+
+  <!-- ============ 3. Vlog ============ -->
+  <section class="materi-section" id="vlog">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num">3</span> Materi Ketiga</span>
+      <h2>Vlog</h2>
+      <p>Vlog (video blog) adalah bentuk blog dalam format video, berisi rekaman aktivitas, gagasan, atau
+      tutorial yang dibagikan lewat platform seperti YouTube. Membuat vlog yang baik memerlukan perencanaan
+      matang, bukan sekadar merekam secara asal.</p>
+    </div>
+
+    <div class="materi-grid-2" data-aos="fade-up">
+      <div class="info-card">
+        <div class="ic-top">
+          <div class="ic-icon"><i class="fa-solid fa-clapperboard"></i></div>
+          <h3>Apa itu Vlog?</h3>
+        </div>
+        <ul>
+          <li>Konten video berisi cerita, opini, atau tutorial</li>
+          <li>Dipublikasikan lewat platform berbagi video</li>
+          <li>Menekankan kepribadian & gaya bertutur pembuatnya</li>
+          <li>Contoh nyata: vlog perjalanan, vlog tutorial, vlog keseharian</li>
+        </ul>
+      </div>
+      <div class="info-card cyan">
+        <div class="ic-top">
+          <div class="ic-icon"><i class="fa-solid fa-video"></i></div>
+          <h3>Peralatan Dasar Vlogging</h3>
+        </div>
+        <ul>
+          <li>Kamera atau ponsel dengan kualitas rekam yang memadai</li>
+          <li>Mikrofon tambahan untuk kejernihan suara</li>
+          <li>Pencahayaan yang cukup</li>
+          <li>Tripod/penyangga & aplikasi penyunting video</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flowchart-card" data-aos="fade-up" data-aos-delay="80">
+      <div class="diagram-label"><span>Alur Produksi Vlog Sederhana</span></div>
+      <div class="algo-steps">
+        <div class="algo-step">
+          <div class="algo-num">1</div>
+          <div class="algo-body">
+            <h4>Pra-Produksi</h4>
+            <p>Tentukan ide, buat naskah singkat atau storyboard, dan siapkan peralatan.</p>
+          </div>
+        </div>
+        <div class="algo-step">
+          <div class="algo-num">2</div>
+          <div class="algo-body">
+            <h4>Produksi</h4>
+            <p>Lakukan pengambilan gambar (syuting) sesuai rencana, ambil beberapa take jika perlu.</p>
+          </div>
+        </div>
+        <div class="algo-step">
+          <div class="algo-num">3</div>
+          <div class="algo-body">
+            <h4>Pasca-Produksi</h4>
+            <p>Sunting video: potong bagian yang tidak perlu, tambahkan musik/teks, lalu ekspor.</p>
+          </div>
+        </div>
+        <div class="algo-step">
+          <div class="algo-num">4</div>
+          <div class="algo-body">
+            <h4>Publikasi</h4>
+            <p>Unggah video ke platform pilihan dengan judul, deskripsi, dan thumbnail yang menarik.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Praktikum ============ -->
+  <section class="materi-section" id="praktikum">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-flask" style="font-size:10px"></i></span> Praktikum</span>
+      <h2>Aktivitas Praktik di Bab Ini</h2>
+      <p>Dua aktivitas untuk melatih langsung keterampilan mengintegrasikan konten serta membangun eksistensi
+      digital lewat blog dan vlog.</p>
+    </div>
+
+    <div class="praktikum-grid">
+      <div class="praktikum-card" data-aos="fade-up">
+        <span class="pk-tag"><i class="fa-solid fa-file-invoice-dollar"></i> Aktivitas 1</span>
+        <h3>Laporan Keuangan Sederhana</h3>
+        <p>Mengintegrasikan tabel dan grafik dari lembar kerja ke dalam dokumen laporan, lalu menampilkan
+        ringkasannya pada slide presentasi.</p>
+        <div class="pk-checklist">
+          <div class="pk-check-item"><span class="box"><i class="fa-solid fa-check"></i></span><span class="lbl">Susun data pemasukan & pengeluaran di lembar kerja</span></div>
+          <div class="pk-check-item"><span class="box"><i class="fa-solid fa-check"></i></span><span class="lbl">Buat grafik ringkasan dari data tersebut</span></div>
+          <div class="pk-check-item"><span class="box"><i class="fa-solid fa-check"></i></span><span class="lbl">Tautkan tabel & grafik ke dokumen laporan</span></div>
+          <div class="pk-check-item"><span class="box"><i class="fa-solid fa-check"></i></span><span class="lbl">Ringkas hasilnya dalam 1 slide presentasi</span></div>
+        </div>
+        <div class="pk-progress-bar"><div class="pk-progress-fill"></div></div>
+        <p class="pk-progress-txt">0/4 langkah selesai (0%)</p>
+      </div>
+
+      <div class="praktikum-card" data-aos="fade-up" data-aos-delay="100">
+        <span class="pk-tag"><i class="fa-solid fa-video"></i> Aktivitas 2</span>
+        <h3>Blog & Vlog Sederhana</h3>
+        <p>Membuat satu postingan blog dan satu video vlog pendek bertema keseharian di sekolah, lengkap
+        dengan tahap perencanaan hingga publikasi.</p>
+        <div class="pk-checklist">
+          <div class="pk-check-item"><span class="box"><i class="fa-solid fa-check"></i></span><span class="lbl">Tentukan tema & buat draf tulisan blog</span></div>
+          <div class="pk-check-item"><span class="box"><i class="fa-solid fa-check"></i></span><span class="lbl">Terbitkan postingan blog dengan gambar pendukung</span></div>
+          <div class="pk-check-item"><span class="box"><i class="fa-solid fa-check"></i></span><span class="lbl">Buat storyboard singkat & rekam video vlog</span></div>
+          <div class="pk-check-item"><span class="box"><i class="fa-solid fa-check"></i></span><span class="lbl">Sunting dan unggah vlog ke platform pilihan</span></div>
+        </div>
+        <div class="pk-progress-bar"><div class="pk-progress-fill"></div></div>
+        <p class="pk-progress-txt">0/4 langkah selesai (0%)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Kata Kunci ============ -->
+  <section class="materi-section" id="kata-kunci">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-key" style="font-size:10px"></i></span> Kata Kunci</span>
+      <h2>Istilah Penting Bab Ini</h2>
+    </div>
+    <div class="kata-kunci-wrap" data-aos="fade-up">
+      <span class="kk-chip">Integrasi konten</span>
+      <span class="kk-chip">Embed / OLE</span>
+      <span class="kk-chip">Dokumen</span>
+      <span class="kk-chip">Lembar kerja</span>
+      <span class="kk-chip">Presentasi</span>
+      <span class="kk-chip">Blog</span>
+      <span class="kk-chip">Vlog</span>
+      <span class="kk-chip">Pra-produksi</span>
+      <span class="kk-chip">Pasca-produksi</span>
+      <span class="kk-chip">Etika digital</span>
+    </div>
+  </section>
+
+  <!-- ============ Kuis Evaluasi ============ -->
+  <section class="materi-section" id="quiz">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-clipboard-question" style="font-size:10px"></i></span> Evaluasi</span>
+      <h2>Kuis: Uji Pemahaman Bab 3</h2>
+      <p>15 soal pilihan ganda mencakup Integrasi Konten Aplikasi Perkantoran, Blog, dan Vlog. Jawab semua
+      soal lalu klik <strong style="color:var(--text-hi)">Periksa Jawaban</strong> untuk melihat skormu.</p>
+    </div>
+
+    <div class="quiz-score-banner" id="quiz-score-banner" data-aos="fade-up">
+      <div class="qsb-icon"><i class="fa-solid fa-trophy"></i></div>
+      <div class="qsb-body">
+        <span class="qsb-label">Skor Kuis</span>
+        <strong id="qsb-score">0 / 15</strong>
+      </div>
+      <p class="qsb-msg" id="qsb-msg">Jawab semua soal di bawah, lalu periksa hasilnya di sini.</p>
+    </div>
+
+    <div class="quiz-wrap" id="quiz-container" data-aos="fade-up" data-aos-delay="80">
+
+      <div class="qz-card" data-qz data-correct="1">
+        <div class="qz-head"><span class="qz-num">1</span><p class="qz-text">Tujuan utama mengintegrasikan konten antaraplikasi perkantoran adalah…</p></div>
+        <div class="qz-options">
+          <button class="qz-option" data-value="0"><span class="qz-dot"></span>Membuat file berukuran lebih besar</button>
+          <button class="qz-option" data-value="1"><span class="qz-dot"></span>Menjaga efisiensi kerja & konsistensi data antaraplikasi</button>
+          <button class="qz-option" data-value="2"><span class="qz-dot"></span>Menghapus data yang tidak terpakai</button>
+          <button class="qz-option" data-value="3"><span class="qz-dot"></span>Mengganti aplikasi lama dengan yang baru</button>
+        </div>
+        <p class="qz-explain">Integrasi konten membuat data tetap konsisten di berbagai aplikasi tanpa harus menyalin ulang secara manual.</p>
+      </div>
+
+      <div class="qz-card" data-qz data-correct="2">
+        <div class="qz-head"><span class="qz-num">2</span><p class="qz-text">Aplikasi perkantoran yang paling tepat untuk mengolah data angka dan membuat grafik adalah…</p></div>
+        <div class="qz-options">
+          <button class="qz-option" data-value="0"><span class="qz-dot"></span>Pengolah kata (dokumen)</button>
+          <button class="qz-option" data-value="1"><span class="qz-dot"></span>Aplikasi presentasi</button>
+          <button class="qz-option" data-value="2"><span class="qz-dot"></span>Lembar kerja (spreadsheet)</button>
+          <button class="qz-option" data-value="3"><span class="qz-dot"></span>Aplikasi pemutar video</button>
+        </div>
+        <p class="qz-explain">Lembar kerja dirancang khusus untuk menghitung, menganalisis, dan memvisualkan data angka dalam bentuk tabel/grafik.</p>
+      </div>
+
+      <div class="qz-card" data-qz data-correct="1">
+        <div class="qz-head"><span class="qz-num">3</span><p class="qz-text">Metode integrasi yang membuat konten di dokumen tujuan ikut ter-update otomatis saat sumber datanya diubah disebut…</p></div>
+        <div class="qz-options">
+          <button class="qz-option" data-value="0"><span class="qz-dot"></span>Copy-paste biasa</button>
+          <button class="qz-option" data-value="1"><span class="qz-dot"></span>Paste Special / Link</button>
+          <button class="qz-option" data-value="2"><span class="qz-dot"></span>Screenshot tampilan</button>
+          <button class="qz-option" data-value="3"><span class="qz-dot"></span>Mengetik ulang data secara manual</button>
+        </div>
+        <p class="qz-explain">Paste Special/Link menjaga konten tetap terhubung ke sumber asli sehingga otomatis diperbarui saat sumbernya berubah.</p>
+      </div>
+
+      <div class="qz-card" data-qz data-correct="2">
+        <div class="qz-head"><span class="qz-num">4</span><p class="qz-text">OLE, istilah yang berkaitan dengan penanaman objek antaraplikasi, merupakan singkatan dari…</p></div>
+        <div class="qz-options">
+          <button class="qz-option" data-value="0"><span class="qz-dot"></span>Online Layout Editor</button>
+          <button class="qz-option" data-value="1"><span class="qz-dot"></span>Open Link Extension</button>
+          <button class="qz-option" data-value="2"><span class="qz-dot"></span>Object Linking and Embedding</button>
+          <button class="qz-option" data-value="3"><span class="qz-dot"></span>Output Layer Engine</button>
+        </div>
+        <p class="qz-explain">OLE (Object Linking and Embedding) memungkinkan objek dari satu aplikasi ditanamkan/dihubungkan ke aplikasi lain dan tetap dapat diedit.</p>
+      </div>
+
+      <div class="qz-card" data-qz data-correct="3">
+        <div class="qz-head"><span class="qz-num">5</span><p class="qz-text">Pada praktikum "Laporan Keuangan Sederhana", tabel dan grafik dari lembar kerja umumnya ditautkan ke dalam…</p></div>
+        <div class="qz-options">
+          <button class="qz-option" data-value="0"><span class="qz-dot"></span>Aplikasi pemutar musik</button>
+          <button class="qz-option" data-value="1"><span class="qz-dot"></span>Peramban web saja</button>
+          <button class="qz-option" data-value="2"><span class="qz-dot"></span>Aplikasi penyunting gambar</button>
+          <button class="qz-option" data-value="3"><span class="qz-dot"></span>Dokumen laporan dan slide presentasi</button>
+        </div>
+        <p class="qz-explain">Data keuangan dari lembar kerja diintegrasikan ke dokumen laporan (uraian) dan presentasi (ringkasan visual).</p>
+      </div>
+
+      <div class="qz-card" data-qz data-correct="2">
+        <div class="qz-head"><span class="qz-num">6</span><p class="qz-text">Istilah "blog" berasal dari singkatan kata…</p></div>
+        <div class="qz-options">
+          <button class="qz-option" data-value="0"><span class="qz-dot"></span>Big log</button>
+          <button class="qz-option" data-value="1"><span class="qz-dot"></span>Basic logic</button>
+          <button class="qz-option" data-value="2"><span class="qz-dot"></span>Web log</button>
+          <button class="qz-option" data-value="3"><span class="qz-dot"></span>Book log</button>
+        </div>
+        <p class="qz-explain">"Blog" adalah bentuk singkat dari "web log", yaitu catatan yang dipublikasikan di web.</p>
+      </div>
+
+      <div class="qz-card" data-qz data-correct="1">
+        <div class="qz-head"><span class="qz-num">7</span><p class="qz-text">Postingan pada sebuah blog pada umumnya ditampilkan dengan urutan…</p></div>
+        <div class="qz-options">
+          <button class="qz-option" data-value="0"><span class="qz-dot"></span>Alfabetis berdasarkan judul</button>
+          <button class="qz-option" data-value="1"><span class="qz-dot"></span>Kronologis terbalik (postingan terbaru di atas)</button>
+          <button class="qz-option" data-value="2"><span class="qz-dot"></span>Acak setiap kali dibuka</button>
+          <button class="qz-option" data-value="3"><span class="qz-dot"></span>Berdasarkan jumlah komentar terbanyak</button>
+        </div>
+        <p class="qz-explain">Ciri khas blog adalah tampilan kronologis terbalik: postingan yang paling baru diterbitkan tampil paling atas.</p>
+      </div>
+
+      <div class="qz-card" data-qz data-correct="0">
+        <div class="qz-head"><span class="qz-num">8</span><p class="qz-text">Fitur pada blog yang memungkinkan pembaca berinteraksi langsung dengan penulis adalah…</p></div>
+        <div class="qz-options">
+          <button class="qz-option" data-value="0"><span class="qz-dot"></span>Kolom komentar</button>
+          <button class="qz-option" data-value="1"><span class="qz-dot"></span>Kategori & tag</button>
+          <button class="qz-option" data-value="2"><span class="qz-dot"></span>Judul postingan</button>
+          <button class="qz-option" data-value="3"><span class="qz-dot"></span>Tanggal penerbitan</button>
+        </div>
+        <p class="qz-explain">Kolom komentar adalah ruang interaksi bagi pembaca untuk memberi tanggapan langsung pada penulis blog.</p>
+      </div>
+
+      <div class="qz-card" data-qz data-correct="2">
+        <div class="qz-head"><span class="qz-num">9</span><p class="qz-text">Fungsi utama kategori/tag pada sebuah blog adalah…</p></div>
+        <div class="qz-options">
+          <button class="qz-option" data-value="0"><span class="qz-dot"></span>Menghapus postingan lama secara otomatis</button>
+          <button class="qz-option" data-value="1"><span class="qz-dot"></span>Menyembunyikan komentar negatif</button>
+          <button class="qz-option" data-value="2"><span class="qz-dot"></span>Mengelompokkan konten agar mudah ditelusuri</button>
+          <button class="qz-option" data-value="3"><span class="qz-dot"></span>Mengunci postingan agar tidak bisa dibaca</button>
+        </div>
+        <p class="qz-explain">Kategori dan tag membantu mengelompokkan postingan berdasarkan topik sehingga pembaca lebih mudah menelusuri konten serupa.</p>
+      </div>
+
+      <div class="qz-card" data-qz data-correct="1">
+        <div class="qz-head"><span class="qz-num">10</span><p class="qz-text">Berikut ini yang merupakan contoh platform untuk membuat blog adalah…</p></div>
+        <div class="qz-options">
+          <button class="qz-option" data-value="0"><span class="qz-dot"></span>Microsoft Excel</button>
+          <button class="qz-option" data-value="1"><span class="qz-dot"></span>Blogger / WordPress</button>
+          <button class="qz-option" data-value="2"><span class="qz-dot"></span>Adobe Photoshop</button>
+          <button class="qz-option" data-value="3"><span class="qz-dot"></span>Windows Media Player</button>
+        </div>
+        <p class="qz-explain">Blogger dan WordPress adalah platform populer yang memudahkan siapa pun membuat dan mengelola blog tanpa harus membangun situs dari nol.</p>
+      </div>
+
+      <div class="qz-card" data-qz data-correct="0">
+        <div class="qz-head"><span class="qz-num">11</span><p class="qz-text">"Vlog" merupakan singkatan dari…</p></div>
+        <div class="qz-options">
+          <button class="qz-option" data-value="0"><span class="qz-dot"></span>Video blog</button>
+          <button class="qz-option" data-value="1"><span class="qz-dot"></span>Virtual log</button>
+          <button class="qz-option" data-value="2"><span class="qz-dot"></span>Visual logic</button>
+          <button class="qz-option" data-value="3"><span class="qz-dot"></span>Voice log</button>
+        </div>
+        <p class="qz-explain">Vlog adalah singkatan dari "video blog", yaitu blog dalam format video.</p>
+      </div>
+
+      <div class="qz-card" data-qz data-correct="2">
+        <div class="qz-head"><span class="qz-num">12</span><p class="qz-text">Menulis naskah singkat atau membuat storyboard sebelum syuting termasuk dalam tahap…</p></div>
+        <div class="qz-options">
+          <button class="qz-option" data-value="0"><span class="qz-dot"></span>Produksi</button>
+          <button class="qz-option" data-value="1"><span class="qz-dot"></span>Publikasi</button>
+          <button class="qz-option" data-value="2"><span class="qz-dot"></span>Pra-produksi</button>
+          <button class="qz-option" data-value="3"><span class="qz-dot"></span>Pasca-produksi</button>
+        </div>
+        <p class="qz-explain">Pra-produksi adalah tahap perencanaan: menentukan ide, naskah/storyboard, dan menyiapkan peralatan sebelum syuting dimulai.</p>
+      </div>
+
+      <div class="qz-card" data-qz data-correct="3">
+        <div class="qz-head"><span class="qz-num">13</span><p class="qz-text">Kegiatan memotong bagian video yang tidak perlu serta menambahkan musik/teks termasuk tahap…</p></div>
+        <div class="qz-options">
+          <button class="qz-option" data-value="0"><span class="qz-dot"></span>Pra-produksi</button>
+          <button class="qz-option" data-value="1"><span class="qz-dot"></span>Syuting</button>
+          <button class="qz-option" data-value="2"><span class="qz-dot"></span>Perencanaan ide</button>
+          <button class="qz-option" data-value="3"><span class="qz-dot"></span>Pasca-produksi</button>
+        </div>
+        <p class="qz-explain">Pasca-produksi mencakup proses penyuntingan video: memotong, menambah musik/teks, hingga mengekspor hasil akhir.</p>
+      </div>
+
+      <div class="qz-card" data-qz data-correct="1">
+        <div class="qz-head"><span class="qz-num">14</span><p class="qz-text">Peralatan tambahan yang paling berpengaruh untuk menjaga kejernihan suara saat membuat vlog adalah…</p></div>
+        <div class="qz-options">
+          <button class="qz-option" data-value="0"><span class="qz-dot"></span>Tripod</button>
+          <button class="qz-option" data-value="1"><span class="qz-dot"></span>Mikrofon tambahan</button>
+          <button class="qz-option" data-value="2"><span class="qz-dot"></span>Lampu ring light</button>
+          <button class="qz-option" data-value="3"><span class="qz-dot"></span>Kartu memori</button>
+        </div>
+        <p class="qz-explain">Mikrofon tambahan membantu merekam suara lebih jernih dibanding mikrofon bawaan kamera/ponsel.</p>
+      </div>
+
+      <div class="qz-card" data-qz data-correct="2">
+        <div class="qz-head"><span class="qz-num">15</span><p class="qz-text">Sikap yang tepat terkait etika berbagi konten di blog maupun vlog adalah…</p></div>
+        <div class="qz-options">
+          <button class="qz-option" data-value="0"><span class="qz-dot"></span>Membagikan data pribadi orang lain agar konten lebih menarik</button>
+          <button class="qz-option" data-value="1"><span class="qz-dot"></span>Menggunakan musik berhak cipta tanpa izin demi kepraktisan</button>
+          <button class="qz-option" data-value="2"><span class="qz-dot"></span>Menghormati privasi orang lain dan hak cipta karya yang digunakan</button>
+          <button class="qz-option" data-value="3"><span class="qz-dot"></span>Mengunggah konten apa pun tanpa memikirkan dampaknya</button>
+        </div>
+        <p class="qz-explain">Etika digital menuntut kita menjaga privasi orang lain dan menghormati hak cipta setiap materi (gambar, musik, kutipan) yang digunakan.</p>
+      </div>
+
+    </div>
+
+    <div class="quiz-actions" data-aos="fade-up">
+      <button class="btn btn-primary" id="quiz-check-btn"><i class="fa-solid fa-check-double"></i> Periksa Jawaban</button>
+      <button class="btn btn-ghost" id="quiz-reset-btn"><i class="fa-solid fa-rotate-left"></i> Ulangi Kuis</button>
+      <span class="quiz-progress-txt" id="quiz-progress-txt">0/15 soal terjawab</span>
+    </div>
+  </section>
+
+  <!-- ============ Refleksi ============ -->
+  <section class="materi-section" id="refleksi">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-comment-dots" style="font-size:10px"></i></span> Refleksi</span>
+      <h2>Yuk, Refleksikan!</h2>
+    </div>
+    <div class="refleksi-card" data-aos="fade-up">
+      <div class="rf-icon"><i class="fa-solid fa-lightbulb"></i></div>
+      <div class="rf-body">
+        <h3>Etika Berbagi Konten di Ruang Digital</h3>
+        <p>Membuat blog dan vlog berarti membagikan sebagian hidup kita ke ruang publik. Diperlukan kesadaran
+        untuk menjaga privasi, menghormati hak cipta, serta bertanggung jawab atas setiap konten yang
+        dipublikasikan.</p>
+        <div class="refleksi-questions">
+          <div class="rf-q"><i class="fa-solid fa-circle-question"></i> Informasi pribadi seperti apa yang sebaiknya tidak kamu bagikan di blog atau vlog?</div>
+          <div class="rf-q"><i class="fa-solid fa-circle-question"></i> Bagaimana cara memastikan gambar, musik, atau kutipan yang kamu gunakan tidak melanggar hak cipta?</div>
+          <div class="rf-q"><i class="fa-solid fa-circle-question"></i> Apa dampaknya jika sebuah konten yang sudah diunggah ternyata menyinggung orang lain?</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Navigasi Bab Sebelum/Sesudah ============ -->
+  <nav class="materi-bottom-nav" aria-label="Navigasi antar bab">
+    <a href="bab2.html" class="bn-link prev" data-aos="fade-up">
+      <span class="bn-arrow"><i class="fa-solid fa-arrow-left"></i></span>
+      <span class="bn-txt"><span>Sebelumnya</span><strong>Bab 2 — Berpikir Komputasional</strong></span>
+    </a>
+    <a href="bab4.html" class="bn-link next" data-aos="fade-up">
+      <span class="bn-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+      <span class="bn-txt"><span>Selanjutnya</span><strong>Bab 4</strong></span>
+    </a>
+  </nav>
+
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="site-footer">
+  <p class="footer-quote" data-aos="fade-up">
+    "Jangan hanya menjadi <span>pengguna</span> teknologi.<br>Belajarlah menjadi <span>pencipta</span> teknologi."
+  </p>
+  <p class="footer-sub">— Semangat belajar Informatika Kelas IX —</p>
+  <div class="footer-links">
+    <a href="index.html">Roadmap</a>
+    <a href="bab1.html">Bab 1</a>
+    <a href="bab7.html">Bab 7</a>
+    <a href="bab9.html">Bab 9</a>
+  </div>
+  <p class="footer-meta">Sumber materi: Buku Siswa Informatika SMP/MTs Kelas IX, Kemendikbudristek © 2022</p>
+</footer>
+
+<button class="fab" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.1/sweetalert2.all.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/materi.js"></script>
+<script>
+  AOS.init({ duration: 700, once: true, offset: 60 });
+</script>
+
+<!-- ============ Skrip Kuis Bab 3 (15 soal, mandiri) ============ -->
+<script>
+(function(){
+  const cards = Array.from(document.querySelectorAll('#quiz-container [data-qz]'));
+  const total = cards.length;
+  const scoreEl = document.getElementById('qsb-score');
+  const msgEl = document.getElementById('qsb-msg');
+  const progressEl = document.getElementById('quiz-progress-txt');
+  const checkBtn = document.getElementById('quiz-check-btn');
+  const resetBtn = document.getElementById('quiz-reset-btn');
+  let checked = false;
+
+  function answeredCount(){
+    return cards.filter(c => c.querySelector('.qz-option.selected')).length;
+  }
+
+  function updateProgress(){
+    progressEl.textContent = answeredCount() + '/' + total + ' soal terjawab';
+  }
+
+  cards.forEach(card => {
+    const options = Array.from(card.querySelectorAll('.qz-option'));
+    options.forEach(opt => {
+      opt.addEventListener('click', () => {
+        if (checked) return;
+        options.forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        updateProgress();
+      });
+    });
+  });
+
+  checkBtn.addEventListener('click', () => {
+    if (answeredCount() < total) {
+      const sisa = total - answeredCount();
+      if (window.Swal) {
+        Swal.fire({ icon: 'info', title: 'Belum selesai', text: 'Masih ada ' + sisa + ' soal yang belum dijawab.' , confirmButtonColor: '#6c5ce7'});
+      } else {
+        alert('Masih ada ' + sisa + ' soal yang belum dijawab.');
+      }
+      return;
+    }
+    let score = 0;
+    cards.forEach(card => {
+      const correct = card.getAttribute('data-correct');
+      const options = Array.from(card.querySelectorAll('.qz-option'));
+      const selected = card.querySelector('.qz-option.selected');
+      options.forEach(o => o.disabled = true);
+      options.forEach(o => {
+        if (o.getAttribute('data-value') === correct) o.classList.add('correct');
+      });
+      if (selected) {
+        if (selected.getAttribute('data-value') === correct) {
+          score++;
+        } else {
+          selected.classList.add('wrong');
+        }
+      }
+      const explain = card.querySelector('.qz-explain');
+      if (explain) explain.classList.add('show');
+    });
+    checked = true;
+    scoreEl.textContent = score + ' / ' + total;
+    if (score >= 13) msgEl.textContent = 'Luar biasa! Pemahamanmu tentang integrasi konten, blog, dan vlog sudah sangat baik.';
+    else if (score >= 10) msgEl.textContent = 'Bagus! Sedikit lagi untuk menguasai materi Bab 3 sepenuhnya.';
+    else if (score >= 6) msgEl.textContent = 'Cukup baik, coba pelajari lagi bagian yang masih salah ya.';
+    else msgEl.textContent = 'Yuk baca ulang materi Bab 3, lalu coba kuisnya lagi.';
+    document.getElementById('quiz-score-banner').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  resetBtn.addEventListener('click', () => {
+    checked = false;
+    cards.forEach(card => {
+      const options = Array.from(card.querySelectorAll('.qz-option'));
+      options.forEach(o => {
+        o.disabled = false;
+        o.classList.remove('selected', 'correct', 'wrong');
+      });
+      const explain = card.querySelector('.qz-explain');
+      if (explain) explain.classList.remove('show');
+    });
+    scoreEl.textContent = '0 / ' + total;
+    msgEl.textContent = 'Jawab semua soal di bawah, lalu periksa hasilnya di sini.';
+    updateProgress();
+  });
+
+  updateProgress();
+})();
+</script>
+</body>
+</html>
