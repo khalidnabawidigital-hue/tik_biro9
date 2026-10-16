@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bab 4 — Sistem Komputer | Informatika Kelas IX</title>
+<meta name="description" content="Bab 4 Informatika Kelas IX: Sistem Komputer — pengingat kebiasaan baik berkomputer, posisi duduk ergonomis, dan konsep CS Unplugged.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<!-- CSS bersama (sama dengan bab3.html) -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/roadmap.css">
+<link rel="stylesheet" href="css/materi.css">
+<style>
+/* ===== Komponen khusus Bab 4 (memakai variabel warna roadmap) ===== */
+.b4-box{border:1px solid rgba(127,127,127,.22);border-radius:16px;padding:20px 22px;margin:0 0 16px;background:rgba(127,127,127,.05)}
+.b4-box h3{margin:0 0 8px;color:var(--text-hi);font-size:1.05rem}
+.b4-box p,.b4-box li{font-size:14.5px;line-height:1.65}
+.b4-box ul{margin:8px 0 0;padding-left:20px}
+.b4-tag{display:inline-flex;align-items:center;gap:6px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:10px}
+.b4-tag.book{background:rgba(108,92,231,.16);color:var(--accent-1-soft,#6c5ce7);border:1px solid var(--accent-1-soft,#6c5ce7)}
+.b4-tag.plus{background:rgba(240,165,0,.16);color:#d98e00;border:1px solid #f0a500}
+.b4-box.book{border-left:4px solid var(--accent-1-soft,#6c5ce7)}
+.b4-box.plus{border-left:4px solid #f0a500;background:rgba(240,165,0,.06)}
+.b4-group{margin:28px 0 12px;padding:10px 14px;border-radius:12px;font-weight:600;color:var(--text-hi);background:rgba(240,165,0,.1);border:1px dashed #f0a500;font-size:14px}
+.b4-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-bottom:16px}
+.b4-goal{display:flex;gap:12px;align-items:flex-start}
+.b4-goal .n{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:var(--accent-1-soft,#6c5ce7);color:#fff;display:flex;align-items:center;justify-content:center;font:700 13px 'Space Mono',monospace}
+.b4-goal p{margin:0;font-size:14px}
+.b4-ask{margin-top:10px;padding:10px 14px;border-radius:10px;background:rgba(0,184,148,.1);border-left:3px solid var(--accent-2-soft,#00b894);font-size:13.5px;color:var(--text-hi)}
+.b4-figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-bottom:16px}
+.b4-fig{border:1px solid rgba(127,127,127,.22);border-radius:16px;padding:14px;text-align:center}
+.b4-fig svg{width:100%;max-width:340px;height:auto;color:var(--text-hi)}
+.b4-fig figcaption{font-size:13.5px;margin-top:6px}
+.b4-fig .ok{color:var(--accent-2-soft,#00b894);font-weight:700}
+.b4-fig .no{color:var(--accent-danger,#e74c3c);font-weight:700}
+.b4-check{display:grid;gap:8px;margin:12px 0}
+.b4-check label{display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(127,127,127,.22);border-radius:10px;cursor:pointer;font-size:14.5px;line-height:1.5}
+.b4-check label:hover,.b4-check label:focus-within{border-color:var(--accent-1-soft,#6c5ce7)}
+.b4-check input{margin-top:4px;width:17px;height:17px;accent-color:#6c5ce7;flex:0 0 auto}
+.b4-bar{height:10px;border-radius:99px;background:rgba(127,127,127,.2);overflow:hidden;margin:10px 0 6px}
+.b4-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent-1-soft,#6c5ce7),var(--accent-2-soft,#00b894));transition:width .3s}
+.b4-fb{margin-top:10px;padding:12px 14px;border-radius:10px;background:rgba(127,127,127,.07);border-left:3px solid var(--accent-1-soft,#6c5ce7);font-size:14px;color:var(--text-hi);min-height:20px}
+.b4-fb ul{margin:6px 0 0;padding-left:20px}
+.b4-note{font-size:12.5px;opacity:.8;margin-top:8px}
+.b4-sc{margin-bottom:14px}
+.b4-sc .q{font-weight:600;color:var(--text-hi);margin:0 0 8px;font-size:14.5px}
+.b4-opts{display:grid;gap:8px}
+.b4-opt{text-align:left;font:inherit;font-size:14.5px;color:inherit;background:rgba(127,127,127,.05);border:1px solid rgba(127,127,127,.22);border-radius:10px;padding:10px 14px;cursor:pointer;transition:.15s}
+.b4-opt:hover:not(:disabled){border-color:var(--accent-1-soft,#6c5ce7)}
+.b4-opt.selected{border-color:var(--accent-1-soft,#6c5ce7);background:rgba(108,92,231,.12)}
+.b4-opt.correct{border-color:var(--accent-2-soft,#00b894);background:rgba(0,184,148,.14)}
+.b4-opt.wrong{border-color:var(--accent-danger,#e74c3c);background:rgba(231,76,60,.12)}
+.b4-opt:disabled{cursor:default}
+.b4-order{list-style:none;padding:0;margin:12px 0;display:grid;gap:8px}
+.b4-order li{display:flex;align-items:center;gap:10px;padding:8px 12px;border:1px solid rgba(127,127,127,.22);border-radius:10px;font-size:14.5px}
+.b4-order li.ok{border-color:var(--accent-2-soft,#00b894);background:rgba(0,184,148,.12)}
+.b4-order li.bad{border-color:var(--accent-danger,#e74c3c);background:rgba(231,76,60,.1)}
+.b4-order .t{flex:1}
+.b4-order button{width:34px;height:34px;border-radius:8px;border:1px solid rgba(127,127,127,.3);background:transparent;color:inherit;cursor:pointer}
+.b4-order button:hover:not(:disabled){border-color:var(--accent-1-soft,#6c5ce7)}
+.b4-order button:disabled{opacity:.35;cursor:default}
+.b4-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:10px}
+.b4-ta{width:100%;min-height:80px;padding:10px 12px;border-radius:10px;border:1px solid rgba(127,127,127,.3);background:rgba(127,127,127,.05);color:inherit;font:inherit;font-size:14.5px;resize:vertical}
+.b4-ta:focus{outline:2px solid var(--accent-1-soft,#6c5ce7)}
+.b4-lbl{display:block;font-weight:600;color:var(--text-hi);margin:14px 0 6px;font-size:14.5px}
+.b4-src li{margin-bottom:10px;font-size:14px;line-height:1.6;word-break:break-word}
+.b4-hero-ill{max-width:360px;width:100%;margin:18px auto 0;display:block}
+.b4-sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.b4-sum div{padding:14px 16px;border-radius:12px;border:1px solid rgba(127,127,127,.22);font-size:14px}
+.b4-sum i{color:var(--accent-2-soft,#00b894);margin-right:6px}
+#b4-qres .rv{padding:8px 0;border-bottom:1px solid rgba(127,127,127,.2);font-size:14px}
+.qz-card{background:rgba(127,127,127,.06);border:1px solid rgba(127,127,127,.18);border-radius:16px;padding:20px 22px;margin-bottom:16px}
+.qz-text{font-weight:600;color:var(--text-hi);line-height:1.5;margin:0 0 12px}
+.b4-qn{font:700 12px 'Space Mono',monospace;opacity:.7;margin-bottom:6px}
+.skip-link{position:absolute;left:-999px}.skip-link:focus{left:10px;top:10px;z-index:9999;background:#fff;color:#000;padding:8px 12px;border-radius:8px}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#materi1">Lewati ke materi</a>
+
+<div id="loading-screen" aria-hidden="true">
+  <div class="loader-node"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="26"></circle></svg></div>
+  <span class="loader-text">Memuat Materi…</span>
+</div>
+<div class="bg-mesh"></div>
+<div class="bg-noise"></div>
+
+<!-- ============ Navbar ============ -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-badge"><i class="fa-solid fa-bolt"></i></span>
+      Informatika<span style="color:var(--accent-2)">IX</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#roadmap">Roadmap</a></li>
+      <li><a href="index.html#statistik">Statistik</a></li>
+      <li><a href="index.html#perjalanan">Peta Perjalanan</a></li>
+      <li><a href="bab1.html">Mulai Belajar</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn theme-toggle" aria-label="Ganti mode gelap/terang"><i class="fa-solid fa-sun"></i></button>
+      <button class="nav-toggle" aria-label="Buka menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="materi-breadcrumb" data-aos="fade-up">
+    <a href="index.html">Roadmap</a><i class="fa-solid fa-chevron-right"></i>
+    <a href="index.html#roadmap">Semester Ganjil</a><i class="fa-solid fa-chevron-right"></i>
+    <span class="current">Bab 4 — Sistem Komputer</span>
+  </div>
+
+  <!-- ============ Hero ============ -->
+  <section class="materi-hero">
+    <div class="materi-hero-top"><div>
+      <span class="materi-hero-badge" data-aos="fade-up"><span class="num-badge">4</span> BAB 04</span>
+      <h1 data-aos="fade-up" data-aos-delay="80">
+        <i class="fa-solid fa-computer" style="color:var(--accent-1-soft);"></i> Sistem <span class="gradient-text">Komputer</span>
+      </h1>
+      <p class="lede" data-aos="fade-up" data-aos-delay="140">
+        Mengingat kembali kebiasaan baik saat menggunakan komputer — aman, nyaman, dan bertanggung jawab —
+        lalu mengenal CS Unplugged: belajar cara berpikir Informatika tanpa harus selalu menyalakan komputer.
+      </p>
+      <p style="margin-top:16px"><a href="#materi1" class="btn btn-primary" id="b4-start"><i class="fa-solid fa-compass"></i> Mulai Eksplorasi</a></p>
+    </div></div>
+    <svg class="b4-hero-ill" viewBox="0 0 360 220" role="img" aria-label="Ilustrasi komputer dengan monitor, keyboard, dan mouse">
+      <rect x="60" y="14" width="240" height="140" rx="12" fill="none" stroke="currentColor" stroke-width="4" style="color:var(--accent-1-soft,#6c5ce7)"/>
+      <rect x="74" y="28" width="212" height="112" rx="6" fill="rgba(108,92,231,.14)"/>
+      <circle cx="180" cy="84" r="22" fill="none" stroke="#00b894" stroke-width="4"/>
+      <path d="M170 84l8 8 14-16" fill="none" stroke="#00b894" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="168" y="154" width="24" height="26" fill="rgba(127,127,127,.5)"/>
+      <rect x="132" y="180" width="96" height="8" rx="4" fill="rgba(127,127,127,.6)"/>
+      <rect x="70" y="196" width="170" height="16" rx="5" fill="none" stroke="currentColor" stroke-width="3" opacity=".6"/>
+      <rect x="262" y="198" width="18" height="14" rx="7" fill="none" stroke="currentColor" stroke-width="3" opacity=".6"/>
+    </svg>
+    <div class="materi-meta-row" data-aos="fade-up" data-aos-delay="180">
+      <span class="materi-chip"><i class="fa-solid fa-calendar"></i> Semester Ganjil</span>
+      <span class="materi-chip"><i class="fa-solid fa-clock"></i> Tanpa JP Khusus</span>
+      <span class="materi-chip warn"><i class="fa-solid fa-bookmark"></i> Sumber: Buku Siswa Kemendikbudristek 2022</span>
+    </div>
+    <nav class="materi-toc" aria-label="Navigasi materi">
+      <a href="#tujuan"><i class="fa-solid fa-bullseye"></i> Tujuan</a>
+      <a href="#materi1"><i class="fa-solid fa-thumbs-up"></i> Kebiasaan</a>
+      <a href="#materi2"><i class="fa-solid fa-chair"></i> Posisi Duduk</a>
+      <a href="#materi3"><i class="fa-solid fa-plug-circle-xmark"></i> CS Unplugged</a>
+      <a href="#aktivitas"><i class="fa-solid fa-flask"></i> Aktivitas</a>
+      <a href="#quiz"><i class="fa-solid fa-clipboard-question"></i> Kuis</a>
+      <a href="#refleksi"><i class="fa-solid fa-comment-dots"></i> Refleksi</a>
+      <a href="#tambahan"><i class="fa-solid fa-link"></i> Sumber</a>
+    </nav>
+  </section>
+
+  <!-- ============ Tujuan ============ -->
+  <section class="materi-section" id="tujuan">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num">i</span> Tujuan Pembelajaran</span>
+      <h2>Setelah Belajar, Kamu Mampu…</h2>
+      <p>Tujuan operasional untuk halaman ini (disusun untuk media pembelajaran ini, bukan kutipan resmi buku atau CP nasional).</p>
+    </div>
+    <div class="b4-grid" id="b4-goals"></div>
+  </section>
+
+  <!-- ============ Mengapa penting ============ -->
+  <section class="materi-section" id="penting">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-question" style="font-size:10px"></i></span> Mengapa Bab Ini Penting?</span>
+      <h2>Bukan Sekadar Bisa Mengoperasikan</h2>
+      <p>Terampil memakai komputer bukan hanya soal tahu tombol mana yang ditekan. Ada kebiasaan baik, rasa aman,
+      kenyamanan tubuh, dan pemahaman konsep Informatika yang ikut menentukan. Karena itu bab ini berfungsi sebagai <strong style="color:var(--text-hi)">pengingat</strong>, bukan pelajaran baru dari nol.</p>
+    </div>
+
+    <div class="b4-box book" data-aos="fade-up">
+      <span class="b4-tag book"><i class="fa-solid fa-book"></i> REFERENSI BUKU SISWA KELAS IX</span>
+      <h3>Materi Pengingat dari Buku</h3>
+      <ul>
+        <li>Sistem Komputer di kelas IX berfokus mengingat kembali kebiasaan baik menggunakan komputer.</li>
+        <li>Kebiasaan tersebut berkaitan dengan pembelajaran Sistem Komputer yang sudah kamu dapat di kelas VII dan VIII.</li>
+        <li>Di buku siswa kelas IX, bab ini <strong>tidak memiliki alokasi JP khusus</strong>; kamu bisa mempelajarinya secara mandiri.</li>
+      </ul>
+    </div>
+    <p class="b4-group"><i class="fa-solid fa-star"></i> Mulai bagian ini, kotak berwarna <strong style="color:#d98e00">kuning</strong> berlabel “Materi Tambahan — Refresh &amp; Update” adalah <strong>pengayaan</strong>, bukan isi buku.</p>
+  </section>
+
+  <!-- ============ Materi 1 ============ -->
+  <section class="materi-section" id="materi1">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num">1</span> Materi Pertama</span>
+      <h2>Kebiasaan Baik Berkomputer</h2>
+      <p>Kebiasaan kecil yang dilakukan terus-menerus membuat komputer lebih awet dan kita lebih nyaman serta aman saat belajar.</p>
+      <span class="b4-tag plus"><i class="fa-solid fa-lightbulb"></i> Materi Tambahan — Refresh &amp; Update</span>
+    </div>
+    <div class="materi-grid-2" data-aos="fade-up">
+      <div class="info-card"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-heart"></i></div><h3>Merawat Perangkat</h3></div>
+        <ul><li>Cuci tangan dan jauhkan makanan/minuman dari keyboard.</li><li>Matikan atau tutup perangkat dengan benar setelah selesai.</li><li>Laporkan ke guru jika ada kerusakan, jangan dipaksa.</li></ul></div>
+      <div class="info-card cyan"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-bullseye"></i></div><h3>Sesuai Kebutuhan Belajar</h3></div>
+        <ul><li>Tentukan dulu tujuan: mengerjakan tugas, mencari bahan, atau berlatih.</li><li>Tutup aplikasi dan tab yang tidak dibutuhkan.</li><li>Atur waktu agar tidak lupa istirahat.</li></ul></div>
+      <div class="info-card"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-lock"></i></div><h3>Tertib dan Aman</h3></div>
+        <ul><li>Jaga kata sandi; jangan dibagikan ke teman.</li><li>Keluar (log out) dari akun di komputer bersama.</li><li>Simpan file pada folder yang rapi dan beri nama jelas.</li></ul></div>
+      <div class="info-card cyan"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-handshake"></i></div><h3>Bertanggung Jawab</h3></div>
+        <ul><li>Gunakan komputer sekolah sesuai aturan lab.</li><li>Tinggalkan meja dan perangkat dalam keadaan rapi.</li><li>Hormati teman yang sedang bekerja di dekatmu.</li></ul></div>
+    </div>
+    <div class="b4-ask"><i class="fa-solid fa-circle-question"></i> <strong>Pertanyaan pemantik:</strong> Kebiasaan apa yang paling sering kamu lupakan saat memakai komputer atau laptop? Mengapa?</div>
+  </section>
+
+  <!-- ============ Materi 2 ============ -->
+  <section class="materi-section" id="materi2">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num">2</span> Materi Kedua</span>
+      <h2>Posisi Duduk yang Benar</h2>
+      <p>Posisi duduk yang baik membantu tubuh tetap nyaman saat belajar. Ilustrasi di bawah hanya membandingkan <em>posisi</em>, bukan menilai bentuk tubuh siapa pun.</p>
+      <span class="b4-tag plus"><i class="fa-solid fa-lightbulb"></i> Materi Tambahan — Refresh &amp; Update</span>
+      <p class="b4-note">Panduan ergonomi terperinci ini adalah materi tambahan karena tidak dibahas secara eksplisit sebagai bab tersendiri di buku kelas IX. Sumber: OSHA (lihat bagian Sumber).</p>
+    </div>
+
+    <div class="b4-figs" data-aos="fade-up">
+      <figure class="b4-fig">
+        <svg viewBox="0 0 340 250" role="img" aria-label="Sisi samping orang duduk tegak, layar sejajar mata, siku ditekuk, kaki menapak lantai">
+          <line x1="20" y1="236" x2="320" y2="236" stroke="currentColor" stroke-width="3" opacity=".4"/>
+          <rect x="70" y="182" width="62" height="7" fill="currentColor" opacity=".35"/><line x1="72" y1="110" x2="72" y2="189" stroke="currentColor" stroke-width="6" opacity=".35"/>
+          <line x1="100" y1="189" x2="100" y2="236" stroke="currentColor" stroke-width="5" opacity=".35"/>
+          <rect x="180" y="156" width="140" height="7" fill="currentColor" opacity=".5"/><line x1="300" y1="163" x2="300" y2="236" stroke="currentColor" stroke-width="5" opacity=".5"/>
+          <rect x="268" y="88" width="9" height="46" rx="2" fill="#6c5ce7"/><line x1="272" y1="134" x2="272" y2="156" stroke="#6c5ce7" stroke-width="5"/>
+          <rect x="196" y="150" width="40" height="6" rx="2" fill="#00b894"/>
+          <circle cx="92" cy="92" r="15" fill="none" stroke="currentColor" stroke-width="4"/>
+          <path d="M94 108 L94 178 L158 178 L158 232" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M96 120 L106 152 L198 148" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="104" y1="92" x2="262" y2="104" stroke="#f0a500" stroke-width="2" stroke-dasharray="5 4"/>
+        </svg>
+        <figcaption><span class="ok"><i class="fa-solid fa-circle-check"></i> Lebih tepat</span><br>Punggung tersangga, kepala tegak, layar sejajar pandangan, siku ditekuk, kaki menapak.</figcaption>
+      </figure>
+      <figure class="b4-fig">
+        <svg viewBox="0 0 340 250" role="img" aria-label="Sisi samping orang membungkuk, kepala maju, layar terlalu rendah dan jauh">
+          <line x1="20" y1="236" x2="320" y2="236" stroke="currentColor" stroke-width="3" opacity=".4"/>
+          <rect x="70" y="182" width="62" height="7" fill="currentColor" opacity=".35"/><line x1="72" y1="110" x2="72" y2="189" stroke="currentColor" stroke-width="6" opacity=".35"/>
+          <line x1="100" y1="189" x2="100" y2="236" stroke="currentColor" stroke-width="5" opacity=".35"/>
+          <rect x="180" y="156" width="140" height="7" fill="currentColor" opacity=".5"/><line x1="300" y1="163" x2="300" y2="236" stroke="currentColor" stroke-width="5" opacity=".5"/>
+          <rect x="268" y="126" width="9" height="30" rx="2" fill="#6c5ce7"/>
+          <rect x="196" y="150" width="40" height="6" rx="2" fill="#00b894"/>
+          <circle cx="152" cy="116" r="15" fill="none" stroke="currentColor" stroke-width="4"/>
+          <path d="M98 188 L134 134 M98 188 L158 188 L158 232" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M136 140 L176 158 L206 150" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="164" y1="120" x2="262" y2="132" stroke="#f0a500" stroke-width="2" stroke-dasharray="5 4"/>
+        </svg>
+        <figcaption><span class="no"><i class="fa-solid fa-circle-exclamation"></i> Kurang tepat</span><br>Membungkuk, kepala maju dan menunduk, layar terlalu rendah. Mudah diperbaiki: tegakkan badan, naikkan layar.</figcaption>
+      </figure>
+    </div>
+
+    <div class="b4-box plus" data-aos="fade-up">
+      <span class="b4-tag plus"><i class="fa-solid fa-lightbulb"></i> Materi Tambahan — Refresh &amp; Update</span>
+      <h3>Enam Hal yang Diperhatikan</h3>
+      <ul>
+        <li><strong>Punggung:</strong> tersangga sandaran, tegak atau sedikit bersandar ke belakang.</li>
+        <li><strong>Kepala &amp; leher:</strong> kepala seimbang dan sejajar badan, tidak terus menunduk.</li>
+        <li><strong>Lengan &amp; pergelangan:</strong> bahu rileks, siku dekat badan dan ditekuk sekitar 90–120°, pergelangan tangan lurus.</li>
+        <li><strong>Layar &amp; keyboard:</strong> bagian atas layar sejajar atau sedikit di bawah mata; keyboard dan mouse mudah dijangkau tanpa meregang.</li>
+        <li><strong>Jarak pandang &amp; cahaya (tips umum):</strong> layar tidak terlalu dekat dan tidak silau terkena cahaya jendela atau lampu.</li>
+        <li><strong>Istirahat:</strong> ubah posisi dan beri jeda dari layar secara berkala.</li>
+      </ul>
+    </div>
+
+    <div class="praktikum-card b4-box plus" data-aos="fade-up">
+      <span class="b4-tag plus"><i class="fa-solid fa-lightbulb"></i> Materi Tambahan — Refresh &amp; Update</span>
+      <h3><i class="fa-solid fa-clipboard-check"></i> Periksa Posisi Dudukmu</h3>
+      <p>Centang yang sudah sesuai dengan keadaanmu sekarang.</p>
+      <div class="b4-check" id="posture-list"></div>
+      <div class="b4-bar"><i id="posture-bar"></i></div>
+      <div class="b4-fb" id="posture-fb" aria-live="polite">Centang item di atas untuk melihat umpan balik.</div>
+      <p class="b4-note">Checklist ini bersifat edukatif untuk membantu kamu memperhatikan kebiasaan, bukan diagnosis kesehatan. Jika merasa tidak nyaman terus-menerus, beri tahu guru atau orang tuamu.</p>
+    </div>
+  </section>
+
+  <!-- ============ Materi 3 ============ -->
+  <section class="materi-section" id="materi3">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num">3</span> Materi Ketiga</span>
+      <h2>Mengenal CS Unplugged</h2>
+      <p><strong style="color:var(--text-hi)">Computer Science Unplugged (CS Unplugged)</strong> adalah cara belajar konsep Informatika lewat kegiatan, permainan, dan kartu — <em>tanpa</em> harus selalu memakai komputer.</p>
+    </div>
+    <div class="b4-box book" data-aos="fade-up">
+      <span class="b4-tag book"><i class="fa-solid fa-book"></i> REFERENSI BUKU SISWA KELAS IX</span>
+      <p style="margin:0">Bab 4 ini juga mengajak kita mengenal pendekatan CS Unplugged sebagai cara belajar konsep Informatika tanpa harus selalu menggunakan komputer.</p>
+    </div>
+    <div class="materi-grid-2" data-aos="fade-up">
+      <div class="info-card"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-brain"></i></div><h3>Mengapa Bisa Tanpa Komputer?</h3></div>
+        <span class="b4-tag plus">Materi Tambahan — Refresh &amp; Update</span>
+        <p>Yang dilatih adalah <em>cara berpikir</em>: logika, algoritma (urutan langkah), pola, dan pemecahan masalah. Ide dipahami dulu lewat kegiatan nyata, baru kemudian diterapkan pada komputer.</p></div>
+      <div class="info-card cyan"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-puzzle-piece"></i></div><h3>Contoh Kegiatan (Pengayaan)</h3></div>
+        <span class="b4-tag plus">Materi Tambahan — Refresh &amp; Update</span>
+        <ul><li>Menyusun langkah-langkah instruksi berurutan.</li><li>Permainan mengikuti instruksi teman.</li><li>Menyusun pola atau mengelompokkan informasi.</li><li>Simulasi sederhana memakai kartu atau kertas.</li></ul></div>
+    </div>
+  </section>
+
+  <!-- ============ Aktivitas ============ -->
+  <section class="materi-section" id="aktivitas">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-flask" style="font-size:10px"></i></span> Aktivitas Interaktif</span>
+      <h2>Coba Sendiri!</h2>
+      <span class="b4-tag plus"><i class="fa-solid fa-lightbulb"></i> Materi Tambahan — Refresh &amp; Update</span>
+    </div>
+
+    <div class="b4-box plus" data-aos="fade-up">
+      <h3>Aktivitas 1 — Checklist Kebiasaan Berkomputer</h3>
+      <div class="b4-check" id="habit-list"></div>
+      <div class="b4-bar"><i id="habit-bar"></i></div>
+      <div class="b4-fb" id="habit-fb" aria-live="polite">Centang kebiasaan yang sudah rutin kamu lakukan.</div>
+    </div>
+
+    <div class="b4-box plus" data-aos="fade-up">
+      <h3>Aktivitas 2 — Pilih Tindakan yang Tepat</h3>
+      <div id="sc-wrap"></div>
+    </div>
+
+    <div class="b4-box plus" data-aos="fade-up">
+      <h3>Aktivitas 3 — Simulasi CS Unplugged: Susun Langkahnya</h3>
+      <p>Susun langkah <strong>membuat segelas teh manis</strong> menjadi urutan yang masuk akal memakai tombol panah ▲ ▼. Ini seperti menulis algoritma — tanpa komputer!</p>
+      <ol class="b4-order" id="ord-list"></ol>
+      <div class="b4-row">
+        <button class="btn btn-primary" id="ord-check"><i class="fa-solid fa-check-double"></i> Periksa Urutan</button>
+        <button class="btn btn-ghost" id="ord-shuffle"><i class="fa-solid fa-shuffle"></i> Acak Lagi</button>
+      </div>
+      <div class="b4-fb" id="ord-fb" aria-live="polite">Atur urutan, lalu klik Periksa Urutan.</div>
+    </div>
+  </section>
+
+  <!-- ============ Kuis ============ -->
+  <section class="materi-section" id="quiz">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-clipboard-question" style="font-size:10px"></i></span> Evaluasi</span>
+      <h2>Kuis Formatif Bab 4</h2>
+      <p>7 soal pilihan ganda, satu soal per layar. Pilih jawaban lalu klik <strong style="color:var(--text-hi)">Periksa Jawaban</strong>.</p>
+    </div>
+    <div class="qz-card" id="qz-main" aria-live="polite"></div>
+    <div class="b4-row">
+      <button class="btn btn-primary" id="qz-check" disabled><i class="fa-solid fa-check-double"></i> Periksa Jawaban</button>
+      <button class="btn btn-ghost" id="qz-next" hidden>Soal Berikutnya <i class="fa-solid fa-arrow-right"></i></button>
+      <button class="btn btn-ghost" id="qz-reset" hidden><i class="fa-solid fa-rotate-left"></i> Ulangi Kuis</button>
+    </div>
+  </section>
+
+  <!-- ============ Refleksi ============ -->
+  <section class="materi-section" id="refleksi">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-comment-dots" style="font-size:10px"></i></span> Refleksi Diri</span>
+      <h2>Yuk, Refleksikan!</h2>
+    </div>
+    <div class="refleksi-card" data-aos="fade-up"><div class="rf-icon"><i class="fa-solid fa-lightbulb"></i></div>
+      <div class="rf-body">
+        <label class="b4-lbl" for="rf1">1. Kebiasaan baik apa yang sudah kamu lakukan saat menggunakan komputer?</label>
+        <textarea class="b4-ta" id="rf1" maxlength="600"></textarea>
+        <label class="b4-lbl" for="rf2">2. Kebiasaan apa yang perlu kamu perbaiki?</label>
+        <textarea class="b4-ta" id="rf2" maxlength="600"></textarea>
+        <label class="b4-lbl" for="rf3">3. Bagaimana kamu dapat mempelajari Informatika tanpa komputer?</label>
+        <textarea class="b4-ta" id="rf3" maxlength="600"></textarea>
+        <div class="b4-row">
+          <button class="btn btn-primary" id="rf-save"><i class="fa-solid fa-floppy-disk"></i> Simpan di Perangkat Ini</button>
+          <button class="btn btn-ghost" id="rf-clear"><i class="fa-solid fa-trash"></i> Hapus</button>
+        </div>
+        <div class="b4-fb" id="rf-fb" aria-live="polite"><i class="fa-solid fa-circle-info"></i> Jawabanmu hanya tersimpan di browser/perangkat ini dan <strong>tidak otomatis terkirim kepada guru</strong>. Jangan menulis data pribadi (nama lengkap, alamat, kata sandi). Jika ingin dinilai, tunjukkan atau salin jawabanmu ke guru.</div>
+      </div></div>
+  </section>
+
+  <!-- ============ Ringkasan ============ -->
+  <section class="materi-section" id="ringkasan">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num">∑</span> Ringkasan</span>
+      <h2>Yang Perlu Kamu Ingat</h2>
+    </div>
+    <div class="b4-sum" data-aos="fade-up">
+      <div><i class="fa-solid fa-check"></i> Bab 4 mengingatkan kebiasaan baik berkomputer dari kelas VII dan VIII; tanpa JP khusus.</div>
+      <div><i class="fa-solid fa-check"></i> Rawat perangkat, tertib, aman, dan gunakan sesuai kebutuhan belajar.</div>
+      <div><i class="fa-solid fa-check"></i> Posisi duduk: punggung tersangga, kepala tegak, layar sejajar mata, siku ditekuk, kaki menapak.</div>
+      <div><i class="fa-solid fa-check"></i> Ubah posisi dan beri jeda dari layar secara berkala.</div>
+      <div><i class="fa-solid fa-check"></i> CS Unplugged: belajar konsep Informatika tanpa harus selalu memakai komputer.</div>
+      <div><i class="fa-solid fa-check"></i> Urutan langkah yang tepat adalah inti dari algoritma.</div>
+    </div>
+  </section>
+
+  <!-- ============ Materi Tambahan: Sumber ============ -->
+  <section class="materi-section" id="tambahan">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-link" style="font-size:10px"></i></span> Pengayaan</span>
+      <h2>Materi Tambahan — Refresh &amp; Update</h2>
+      <p>Bagian berlabel kuning di halaman ini disusun dari sumber berikut. Ilustrasi, checklist, dan contoh kegiatan dibuat ulang dengan bahasa sendiri untuk siswa SMP.</p>
+    </div>
+    <div class="b4-box plus" data-aos="fade-up">
+      <span class="b4-tag plus">Daftar Sumber</span>
+      <ol class="b4-src">
+        <li><strong>Computer Workstations eTool — Good Working Positions.</strong> Occupational Safety &amp; Health Administration (OSHA), U.S. Department of Labor. <a href="https://www.osha.gov/SLTC/etools/computerworkstations/positions.html" target="_blank" rel="noopener noreferrer">osha.gov/SLTC/etools/computerworkstations/positions.html</a>. Dipakai untuk: posisi punggung, kepala, bahu, siku (90–120°), pergelangan, kaki, dan perlunya variasi posisi/jeda. Panduan ini aslinya untuk tempat kerja dan sudah lama (ditinjau 2008), sehingga disederhanakan untuk siswa. Diakses 16 Oktober 2026 melalui pencarian; tautan dapat berpindah alamat.</li>
+        <li><strong>CS Unplugged: Computer Science without a computer.</strong> University of Canterbury, Selandia Baru. <a href="https://www.csunplugged.org/en/" target="_blank" rel="noopener noreferrer">csunplugged.org/en</a>. Dipakai untuk: gambaran umum CS Unplugged dan contoh jenis kegiatan. Diakses 16 Oktober 2026 melalui pencarian.</li>
+        <li><strong>Bell, T., Alexander, J., Freeman, I., &amp; Grimley, M. (2009). Computer science unplugged: school students doing real computing without computers.</strong> New Zealand Journal of Applied Computing and Information Technology, 13(1), 20–29. <a href="https://researchportal.bath.ac.uk/en/publications/computer-science-unplugged-school-students-doing-real-computing-w/" target="_blank" rel="noopener noreferrer">Halaman publikasi (University of Bath)</a>. Dipakai untuk: gagasan bahwa kegiatan tanpa komputer dapat memperkenalkan cara berpikir seorang ilmuwan komputer.</li>
+      </ol>
+      <p class="b4-note">Tips tentang cahaya/silau dan jarak layar adalah saran umum dan tidak bersumber langsung dari daftar di atas.</p>
+    </div>
+  </section>
+
+  <!-- ============ Navigasi ============ -->
+  <nav class="materi-bottom-nav" aria-label="Navigasi antar bab">
+    <a href="bab3.html" class="bn-link prev"><span class="bn-arrow"><i class="fa-solid fa-arrow-left"></i></span><span class="bn-txt"><span>Bab Sebelumnya</span><strong>Bab 3</strong></span></a>
+    <a href="index.html" class="bn-link"><span class="bn-arrow"><i class="fa-solid fa-map"></i></span><span class="bn-txt"><span>← Kembali ke</span><strong>Roadmap</strong></span></a>
+    <a href="bab5.html" class="bn-link next"><span class="bn-arrow"><i class="fa-solid fa-arrow-right"></i></span><span class="bn-txt"><span>Bab Selanjutnya</span><strong>Bab 5</strong></span></a>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <p class="footer-quote">"Jangan hanya menjadi <span>pengguna</span> teknologi.<br>Belajarlah menjadi <span>pencipta</span> teknologi."</p>
+  <p class="footer-sub">— Semangat belajar Informatika Kelas IX —</p>
+  <div class="footer-links"><a href="index.html">Roadmap</a><a href="bab1.html">Bab 1</a><a href="bab7.html">Bab 7</a><a href="bab9.html">Bab 9</a></div>
+  <p class="footer-meta">Sumber materi: Buku Siswa Informatika SMP/MTs Kelas IX, Kemendikbudristek © 2022 · Materi tambahan: lihat daftar sumber</p>
+</footer>
+<button class="fab" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="js/main.js"></script>
+<script src="js/materi.js"></script>
+<script>
+if (window.AOS) AOS.init({ duration: 700, once: true, offset: 60 });
+setTimeout(function(){var l=document.getElementById('loading-screen');if(l)l.style.display='none';},3000);
+</script>
+<script src="js/bab4.js"></script>
+</body>
+</html>
