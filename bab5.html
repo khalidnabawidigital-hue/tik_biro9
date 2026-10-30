@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bab 5 — Jaringan Komputer &amp; Internet | Informatika Kelas IX</title>
+<meta name="description" content="Bab 5 Informatika Kelas IX: Jaringan Komputer & Internet — etika dan keamanan berinternet serta karya kampanye internet aman.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<!-- CSS bersama (sama dengan bab3.html dan bab4.html) -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/roadmap.css">
+<link rel="stylesheet" href="css/materi.css">
+<style>
+/* ===== Komponen khusus Bab 5 (pola sama dengan Bab 4, memakai variabel warna roadmap) ===== */
+.b5-box{border:1px solid rgba(127,127,127,.22);border-radius:16px;padding:20px 22px;margin:0 0 16px;background:rgba(127,127,127,.05)}
+.b5-box h3{margin:0 0 8px;color:var(--text-hi);font-size:1.05rem}
+.b5-box p,.b5-box li{font-size:14.5px;line-height:1.65}
+.b5-box ul{margin:8px 0 0;padding-left:20px}
+.b5-tag{display:inline-flex;align-items:center;gap:6px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:10px}
+.b5-tag.book{background:rgba(108,92,231,.16);color:var(--accent-1-soft,#6c5ce7);border:1px solid var(--accent-1-soft,#6c5ce7)}
+.b5-tag.plus{background:rgba(240,165,0,.16);color:#d98e00;border:1px solid #f0a500}
+.b5-tag.opt{background:rgba(0,184,148,.14);color:var(--accent-2-soft,#00b894);border:1px solid var(--accent-2-soft,#00b894)}
+.b5-box.book{border-left:4px solid var(--accent-1-soft,#6c5ce7)}
+.b5-box.plus{border-left:4px solid #f0a500;background:rgba(240,165,0,.06)}
+.b5-box.proj{border-left:4px solid var(--accent-2-soft,#00b894);background:rgba(0,184,148,.06)}
+.b5-ext{border:2px dashed #f0a500;border-radius:20px;padding:22px;background:rgba(240,165,0,.05);margin-bottom:16px}
+.b5-ext-banner{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-weight:700;font-size:13px;letter-spacing:.03em;text-transform:uppercase;color:#d98e00;margin-bottom:6px}
+.b5-ext-banner i{font-size:18px}
+.b5-group{margin:28px 0 12px;padding:10px 14px;border-radius:12px;font-weight:600;color:var(--text-hi);background:rgba(240,165,0,.1);border:1px dashed #f0a500;font-size:14px}
+.b5-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-bottom:16px}
+.b5-goal{display:flex;gap:12px;align-items:flex-start}
+.b5-goal .n{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:var(--accent-1-soft,#6c5ce7);color:#fff;display:flex;align-items:center;justify-content:center;font:700 13px 'Space Mono',monospace}
+.b5-goal p{margin:0;font-size:14px}
+.b5-cp{font-size:15px;line-height:1.7;font-style:italic;margin:0}
+.b5-ask{margin-top:10px;padding:10px 14px;border-radius:10px;background:rgba(0,184,148,.1);border-left:3px solid var(--accent-2-soft,#00b894);font-size:13.5px;color:var(--text-hi)}
+.b5-case{margin-top:12px;padding:10px 14px;border-radius:10px;background:rgba(108,92,231,.09);border-left:3px solid var(--accent-1-soft,#6c5ce7);font-size:13.5px;line-height:1.6}
+.b5-case strong{color:var(--text-hi)}
+.b5-bar{height:10px;border-radius:99px;background:rgba(127,127,127,.2);overflow:hidden;margin:10px 0 6px}
+.b5-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent-1-soft,#6c5ce7),var(--accent-2-soft,#00b894));transition:width .3s}
+.b5-fb{margin-top:10px;padding:12px 14px;border-radius:10px;background:rgba(127,127,127,.07);border-left:3px solid var(--accent-1-soft,#6c5ce7);font-size:14px;color:var(--text-hi);min-height:20px;line-height:1.6}
+.b5-fb.good{border-left-color:var(--accent-2-soft,#00b894)}
+.b5-fb.bad{border-left-color:var(--accent-danger,#e74c3c)}
+.b5-note{font-size:12.5px;opacity:.85;margin-top:8px;line-height:1.55}
+.b5-sc{margin-bottom:18px;padding-bottom:16px;border-bottom:1px dashed rgba(127,127,127,.3)}
+.b5-sc:last-child{border-bottom:0;margin-bottom:0}
+.b5-sc .q{font-weight:600;color:var(--text-hi);margin:0 0 8px;font-size:14.5px;line-height:1.55}
+.b5-opts{display:grid;gap:8px}
+.b5-opt{text-align:left;font:inherit;font-size:14.5px;color:inherit;background:rgba(127,127,127,.05);border:1px solid rgba(127,127,127,.22);border-radius:10px;padding:10px 14px;cursor:pointer;transition:.15s;line-height:1.5}
+.b5-opt:hover:not(:disabled){border-color:var(--accent-1-soft,#6c5ce7)}
+.b5-opt:focus-visible{outline:2px solid var(--accent-1-soft,#6c5ce7)}
+.b5-opt.selected{border-color:var(--accent-1-soft,#6c5ce7);background:rgba(108,92,231,.12)}
+.b5-opt.correct{border-color:var(--accent-2-soft,#00b894);background:rgba(0,184,148,.14)}
+.b5-opt.wrong{border-color:var(--accent-danger,#e74c3c);background:rgba(231,76,60,.12)}
+.b5-opt:disabled{cursor:default}
+.b5-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:10px}
+.b5-ta{width:100%;min-height:80px;padding:10px 12px;border-radius:10px;border:1px solid rgba(127,127,127,.3);background:rgba(127,127,127,.05);color:inherit;font:inherit;font-size:14.5px;resize:vertical}
+.b5-ta:focus{outline:2px solid var(--accent-1-soft,#6c5ce7)}
+.b5-lbl{display:block;font-weight:600;color:var(--text-hi);margin:14px 0 6px;font-size:14.5px}
+.b5-src li{margin-bottom:10px;font-size:14px;line-height:1.6;word-break:break-word}
+.b5-hero-ill{max-width:360px;width:100%;margin:18px auto 0;display:block}
+.b5-sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.b5-sum div{padding:14px 16px;border-radius:12px;border:1px solid rgba(127,127,127,.22);font-size:14px;line-height:1.55}
+.b5-sum i{color:var(--accent-2-soft,#00b894);margin-right:6px}
+.b5-kinds{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-bottom:16px}
+.b5-steps{counter-reset:s;list-style:none;padding:0;margin:10px 0 0;display:grid;gap:8px}
+.b5-steps li{counter-increment:s;display:flex;gap:10px;align-items:flex-start;font-size:14.5px;line-height:1.6}
+.b5-steps li::before{content:counter(s);flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent-2-soft,#00b894);color:#fff;display:flex;align-items:center;justify-content:center;font:700 12px 'Space Mono',monospace}
+.b5-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.b5-chip{padding:6px 12px;border-radius:999px;border:1px solid rgba(127,127,127,.3);font-size:13px}
+.b5-table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
+.b5-table th,.b5-table td{border:1px solid rgba(127,127,127,.25);padding:8px 10px;text-align:left;vertical-align:top;line-height:1.5}
+.b5-table th{background:rgba(127,127,127,.1);color:var(--text-hi)}
+.b5-score{font:700 14px 'Space Mono',monospace;margin-top:10px}
+.b5-tf{padding:14px 0;border-bottom:1px dashed rgba(127,127,127,.3)}
+.b5-tf:last-of-type{border-bottom:0}
+.b5-tf .st{margin:0 0 8px;font-weight:600;color:var(--text-hi);font-size:14.5px;line-height:1.55}
+.b5-tf .btns{display:flex;flex-wrap:wrap;gap:8px}
+.b5-tf .b5-opt{flex:1 1 150px;text-align:center}
+.qz-card{background:rgba(127,127,127,.06);border:1px solid rgba(127,127,127,.18);border-radius:16px;padding:20px 22px;margin-bottom:16px}
+.qz-text{font-weight:600;color:var(--text-hi);line-height:1.5;margin:0 0 12px}
+.b5-qn{font:700 12px 'Space Mono',monospace;opacity:.7;margin-bottom:6px}
+#qz-main .b5-qres div{padding:8px 0;border-bottom:1px solid rgba(127,127,127,.2);font-size:14px}
+.skip-link{position:absolute;left:-999px}.skip-link:focus{left:10px;top:10px;z-index:9999;background:#fff;color:#000;padding:8px 12px;border-radius:8px}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#materi1">Lewati ke materi</a>
+
+<div id="loading-screen" aria-hidden="true">
+  <div class="loader-node"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="26"></circle></svg></div>
+  <span class="loader-text">Memuat Materi…</span>
+</div>
+<div class="bg-mesh"></div>
+<div class="bg-noise"></div>
+
+<!-- ============ Navbar ============ -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-badge"><i class="fa-solid fa-bolt"></i></span>
+      Informatika<span style="color:var(--accent-2)">IX</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#roadmap">Roadmap</a></li>
+      <li><a href="index.html#statistik">Statistik</a></li>
+      <li><a href="index.html#perjalanan">Peta Perjalanan</a></li>
+      <li><a href="bab4.html">Bab 4</a></li>
+      <li><a href="bab6.html">Bab 6</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn theme-toggle" aria-label="Ganti mode gelap/terang"><i class="fa-solid fa-sun"></i></button>
+      <button class="nav-toggle" aria-label="Buka menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="materi-breadcrumb" data-aos="fade-up">
+    <a href="index.html">Roadmap</a><i class="fa-solid fa-chevron-right"></i>
+    <a href="index.html#roadmap">Semester Genap</a><i class="fa-solid fa-chevron-right"></i>
+    <span class="current">Bab 5 — Jaringan Komputer &amp; Internet</span>
+  </div>
+
+  <!-- ============ Hero ============ -->
+  <section class="materi-hero">
+    <div class="materi-hero-top"><div>
+      <span class="materi-hero-badge" data-aos="fade-up"><span class="num-badge">5</span> BAB 05</span>
+      <h1 data-aos="fade-up" data-aos-delay="80">
+        <i class="fa-solid fa-globe" style="color:var(--accent-1-soft);"></i> Jaringan Komputer <span class="gradient-text">&amp; Internet</span>
+      </h1>
+      <p class="lede" data-aos="fade-up" data-aos-delay="140">
+        Internet memberikan banyak manfaat dalam kehidupan sehari-hari. Namun, sebagai pengguna teknologi digital,
+        kita perlu memahami etika dan keamanan agar dapat menggunakan internet secara aman, bertanggung jawab, dan bijak.
+      </p>
+      <p style="margin-top:16px"><a href="#materi1" class="btn btn-primary" id="b5-start"><i class="fa-solid fa-compass"></i> Mulai Eksplorasi</a></p>
+    </div></div>
+    <svg class="b5-hero-ill" viewBox="0 0 360 220" role="img" aria-label="Ilustrasi perisai dengan tanda centang di depan globe internet">
+      <circle cx="180" cy="110" r="86" fill="rgba(108,92,231,.12)" stroke="var(--accent-1-soft,#6c5ce7)" stroke-width="4"/>
+      <ellipse cx="180" cy="110" rx="36" ry="86" fill="none" stroke="var(--accent-1-soft,#6c5ce7)" stroke-width="3" opacity=".6"/>
+      <line x1="94" y1="110" x2="266" y2="110" stroke="var(--accent-1-soft,#6c5ce7)" stroke-width="3" opacity=".6"/>
+      <path d="M104 70 Q180 92 256 70 M104 150 Q180 128 256 150" fill="none" stroke="var(--accent-1-soft,#6c5ce7)" stroke-width="3" opacity=".5"/>
+      <path d="M180 52 L228 70 V112 C228 142 208 162 180 174 C152 162 132 142 132 112 V70 Z" fill="#0b1020" fill-opacity=".85" stroke="#00b894" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M160 112 l15 15 28-32" fill="none" stroke="#00b894" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="materi-meta-row" data-aos="fade-up" data-aos-delay="180">
+      <span class="materi-chip"><i class="fa-solid fa-calendar"></i> Semester Genap</span>
+      <span class="materi-chip"><i class="fa-solid fa-clock"></i> Materi Penguatan – Tanpa JP Khusus</span>
+      <span class="materi-chip warn"><i class="fa-solid fa-bookmark"></i> Sumber: Buku Siswa Kemendikbudristek 2022</span>
+    </div>
+    <nav class="materi-toc" aria-label="Navigasi materi">
+      <a href="#cp"><i class="fa-solid fa-bullseye"></i> Capaian</a>
+      <a href="#materi1"><i class="fa-solid fa-shield-halved"></i> Etika &amp; Keamanan</a>
+      <a href="#materi2"><i class="fa-solid fa-bullhorn"></i> Kampanye</a>
+      <a href="#aktivitas"><i class="fa-solid fa-flask"></i> Aktivitas</a>
+      <a href="#proyek"><i class="fa-solid fa-palette"></i> Proyek</a>
+      <a href="#tambahan"><i class="fa-solid fa-link"></i> Materi Tambahan</a>
+      <a href="#quiz"><i class="fa-solid fa-clipboard-question"></i> Kuis</a>
+      <a href="#refleksi"><i class="fa-solid fa-comment-dots"></i> Refleksi</a>
+    </nav>
+  </section>
+
+  <!-- ============ Capaian Pembelajaran ============ -->
+  <section class="materi-section" id="cp">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num">i</span> Capaian Pembelajaran</span>
+      <h2>Apa yang Ingin Dicapai?</h2>
+    </div>
+
+    <div class="b5-box book" data-aos="fade-up">
+      <span class="b5-tag book"><i class="fa-solid fa-flag"></i> Capaian Pembelajaran (CP)</span>
+      <p class="b5-cp">“Peserta didik mampu menerapkan praktik baik dalam penggunaan jaringan komputer dan internet secara aman, bertanggung jawab, dan sesuai etika sebagai pengguna teknologi digital.”</p>
+    </div>
+
+    <div class="b5-box" data-aos="fade-up">
+      <span class="b5-tag opt"><i class="fa-solid fa-bullseye"></i> Target Pembelajaran</span>
+      <p style="margin:0">“Siswa mampu mengampanyekan praktik baik penggunaan internet yang aman melalui karya kreatif.”</p>
+    </div>
+
+    <div class="b5-box book" data-aos="fade-up">
+      <span class="b5-tag book"><i class="fa-solid fa-book"></i> REFERENSI BUKU SISWA KELAS IX</span>
+      <h3>Halaman Ini Adalah Pengingat</h3>
+      <ul>
+        <li>Bab 5 berfungsi sebagai <strong>pengingat dan penguatan</strong> materi jaringan komputer dan internet yang sudah kamu pelajari sebelumnya di kelas VII dan VIII.</li>
+        <li>Bab ini <strong>bukan unit pembelajaran baru</strong> dan <strong>tidak memiliki alokasi JP khusus</strong>; kamu bisa mempelajarinya secara mandiri.</li>
+        <li>Kegiatan utamanya: mengingat etika &amp; keamanan berinternet, lalu menghasilkan karya kampanye (poster, komik, atau video).</li>
+      </ul>
+    </div>
+
+    <h3 style="margin:18px 0 10px;color:var(--text-hi);font-size:1.05rem" data-aos="fade-up">Kompetensi yang Kamu Peroleh</h3>
+    <div class="b5-grid" id="b5-goals"></div>
+
+    <p class="b5-group"><i class="fa-solid fa-star"></i> Kotak berwarna <strong style="color:#d98e00">kuning dengan garis putus-putus</strong> berlabel “Materi Tambahan – Sumber Eksternal (Refresh &amp; Update)” adalah <strong>pengayaan dari luar buku</strong>. Kotak berwarna <strong style="color:var(--accent-2-soft,#00b894)">hijau</strong> adalah kegiatan opsional.</p>
+  </section>
+
+  <!-- ============ Mengapa penting ============ -->
+  <section class="materi-section" id="penting">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-question" style="font-size:10px"></i></span> Mengapa Penting?</span>
+      <h2>Mengapa Internet Aman Itu Penting?</h2>
+      <p>Hampir semua kegiatan kita bersinggungan dengan internet. Setiap kali online, ada <strong style="color:var(--text-hi)">keamanan</strong>, <strong style="color:var(--text-hi)">etika</strong>, dan <strong style="color:var(--text-hi)">tanggung jawab</strong> yang perlu kita pikirkan.</p>
+    </div>
+    <div class="materi-grid-2" data-aos="fade-up">
+      <div class="info-card"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-share-nodes"></i></div><h3>Media Sosial</h3></div>
+        <p>Apa yang kamu tulis dan unggah bisa dilihat banyak orang, dan sulit ditarik kembali.</p></div>
+      <div class="info-card cyan"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-comments"></i></div><h3>Aplikasi Pesan</h3></div>
+        <p>Pesan dan tautan dari kontak yang tidak dikenal bisa jadi jebakan, dan pesan grup mudah menyebar.</p></div>
+      <div class="info-card"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-magnifying-glass"></i></div><h3>Mencari Informasi</h3></div>
+        <p>Tidak semua yang ada di internet itu benar. Informasi perlu diperiksa sebelum dipercaya.</p></div>
+      <div class="info-card cyan"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-image"></i></div><h3>Berbagi Foto &amp; Video</h3></div>
+        <p>Foto dan video bisa mengandung data pribadi, dan orang lain berhak atas privasinya.</p></div>
+      <div class="info-card"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-user-lock"></i></div><h3>Akun Digital</h3></div>
+        <p>Akun menyimpan data dan identitasmu, sehingga perlu dijaga dengan kata sandi yang kuat.</p></div>
+      <div class="info-card cyan"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-people-group"></i></div><h3>Berinteraksi dengan Orang Lain</h3></div>
+        <p>Di balik layar ada manusia sungguhan. Kata-kata yang kita kirim tetap bisa melukai.</p></div>
+    </div>
+    <div class="b5-ask"><i class="fa-solid fa-circle-question"></i> <strong>Pertanyaan pemantik:</strong> Aktivitas internet apa yang paling sering kamu lakukan setiap hari? Hal apa yang perlu kamu waspadai di sana?</div>
+  </section>
+
+  <!-- ============ Materi 1 ============ -->
+  <section class="materi-section" id="materi1">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num">1</span> Materi Pertama</span>
+      <h2>Etika &amp; Keamanan Berinternet</h2>
+      <p>Tiga kelompok kebiasaan baik yang perlu kita ingat kembali. Setiap kelompok disertai contoh kasus sederhana.</p>
+      <span class="b5-tag book"><i class="fa-solid fa-book"></i> Materi Pengingat (kelas VII–VIII)</span>
+    </div>
+
+    <div class="materi-grid-2" data-aos="fade-up">
+      <div class="info-card"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-handshake-angle"></i></div><h3>1. Etika Berinternet</h3></div>
+        <ul>
+          <li>Menggunakan bahasa yang sopan saat berkomunikasi.</li>
+          <li>Menghargai pendapat orang lain.</li>
+          <li>Tidak menyebarkan informasi yang belum jelas kebenarannya.</li>
+          <li>Tidak melakukan perundungan digital.</li>
+          <li>Menghargai privasi orang lain.</li>
+          <li>Memahami bahwa aktivitas di internet memiliki konsekuensi.</li>
+        </ul>
+        <div class="b5-case"><strong>Contoh kasus:</strong> Dina tidak setuju dengan pendapat temannya di grup kelas. Ia menjawab dengan sopan, “Menurutku begini, karena…”, bukan mengejek. Perbedaan pendapat tetap enak dibahas.</div>
+      </div>
+
+      <div class="info-card cyan"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-lock"></i></div><h3>2. Keamanan Berinternet</h3></div>
+        <ul>
+          <li>Menjaga kerahasiaan informasi pribadi.</li>
+          <li>Menggunakan kata sandi yang kuat dan tidak membagikannya.</li>
+          <li>Berhati-hati terhadap tautan dan pesan mencurigakan.</li>
+          <li>Memeriksa kebenaran informasi sebelum membagikannya.</li>
+          <li>Berhati-hati saat mengunduh file.</li>
+          <li>Meminta bantuan orang tua atau guru ketika menemukan aktivitas digital yang mencurigakan.</li>
+        </ul>
+        <div class="b5-case"><strong>Contoh kasus:</strong> Raka menerima pesan “Kamu menang hadiah! Klik di sini.” Ia tidak membuka tautannya, lalu menunjukkan pesan itu kepada gurunya.</div>
+      </div>
+
+      <div class="info-card"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-scale-balanced"></i></div><h3>3. Tanggung Jawab sebagai Pengguna Digital</h3></div>
+        <ul>
+          <li>Menggunakan internet untuk kegiatan positif.</li>
+          <li>Menghormati hak cipta.</li>
+          <li>Tidak menyalahgunakan teknologi.</li>
+          <li>Berpikir sebelum mengunggah atau membagikan sesuatu.</li>
+          <li>Menjaga jejak digital.</li>
+        </ul>
+        <div class="b5-case"><strong>Contoh kasus:</strong> Sinta ingin memakai gambar dari internet untuk tugas. Ia mencantumkan sumbernya dan tidak mengaku sebagai karyanya sendiri.</div>
+      </div>
+    </div>
+    <p class="b5-note">Poin-poin di atas disusun ulang dengan bahasa sederhana sebagai pengingat. Gunakan Buku Siswa Informatika (kelas VII–IX) untuk memperdalam.</p>
+  </section>
+
+  <!-- ============ Materi 2 ============ -->
+  <section class="materi-section" id="materi2">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num">2</span> Materi Kedua</span>
+      <h2>Karya Kampanye Internet Aman</h2>
+      <p><strong style="color:var(--text-hi)">Kampanye digital</strong> adalah kegiatan menyampaikan pesan atau ajakan kepada banyak orang melalui media, misalnya poster, komik, atau video, supaya mereka mau menerapkan suatu kebiasaan baik. Tujuan membuat karya kampanye: <strong style="color:var(--text-hi)">mengajak</strong> teman dan keluarga menggunakan internet secara aman, bertanggung jawab, dan beretika.</p>
+    </div>
+
+    <div class="b5-box book" data-aos="fade-up">
+      <span class="b5-tag book"><i class="fa-solid fa-book"></i> REFERENSI BUKU SISWA KELAS IX</span>
+      <p style="margin:0">Pada bab ini, siswa diajak menghasilkan karya kreatif berupa <strong>poster, komik, atau video kampanye internet aman</strong>. Kamu boleh memilih <strong>salah satu</strong> bentuk karya sesuai kemampuan dan fasilitas yang tersedia.</p>
+    </div>
+
+    <div class="b5-kinds" data-aos="fade-up">
+      <div class="info-card"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-image"></i></div><h3>Poster</h3></div>
+        <ul><li>Pesan singkat dan mudah diingat.</li><li>Ilustrasi yang mendukung pesan.</li><li>Ada ajakan menggunakan internet secara aman.</li></ul>
+        <div class="b5-case"><strong>Contoh tema:</strong> “Pikir Sebelum Membagikan”.</div></div>
+      <div class="info-card cyan"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-book-open"></i></div><h3>Komik</h3></div>
+        <ul><li>Cerita pendek dengan tokoh dan situasi sehari-hari.</li><li>Menampilkan masalah dan solusi.</li><li>Memiliki pesan moral tentang keamanan internet.</li></ul>
+        <div class="b5-case"><strong>Contoh cerita:</strong> siswa menerima tautan mencurigakan dan memilih tidak membukanya sebelum memeriksa kebenarannya.</div></div>
+      <div class="info-card"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-video"></i></div><h3>Video Pendek</h3></div>
+        <ul><li>Durasi disarankan 30–60 detik.</li><li>Memiliki pesan utama yang jelas.</li><li>Memakai bahasa yang mudah dipahami.</li><li>Mengajak penonton menerapkan kebiasaan internet aman.</li></ul></div>
+    </div>
+  </section>
+
+  <!-- ============ Aktivitas ============ -->
+  <section class="materi-section" id="aktivitas">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-flask" style="font-size:10px"></i></span> Aktivitas Interaktif</span>
+      <h2>Coba Sendiri!</h2>
+      <p>Dua aktivitas singkat yang bisa dipakai di komputer maupun ponsel. Jawabanmu tidak dikirim ke mana pun.</p>
+    </div>
+
+    <div class="b5-box" data-aos="fade-up">
+      <h3>Aktivitas 1 — Studi Kasus Digital</h3>
+      <p>Pilih tindakan yang paling tepat untuk setiap situasi.</p>
+      <div id="sc-wrap"></div>
+      <div class="b5-score" id="sc-score" aria-live="polite"></div>
+    </div>
+
+    <div class="b5-box" data-aos="fade-up">
+      <h3>Aktivitas 2 — Tantangan “Internet Aman atau Tidak?”</h3>
+      <p>Tentukan apakah perilaku berikut termasuk <strong>praktik baik</strong> atau <strong>bukan</strong>.</p>
+      <div id="tf-wrap"></div>
+      <div class="b5-score" id="tf-score" aria-live="polite">Skor: 0 / 8</div>
+      <div class="b5-row"><button class="btn btn-ghost" id="tf-reset"><i class="fa-solid fa-rotate-left"></i> Ulangi Tantangan</button></div>
+    </div>
+  </section>
+
+  <!-- ============ Proyek ============ -->
+  <section class="materi-section" id="proyek">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-palette" style="font-size:10px"></i></span> Proyek Kreatif</span>
+      <h2>Satu Karya, Satu Pesan: Internet Aman untuk Semua</h2>
+      <span class="b5-tag opt"><i class="fa-solid fa-hand-holding-heart"></i> OPSIONAL — Kegiatan Penguatan</span>
+    </div>
+
+    <div class="b5-box proj" data-aos="fade-up">
+      <p style="margin:0 0 6px">Proyek ini <strong>bersifat opsional</strong>: kegiatan penguatan dan kampanye kreatif, bukan tugas wajib yang memberatkan. Kerjakan sesuai kemampuan dan fasilitasmu, sendiri atau berkelompok.</p>
+      <h3 style="margin-top:14px">Langkah-langkah</h3>
+      <ol class="b5-steps">
+        <li>Pilih satu tema keamanan atau etika berinternet.</li>
+        <li>Tentukan bentuk karya: poster, komik, atau video pendek.</li>
+        <li>Susun pesan kampanye yang singkat dan mudah dipahami.</li>
+        <li>Buat karya secara individu atau berkelompok.</li>
+        <li>Presentasikan atau bagikan karya kepada teman sekelas.</li>
+      </ol>
+      <h3 style="margin-top:16px">Contoh Tema</h3>
+      <div class="b5-chips">
+        <span class="b5-chip">Jaga Privasi Digital</span><span class="b5-chip">Jangan Mudah Percaya Tautan</span>
+        <span class="b5-chip">Sopan di Dunia Maya</span><span class="b5-chip">Pikir Sebelum Membagikan</span>
+        <span class="b5-chip">Hentikan Perundungan Digital</span><span class="b5-chip">Gunakan Internet untuk Hal Positif</span>
+      </div>
+      <h3 style="margin-top:16px">Indikator Penilaian Sederhana</h3>
+      <div style="overflow-x:auto">
+      <table class="b5-table">
+        <thead><tr><th>Indikator</th><th>Yang Dilihat</th></tr></thead>
+        <tbody>
+          <tr><td>Ketepatan pesan</td><td>Pesan benar dan sesuai praktik internet aman.</td></tr>
+          <tr><td>Kesesuaian tema</td><td>Isi karya sesuai tema yang dipilih.</td></tr>
+          <tr><td>Kreativitas</td><td>Ide, tampilan, atau cerita menarik dan orisinal.</td></tr>
+          <tr><td>Kejelasan komunikasi</td><td>Pesan mudah dipahami dan diingat.</td></tr>
+          <tr><td>Kerja sama</td><td>Anggota berbagi tugas (jika berkelompok).</td></tr>
+        </tbody>
+      </table></div>
+      <p class="b5-note">Tips: jangan memasang data pribadi (alamat, nomor telepon, wajah teman tanpa izin) di karyamu. Gunakan gambar buatan sendiri atau cantumkan sumbernya.</p>
+    </div>
+  </section>
+
+  <!-- ============ Materi Tambahan Eksternal ============ -->
+  <section class="materi-section" id="tambahan">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-link" style="font-size:10px"></i></span> Pengayaan</span>
+      <h2>Wawasan Keamanan Internet Terkini</h2>
+    </div>
+
+    <div class="b5-ext" data-aos="fade-up">
+      <div class="b5-ext-banner"><i class="fa-solid fa-lightbulb"></i> MATERI TAMBAHAN – SUMBER EKSTERNAL (REFRESH &amp; UPDATE)</div>
+      <p style="font-size:14px;line-height:1.65">Bagian ini <strong>bukan kutipan dari Buku Siswa Kelas IX</strong>. Isinya adalah pengayaan umum yang diringkas dengan bahasa sendiri untuk siswa SMP dari topik-topik literasi digital yang lazim dibahas lembaga edukasi keamanan digital.</p>
+
+      <div class="b5-grid">
+        <div class="b5-box plus" style="margin:0"><span class="b5-tag plus">Eksternal</span>
+          <h3>Phishing &amp; Penipuan Digital</h3>
+          <p>Phishing adalah upaya menipu agar kita memberikan data atau mengeklik tautan berbahaya, biasanya lewat pesan yang meniru pihak resmi. Waspadai pesan yang mendesak, menjanjikan hadiah, atau meminta kode/kata sandi.</p></div>
+        <div class="b5-box plus" style="margin:0"><span class="b5-tag plus">Eksternal</span>
+          <h3>Privasi &amp; Data Pribadi</h3>
+          <p>Data pribadi seperti nama lengkap, alamat, nomor telepon, dan foto identitas tidak sembarang dibagikan. Periksa pengaturan privasi akun media sosialmu.</p></div>
+        <div class="b5-box plus" style="margin:0"><span class="b5-tag plus">Eksternal</span>
+          <h3>Jejak Digital</h3>
+          <p>Semua yang kita unggah, komentari, dan cari meninggalkan jejak yang bisa bertahan lama dan dilihat orang lain. Pikirkan: “Apakah aku nyaman jika ini dibaca orang lain beberapa tahun lagi?”</p></div>
+        <div class="b5-box plus" style="margin:0"><span class="b5-tag plus">Eksternal</span>
+          <h3>Perundungan Siber</h3>
+          <p>Perundungan siber adalah mengejek, mengancam, atau mempermalukan seseorang lewat media digital. Jika mengalaminya atau melihatnya: jangan membalas, simpan bukti (tangkapan layar), blokir/laporkan, dan ceritakan kepada orang dewasa tepercaya.</p></div>
+        <div class="b5-box plus" style="margin:0"><span class="b5-tag plus">Eksternal</span>
+          <h3>Misinformasi &amp; Informasi Palsu</h3>
+          <p>Cek siapa penulisnya, kapan dibuat, dan apakah media tepercaya melaporkan hal yang sama. Berita yang memancing emosi berlebihan patut dicurigai sebelum dibagikan.</p></div>
+        <div class="b5-box plus" style="margin:0"><span class="b5-tag plus">Eksternal</span>
+          <h3>Keamanan Akun</h3>
+          <p>Gunakan kata sandi yang panjang dan berbeda untuk tiap akun, aktifkan verifikasi dua langkah bila tersedia, dan jangan pernah membagikan kode verifikasi (OTP) kepada siapa pun.</p></div>
+        <div class="b5-box plus" style="margin:0"><span class="b5-tag plus">Eksternal</span>
+          <h3>Etika di Media Sosial</h3>
+          <p>Minta izin sebelum mengunggah foto orang lain, hindari menyebarkan tangkapan layar percakapan pribadi, dan ingat bahwa akun anonim pun tetap bertanggung jawab atas ucapannya.</p></div>
+      </div>
+
+      <div class="b5-box plus" style="margin:16px 0 0">
+        <span class="b5-tag plus">Daftar Sumber Referensi</span>
+        <p style="margin-top:0">Untuk membaca lebih lanjut, cari materi edukasi dari lembaga tepercaya berikut melalui situs resminya:</p>
+        <ol class="b5-src">
+          <li><strong>Siberkreasi</strong> — gerakan nasional literasi digital (materi tentang etika, keamanan, budaya, dan kecakapan digital).</li>
+          <li><strong>Kementerian Komunikasi dan Digital Republik Indonesia (Komdigi)</strong> — informasi literasi digital dan pelindungan data pribadi.</li>
+          <li><strong>Badan Siber dan Sandi Negara (BSSN)</strong> — informasi keamanan siber.</li>
+        </ol>
+        <p class="b5-note">Tautan langsung tidak dicantumkan karena belum diverifikasi saat halaman ini disusun. Cari nama lembaga di mesin pencari dan pilih situs resminya. Guru dapat menambahkan tautan terverifikasi di bagian ini.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Kuis ============ -->
+  <section class="materi-section" id="quiz">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-clipboard-question" style="font-size:10px"></i></span> Evaluasi</span>
+      <h2>Kuis Formatif Bab 5</h2>
+      <p>7 soal pilihan ganda, satu soal per layar. Pilih jawaban lalu klik <strong style="color:var(--text-hi)">Periksa Jawaban</strong>.</p>
+    </div>
+    <div class="qz-card" id="qz-main" aria-live="polite"></div>
+    <div class="b5-row">
+      <button class="btn btn-primary" id="qz-check" disabled><i class="fa-solid fa-check-double"></i> Periksa Jawaban</button>
+      <button class="btn btn-ghost" id="qz-next" hidden>Soal Berikutnya <i class="fa-solid fa-arrow-right"></i></button>
+      <button class="btn btn-ghost" id="qz-reset" hidden><i class="fa-solid fa-rotate-left"></i> Ulangi Kuis</button>
+    </div>
+  </section>
+
+  <!-- ============ Refleksi ============ -->
+  <section class="materi-section" id="refleksi">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-comment-dots" style="font-size:10px"></i></span> Refleksi Diri</span>
+      <h2>Yuk, Refleksikan!</h2>
+    </div>
+    <div class="refleksi-card" data-aos="fade-up"><div class="rf-icon"><i class="fa-solid fa-lightbulb"></i></div>
+      <div class="rf-body">
+        <label class="b5-lbl" for="rf1">1. Kebiasaan apa yang sudah saya lakukan untuk menjaga keamanan saat menggunakan internet?</label>
+        <textarea class="b5-ta" id="rf1" maxlength="600"></textarea>
+        <label class="b5-lbl" for="rf2s">2. Apakah saya sudah menggunakan bahasa yang sopan saat berkomunikasi di internet?</label>
+        <select class="b5-ta" id="rf2s" style="min-height:0;margin-bottom:8px">
+          <option value="">— Pilih salah satu —</option>
+          <option>Selalu</option><option>Sering</option><option>Kadang-kadang</option><option>Belum</option>
+        </select>
+        <textarea class="b5-ta" id="rf2" maxlength="600" placeholder="Ceritakan contohnya (opsional)"></textarea>
+        <label class="b5-lbl" for="rf3">3. Apa yang akan saya perbaiki dari kebiasaan berinternet saya?</label>
+        <textarea class="b5-ta" id="rf3" maxlength="600"></textarea>
+        <label class="b5-lbl" for="rf4">4. Pesan apa yang ingin saya sampaikan kepada orang lain tentang internet aman?</label>
+        <textarea class="b5-ta" id="rf4" maxlength="600"></textarea>
+        <div class="b5-row">
+          <button class="btn btn-primary" id="rf-save"><i class="fa-solid fa-floppy-disk"></i> Simpan di Perangkat Ini</button>
+          <button class="btn btn-ghost" id="rf-clear"><i class="fa-solid fa-trash"></i> Hapus</button>
+        </div>
+        <div class="b5-fb" id="rf-fb" aria-live="polite"><i class="fa-solid fa-circle-info"></i> Jawabanmu hanya tersimpan di browser/perangkat ini dan <strong>tidak otomatis terkirim kepada guru</strong>. Jangan menulis data pribadi (nama lengkap, alamat, kata sandi). Jika ingin dinilai, tunjukkan atau salin jawabanmu ke guru.</div>
+      </div></div>
+  </section>
+
+  <!-- ============ Ringkasan ============ -->
+  <section class="materi-section" id="ringkasan">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num">∑</span> Ringkasan</span>
+      <h2>Yang Perlu Kamu Ingat</h2>
+    </div>
+    <div class="b5-sum" data-aos="fade-up">
+      <div><i class="fa-solid fa-check"></i> Internet perlu digunakan secara aman dan bertanggung jawab.</div>
+      <div><i class="fa-solid fa-check"></i> Etika digital perlu diterapkan dalam setiap interaksi.</div>
+      <div><i class="fa-solid fa-check"></i> Informasi pribadi harus dijaga.</div>
+      <div><i class="fa-solid fa-check"></i> Informasi perlu diperiksa sebelum dibagikan.</div>
+      <div><i class="fa-solid fa-check"></i> Setiap pengguna internet dapat ikut menyebarkan pesan positif.</div>
+      <div><i class="fa-solid fa-check"></i> Karya kreatif dapat menjadi media kampanye internet aman.</div>
+    </div>
+  </section>
+
+  <!-- ============ Navigasi ============ -->
+  <nav class="materi-bottom-nav" aria-label="Navigasi antar bab">
+    <a href="bab4.html" class="bn-link prev"><span class="bn-arrow"><i class="fa-solid fa-arrow-left"></i></span><span class="bn-txt"><span>Bab Sebelumnya</span><strong>Bab 4</strong></span></a>
+    <a href="index.html" class="bn-link"><span class="bn-arrow"><i class="fa-solid fa-map"></i></span><span class="bn-txt"><span>← Kembali ke</span><strong>Roadmap</strong></span></a>
+    <a href="bab6.html" class="bn-link next"><span class="bn-arrow"><i class="fa-solid fa-arrow-right"></i></span><span class="bn-txt"><span>Bab Selanjutnya</span><strong>Bab 6</strong></span></a>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <p class="footer-quote">"Jangan hanya menjadi <span>pengguna</span> teknologi.<br>Belajarlah menjadi <span>pencipta</span> teknologi."</p>
+  <p class="footer-sub">— Semangat belajar Informatika Kelas IX —</p>
+  <div class="footer-links"><a href="index.html">Roadmap</a><a href="bab1.html">Bab 1</a><a href="bab7.html">Bab 7</a><a href="bab9.html">Bab 9</a></div>
+  <p class="footer-meta">Sumber materi: Buku Siswa Informatika SMP/MTs Kelas IX, Kemendikbudristek © 2022 · Materi tambahan: lihat daftar sumber</p>
+</footer>
+<button class="fab" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="js/main.js"></script>
+<script src="js/materi.js"></script>
+<script>
+if (window.AOS) AOS.init({ duration: 700, once: true, offset: 60 });
+setTimeout(function(){var l=document.getElementById('loading-screen');if(l)l.style.display='none';},3000);
+</script>
+<script>
+(function(){
+'use strict';
+
+/* ---------- util ---------- */
+function el(tag, cls, text){var e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e;}
+function $(id){return document.getElementById(id);}
+
+/* ---------- Kompetensi ---------- */
+var goals=[
+  'Kesadaran keamanan berinternet.',
+  'Kemampuan menerapkan etika digital.',
+  'Kolaborasi membuat karya kampanye.',
+  'Kemampuan menyampaikan pesan positif melalui media kreatif.'
+];
+(function(){
+  var w=$('b5-goals'); if(!w) return;
+  goals.forEach(function(g,i){
+    var b=el('div','b5-box b5-goal'); b.appendChild(el('span','n',String(i+1))); b.appendChild(el('p','',g)); w.appendChild(b);
+  });
+})();
+
+/* ---------- Aktivitas 1: Studi kasus ---------- */
+var cases=[
+  {q:'Kamu menerima pesan dari nomor tidak dikenal: “Selamat! Kamu menang hadiah. Klik tautan ini untuk mengambilnya.” Apa yang paling tepat dilakukan?',
+   o:['Mengeklik tautan karena sayang jika hadiahnya hilang.','Tidak membuka tautan, lalu menunjukkan pesan itu kepada orang tua atau guru.','Meneruskan pesan ke semua teman agar mereka ikut menang.'],
+   c:1,why:'Pesan hadiah dari pengirim tidak dikenal sering kali penipuan. Tautannya bisa mencuri data. Jangan dibuka dan minta bantuan orang dewasa tepercaya.'},
+  {q:'Temanmu menyebarkan foto teman sekelas yang sedang tidak rapi tanpa izin, dan banyak yang menertawakan. Apa yang paling tepat?',
+   o:['Ikut tertawa dan membagikan lagi karena sudah ramai.','Diam saja dan tidak peduli.','Tidak ikut menyebarkan, mengingatkan temanmu dengan sopan, dan melapor ke guru bila perlu.'],
+   c:2,why:'Menyebarkan foto orang lain tanpa izin melanggar privasi dan bisa menjadi perundungan digital. Tindakan baik adalah tidak ikut menyebarkan dan mengingatkan.'},
+  {q:'Kamu menemukan berita mengejutkan di media sosial: “Besok semua sekolah diliburkan!” tanpa sumber yang jelas. Apa yang sebaiknya kamu lakukan?',
+   o:['Memeriksa dulu ke sumber resmi (misalnya guru atau pengumuman sekolah) sebelum membagikan.','Langsung membagikannya agar teman-teman cepat tahu.','Mempercayainya karena banyak yang menyukai unggahannya.'],
+   c:0,why:'Informasi yang belum jelas kebenarannya tidak boleh disebarkan. Jumlah “suka” tidak membuktikan kebenaran. Periksa sumber resmi dulu.'},
+  {q:'Seseorang yang mengaku teman barumu di game online meminta kata sandi akunmu “untuk membantu naik level”. Apa yang paling tepat?',
+   o:['Memberikannya karena dia terlihat baik.','Menolak, tidak membagikan kata sandi kepada siapa pun, dan menceritakannya kepada orang tua.','Memberikan setengah kata sandi saja.'],
+   c:1,why:'Kata sandi bersifat rahasia dan tidak boleh dibagikan, bahkan kepada teman. Permintaan seperti ini perlu diwaspadai.'}
+];
+var scDone=0, scRight=0;
+(function(){
+  var w=$('sc-wrap'); if(!w) return;
+  cases.forEach(function(cs,ci){
+    var box=el('div','b5-sc'); box.appendChild(el('p','q',(ci+1)+'. '+cs.q));
+    var opts=el('div','b5-opts'); var fb=el('div','b5-fb','Pilih salah satu jawaban.'); fb.setAttribute('aria-live','polite');
+    cs.o.forEach(function(t,oi){
+      var b=el('button','b5-opt',t); b.type='button';
+      b.addEventListener('click',function(){
+        var bs=opts.querySelectorAll('button');
+        bs.forEach(function(x,xi){x.disabled=true; if(xi===cs.c)x.classList.add('correct');});
+        var ok=(oi===cs.c);
+        if(!ok) b.classList.add('wrong');
+        fb.className='b5-fb '+(ok?'good':'bad');
+        fb.textContent=(ok?'Tepat! ':'Belum tepat. ')+cs.why;
+        scDone++; if(ok) scRight++;
+        if(scDone===cases.length) $('sc-score').textContent='Selesai! Kamu menjawab tepat '+scRight+' dari '+cases.length+' kasus.';
+      });
+      opts.appendChild(b);
+    });
+    box.appendChild(opts); box.appendChild(fb); w.appendChild(box);
+  });
+})();
+
+/* ---------- Aktivitas 2: Aman atau tidak ---------- */
+var stm=[
+  {t:'Menggunakan kata sandi yang panjang dan berbeda untuk tiap akun.',ok:true,why:'Kata sandi kuat dan unik membuat akun lebih sulit dibobol.'},
+  {t:'Membagikan kata sandi kepada sahabat karena kami saling percaya.',ok:false,why:'Kata sandi bersifat rahasia dan tidak dibagikan kepada siapa pun.'},
+  {t:'Memeriksa kebenaran sebuah berita sebelum membagikannya.',ok:true,why:'Memeriksa informasi mencegah penyebaran kabar yang belum jelas kebenarannya.'},
+  {t:'Mengeklik semua tautan yang dikirim lewat pesan agar tidak penasaran.',ok:false,why:'Tautan dari pesan mencurigakan bisa berbahaya. Periksa dulu atau tanya orang dewasa.'},
+  {t:'Meminta izin teman sebelum mengunggah fotonya.',ok:true,why:'Menghargai privasi orang lain adalah bagian dari etika digital.'},
+  {t:'Membalas komentar yang tidak kamu setujui dengan kata-kata kasar.',ok:false,why:'Bahasa kasar bisa melukai orang lain. Sampaikan perbedaan pendapat dengan sopan.'},
+  {t:'Menceritakan kepada guru atau orang tua ketika ada pesan yang mencurigakan.',ok:true,why:'Meminta bantuan orang dewasa tepercaya adalah langkah yang bijak.'},
+  {t:'Memakai gambar karya orang lain tanpa menyebutkan sumbernya.',ok:false,why:'Hak cipta perlu dihormati. Cantumkan sumber atau gunakan karya sendiri.'}
+];
+var tfAns=0, tfRight=0;
+function buildTF(){
+  var w=$('tf-wrap'); if(!w) return; w.textContent=''; tfAns=0; tfRight=0; $('tf-score').textContent='Skor: 0 / '+stm.length;
+  stm.forEach(function(s,i){
+    var box=el('div','b5-tf'); box.appendChild(el('p','st',(i+1)+'. '+s.t));
+    var btns=el('div','btns'); var fb=el('div','b5-fb','Pilih jawabanmu.'); fb.setAttribute('aria-live','polite');
+    [['Praktik baik',true],['Bukan praktik baik',false]].forEach(function(p){
+      var b=el('button','b5-opt',p[0]); b.type='button';
+      b.addEventListener('click',function(){
+        var all=btns.querySelectorAll('button'); all.forEach(function(x){x.disabled=true;});
+        var ok=(p[1]===s.ok); b.classList.add(ok?'correct':'wrong');
+        fb.className='b5-fb '+(ok?'good':'bad'); fb.textContent=(ok?'Benar! ':'Kurang tepat. ')+s.why;
+        tfAns++; if(ok) tfRight++;
+        $('tf-score').textContent='Skor: '+tfRight+' / '+stm.length+(tfAns===stm.length?' — Selesai!':'');
+      });
+      btns.appendChild(b);
+    });
+    box.appendChild(btns); box.appendChild(fb); w.appendChild(box);
+  });
+}
+buildTF();
+if($('tf-reset')) $('tf-reset').addEventListener('click',buildTF);
+
+/* ---------- Kuis ---------- */
+var quiz=[
+  {q:'Berikut yang termasuk etika berinternet adalah…',o:['Menggunakan bahasa yang sopan saat berkomunikasi.','Menyebarkan kabar yang belum jelas kebenarannya.','Mengejek pendapat yang berbeda.','Memposting foto orang lain tanpa izin.'],c:0,why:'Bahasa yang sopan dan menghargai pendapat orang lain adalah bagian dari etika berinternet.'},
+  {q:'Sikap yang tepat terhadap kata sandi akunmu adalah…',o:['Membagikannya kepada teman dekat.','Menggunakan kata sandi yang kuat dan merahasiakannya.','Memakai satu kata sandi mudah untuk semua akun.','Menuliskannya di status media sosial.'],c:1,why:'Kata sandi kuat dan rahasia menjaga keamanan akun.'},
+  {q:'Kamu menerima pesan berisi tautan hadiah dari pengirim tak dikenal. Langkah terbaik adalah…',o:['Langsung membuka tautan.','Meneruskannya ke grup kelas.','Tidak membukanya dan meminta bantuan guru atau orang tua.','Mengirim data pribadimu agar hadiah cepat sampai.'],c:2,why:'Tautan mencurigakan bisa berbahaya. Hindari membukanya dan minta bantuan orang dewasa.'},
+  {q:'Sebelum membagikan berita yang mengejutkan, sebaiknya kamu…',o:['Membagikannya dulu, memeriksanya belakangan.','Memeriksa kebenarannya terlebih dahulu.','Menghapus akunmu.','Menunggu sampai banyak yang menyukainya.'],c:1,why:'Informasi perlu diperiksa sebelum dibagikan agar tidak menyebarkan kabar palsu.'},
+  {q:'Kampanye internet aman melalui video pendek disarankan berdurasi…',o:['5–10 detik','30–60 detik','10–15 menit','Lebih dari 1 jam'],c:1,why:'Video kampanye yang singkat, 30–60 detik, memudahkan pesan utama tersampaikan dan diingat.'},
+  {q:'Ciri komik kampanye internet aman yang baik adalah…',o:['Tanpa tokoh dan tanpa cerita.','Menampilkan masalah, solusi, dan pesan moral dari situasi sehari-hari.','Berisi data pribadi tokoh nyata.','Hanya berisi teks panjang.'],c:1,why:'Komik yang baik memuat tokoh, masalah dan solusi, serta pesan moral tentang keamanan internet.'},
+  {q:'Proyek “Satu Karya, Satu Pesan: Internet Aman untuk Semua” bersifat…',o:['Wajib dengan nilai ujian akhir.','Opsional, sebagai kegiatan penguatan dan kampanye kreatif.','Hanya boleh dikerjakan sendirian.','Hanya boleh berbentuk video.'],c:1,why:'Proyek ini opsional. Kamu bisa memilih poster, komik, atau video, secara individu atau berkelompok.'}
+];
+var qi=0, qSel=-1, qScore=0, qChecked=false, qLog=[];
+var qMain=$('qz-main'), qCheck=$('qz-check'), qNext=$('qz-next'), qReset=$('qz-reset');
+function renderQ(){
+  qMain.textContent=''; qSel=-1; qChecked=false;
+  qCheck.disabled=true; qCheck.hidden=false; qNext.hidden=true; qReset.hidden=true;
+  var Q=quiz[qi];
+  qMain.appendChild(el('div','b5-qn','SOAL '+(qi+1)+' DARI '+quiz.length));
+  qMain.appendChild(el('p','qz-text',Q.q));
+  var opts=el('div','b5-opts');
+  Q.o.forEach(function(t,i){
+    var b=el('button','b5-opt',String.fromCharCode(65+i)+'. '+t); b.type='button';
+    b.addEventListener('click',function(){
+      if(qChecked) return;
+      qSel=i; opts.querySelectorAll('button').forEach(function(x){x.classList.remove('selected');}); b.classList.add('selected'); qCheck.disabled=false;
+    });
+    opts.appendChild(b);
+  });
+  qMain.appendChild(opts);
+  var fb=el('div','b5-fb','Pilih jawaban, lalu klik Periksa Jawaban.'); fb.id='qz-fb'; qMain.appendChild(fb);
+}
+function checkQ(){
+  if(qSel<0||qChecked) return; qChecked=true;
+  var Q=quiz[qi], bs=qMain.querySelectorAll('.b5-opt'), ok=(qSel===Q.c);
+  bs.forEach(function(x,i){x.disabled=true; if(i===Q.c)x.classList.add('correct');});
+  if(!ok) bs[qSel].classList.add('wrong'); else qScore++;
+  qLog.push({n:qi+1,ok:ok});
+  var fb=$('qz-fb'); fb.className='b5-fb '+(ok?'good':'bad'); fb.textContent=(ok?'Benar! ':'Belum tepat. ')+Q.why;
+  qCheck.hidden=true; qNext.hidden=false;
+  qNext.innerHTML=(qi===quiz.length-1?'Lihat Skor <i class="fa-solid fa-flag-checkered"></i>':'Soal Berikutnya <i class="fa-solid fa-arrow-right"></i>');
+}
+function finishQ(){
+  qMain.textContent=''; qCheck.hidden=true; qNext.hidden=true; qReset.hidden=false;
+  var pct=Math.round(qScore/quiz.length*100);
+  qMain.appendChild(el('div','b5-qn','HASIL KUIS'));
+  qMain.appendChild(el('p','qz-text','Skor akhir: '+qScore+' / '+quiz.length+' ('+pct+'%)'));
+  var msg=pct>=80?'Hebat! Kamu sudah paham praktik internet aman.':(pct>=60?'Bagus! Baca lagi bagian yang masih keliru.':'Ayo pelajari lagi materi di atas, lalu coba ulangi kuis.');
+  var fb=el('div','b5-fb good',msg); qMain.appendChild(fb);
+  var res=el('div','b5-qres'); qLog.forEach(function(r){res.appendChild(el('div','', 'Soal '+r.n+': '+(r.ok?'✔ Benar':'✘ Salah')));}); qMain.appendChild(res);
+}
+qCheck.addEventListener('click',checkQ);
+qNext.addEventListener('click',function(){ if(qi===quiz.length-1) finishQ(); else {qi++; renderQ();} });
+qReset.addEventListener('click',function(){qi=0;qScore=0;qLog=[];renderQ();});
+renderQ();
+
+/* ---------- Refleksi (localStorage, dengan try/catch) ---------- */
+var KEY='b5-refleksi-v1', ids=['rf1','rf2s','rf2','rf3','rf4'];
+function load(){try{var d=JSON.parse(localStorage.getItem(KEY)||'null'); if(d) ids.forEach(function(i){if(d[i]!=null)$(i).value=d[i];});}catch(e){}}
+load();
+$('rf-save').addEventListener('click',function(){
+  var d={}; ids.forEach(function(i){d[i]=$(i).value;});
+  var fb=$('rf-fb');
+  try{localStorage.setItem(KEY,JSON.stringify(d)); fb.className='b5-fb good'; fb.textContent='Tersimpan di perangkat ini. Ingat: belum terkirim kepada guru.';}
+  catch(e){fb.className='b5-fb bad'; fb.textContent='Penyimpanan tidak tersedia di browser ini. Salin jawabanmu secara manual.';}
+});
+$('rf-clear').addEventListener('click',function(){
+  ids.forEach(function(i){$(i).value='';});
+  try{localStorage.removeItem(KEY);}catch(e){}
+  var fb=$('rf-fb'); fb.className='b5-fb'; fb.textContent='Jawaban dihapus.';
+});
+})();
+</script>
+</body>
+</html>
