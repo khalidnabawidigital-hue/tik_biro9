@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bab 6 — Analisis Data | Informatika Kelas IX</title>
+<meta name="description" content="Bab 6 Informatika Kelas IX: Analisis Data — mengenal data, informasi, dan praktik baik pengolahan data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<!-- CSS bersama (sama dengan bab3–bab5) -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/roadmap.css">
+<link rel="stylesheet" href="css/materi.css">
+<style>
+/* ===== Komponen khusus Bab 6 (pola sama dengan Bab 5, memakai variabel warna roadmap) ===== */
+.b6-box{border:1px solid rgba(127,127,127,.22);border-radius:16px;padding:20px 22px;margin:0 0 16px;background:rgba(127,127,127,.05)}
+.b6-box h3{margin:0 0 8px;color:var(--text-hi);font-size:1.05rem}
+.b6-box p,.b6-box li{font-size:14.5px;line-height:1.65}
+.b6-box ul{margin:8px 0 0;padding-left:20px}
+.b6-tag{display:inline-flex;align-items:center;gap:6px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:10px}
+.b6-tag.book{background:rgba(108,92,231,.16);color:var(--accent-1-soft,#6c5ce7);border:1px solid var(--accent-1-soft,#6c5ce7)}
+.b6-tag.plus{background:rgba(240,165,0,.16);color:#d98e00;border:1px solid #f0a500}
+.b6-tag.opt{background:rgba(0,184,148,.14);color:var(--accent-2-soft,#00b894);border:1px solid var(--accent-2-soft,#00b894)}
+.b6-box.book{border-left:4px solid var(--accent-1-soft,#6c5ce7)}
+.b6-box.plus{border-left:4px solid #f0a500;background:rgba(240,165,0,.06)}
+.b6-ext{border:2px dashed #f0a500;border-radius:20px;padding:22px;background:rgba(240,165,0,.05);margin-bottom:16px}
+.b6-ext-banner{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-weight:700;font-size:13px;letter-spacing:.03em;text-transform:uppercase;color:#d98e00;margin-bottom:6px}
+.b6-ext-banner i{font-size:18px}
+.b6-group{margin:28px 0 12px;padding:10px 14px;border-radius:12px;font-weight:600;color:var(--text-hi);background:rgba(240,165,0,.1);border:1px dashed #f0a500;font-size:14px}
+.b6-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-bottom:16px}
+.b6-goal{display:flex;gap:12px;align-items:flex-start}
+.b6-goal .n{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:var(--accent-1-soft,#6c5ce7);color:#fff;display:flex;align-items:center;justify-content:center;font:700 13px 'Space Mono',monospace}
+.b6-goal p{margin:0;font-size:14px}
+.b6-cp{font-size:15px;line-height:1.7;font-style:italic;margin:0}
+.b6-ask{margin-top:10px;padding:10px 14px;border-radius:10px;background:rgba(0,184,148,.1);border-left:3px solid var(--accent-2-soft,#00b894);font-size:13.5px;color:var(--text-hi)}
+.b6-case{margin-top:12px;padding:10px 14px;border-radius:10px;background:rgba(108,92,231,.09);border-left:3px solid var(--accent-1-soft,#6c5ce7);font-size:13.5px;line-height:1.6}
+.b6-case strong{color:var(--text-hi)}
+.b6-fb{margin-top:10px;padding:12px 14px;border-radius:10px;background:rgba(127,127,127,.07);border-left:3px solid var(--accent-1-soft,#6c5ce7);font-size:14px;color:var(--text-hi);min-height:20px;line-height:1.6}
+.b6-fb.good{border-left-color:var(--accent-2-soft,#00b894)}
+.b6-fb.bad{border-left-color:var(--accent-danger,#e74c3c)}
+.b6-note{font-size:12.5px;opacity:.85;margin-top:8px;line-height:1.55}
+.b6-opts{display:grid;gap:8px}
+.b6-opt{text-align:left;font:inherit;font-size:14.5px;color:inherit;background:rgba(127,127,127,.05);border:1px solid rgba(127,127,127,.22);border-radius:10px;padding:10px 14px;cursor:pointer;transition:.15s;line-height:1.5}
+.b6-opt:hover:not(:disabled){border-color:var(--accent-1-soft,#6c5ce7)}
+.b6-opt:focus-visible{outline:2px solid var(--accent-1-soft,#6c5ce7)}
+.b6-opt.selected{border-color:var(--accent-1-soft,#6c5ce7);background:rgba(108,92,231,.12)}
+.b6-opt.correct{border-color:var(--accent-2-soft,#00b894);background:rgba(0,184,148,.14)}
+.b6-opt.wrong{border-color:var(--accent-danger,#e74c3c);background:rgba(231,76,60,.12)}
+.b6-opt:disabled{cursor:default}
+.b6-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:10px}
+.b6-ta{width:100%;min-height:80px;padding:10px 12px;border-radius:10px;border:1px solid rgba(127,127,127,.3);background:rgba(127,127,127,.05);color:inherit;font:inherit;font-size:14.5px;resize:vertical}
+.b6-ta:focus{outline:2px solid var(--accent-1-soft,#6c5ce7)}
+.b6-lbl{display:block;font-weight:600;color:var(--text-hi);margin:14px 0 6px;font-size:14.5px}
+.b6-src li{margin-bottom:10px;font-size:14px;line-height:1.6;word-break:break-word}
+.b6-hero-ill{max-width:360px;width:100%;margin:18px auto 0;display:block}
+.b6-sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.b6-sum div{padding:14px 16px;border-radius:12px;border:1px solid rgba(127,127,127,.22);font-size:14px;line-height:1.55}
+.b6-sum i{color:var(--accent-2-soft,#00b894);margin-right:6px}
+.b6-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.b6-chip{padding:6px 12px;border-radius:999px;border:1px solid rgba(127,127,127,.3);font-size:13px}
+.b6-table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
+.b6-table th,.b6-table td{border:1px solid rgba(127,127,127,.25);padding:8px 10px;text-align:left;vertical-align:top;line-height:1.5}
+.b6-table th{background:rgba(127,127,127,.1);color:var(--text-hi)}
+.b6-score{font:700 14px 'Space Mono',monospace;margin-top:10px}
+.b6-flow{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin-bottom:12px}
+.b6-flow .d,.b6-flow .i{padding:10px 14px;border-radius:12px;font-size:14px;line-height:1.5}
+.b6-flow .d{background:rgba(108,92,231,.12);border:1px solid var(--accent-1-soft,#6c5ce7)}
+.b6-flow .i{background:rgba(0,184,148,.12);border:1px solid var(--accent-2-soft,#00b894)}
+.b6-flow .d span,.b6-flow .i span{display:block;font:700 10px 'Space Mono',monospace;letter-spacing:.06em;text-transform:uppercase;opacity:.75;margin-bottom:2px}
+.b6-flow>i{color:var(--accent-2-soft,#00b894)}
+@media(max-width:560px){.b6-flow{grid-template-columns:1fr}.b6-flow>i{transform:rotate(90deg);justify-self:center}}
+.b6-tf{padding:14px 0;border-bottom:1px dashed rgba(127,127,127,.3)}
+.b6-tf:last-of-type{border-bottom:0}
+.b6-tf .st{margin:0 0 8px;font-weight:600;color:var(--text-hi);font-size:14.5px;line-height:1.55}
+.b6-tf .btns{display:flex;flex-wrap:wrap;gap:8px}
+.b6-tf .b6-opt{flex:1 1 150px;text-align:center}
+.qz-card{background:rgba(127,127,127,.06);border:1px solid rgba(127,127,127,.18);border-radius:16px;padding:20px 22px;margin-bottom:16px}
+.qz-text{font-weight:600;color:var(--text-hi);line-height:1.5;margin:0 0 12px}
+.b6-qn{font:700 12px 'Space Mono',monospace;opacity:.7;margin-bottom:6px}
+#qz-main .b6-qres div{padding:8px 0;border-bottom:1px solid rgba(127,127,127,.2);font-size:14px}
+.skip-link{position:absolute;left:-999px}.skip-link:focus{left:10px;top:10px;z-index:9999;background:#fff;color:#000;padding:8px 12px;border-radius:8px}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#materi1">Lewati ke materi</a>
+
+<div id="loading-screen" aria-hidden="true">
+  <div class="loader-node"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="26"></circle></svg></div>
+  <span class="loader-text">Memuat Materi…</span>
+</div>
+<div class="bg-mesh"></div>
+<div class="bg-noise"></div>
+
+<!-- ============ Navbar ============ -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-badge"><i class="fa-solid fa-bolt"></i></span>
+      Informatika<span style="color:var(--accent-2)">IX</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#roadmap">Roadmap</a></li>
+      <li><a href="index.html#statistik">Statistik</a></li>
+      <li><a href="index.html#perjalanan">Peta Perjalanan</a></li>
+      <li><a href="bab5.html">Bab 5</a></li>
+      <li><a href="bab7.html">Bab 7</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn theme-toggle" aria-label="Ganti mode gelap/terang"><i class="fa-solid fa-sun"></i></button>
+      <button class="nav-toggle" aria-label="Buka menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="materi-breadcrumb" data-aos="fade-up">
+    <a href="index.html">Roadmap</a><i class="fa-solid fa-chevron-right"></i>
+    <a href="index.html#roadmap">Semester Genap</a><i class="fa-solid fa-chevron-right"></i>
+    <span class="current">Bab 6 — Analisis Data</span>
+  </div>
+
+  <!-- ============ Hero ============ -->
+  <section class="materi-hero">
+    <div class="materi-hero-top"><div>
+      <span class="materi-hero-badge" data-aos="fade-up"><span class="num-badge">6</span> BAB 06</span>
+      <h1 data-aos="fade-up" data-aos-delay="80">
+        <i class="fa-solid fa-chart-column" style="color:var(--accent-1-soft);"></i> Analisis <span class="gradient-text">Data</span>
+      </h1>
+      <p style="font-weight:600;color:var(--text-hi);margin:6px 0 0" data-aos="fade-up" data-aos-delay="110">Mengenal Data, Informasi, dan Praktik Baik Pengolahan Data</p>
+      <p class="lede" data-aos="fade-up" data-aos-delay="140">
+        Setiap hari kita menemukan berbagai macam data, mulai dari angka, daftar nilai, jadwal, hingga informasi dari internet.
+        Dengan memahami perbedaan data dan informasi, kita dapat lebih bijak dalam membaca, memahami, dan menggunakan data.
+      </p>
+      <p style="margin-top:16px"><a href="#materi1" class="btn btn-primary" id="b6-start"><i class="fa-solid fa-compass"></i> Mulai Eksplorasi</a></p>
+    </div></div>
+    <svg class="b6-hero-ill" viewBox="0 0 360 220" role="img" aria-label="Ilustrasi deretan angka diolah menjadi grafik batang">
+      <rect x="24" y="50" width="104" height="120" rx="14" fill="rgba(108,92,231,.12)" stroke="var(--accent-1-soft,#6c5ce7)" stroke-width="4"/>
+      <g font-family="Space Mono,monospace" font-size="17" font-weight="700" fill="var(--accent-1-soft,#6c5ce7)" text-anchor="middle">
+        <text x="76" y="86">80 85</text><text x="76" y="114">90 75</text><text x="76" y="142">80 …</text></g>
+      <path d="M142 110 h46 m-12 -14 l14 14 -14 14" fill="none" stroke="#00b894" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="204" y="50" width="132" height="120" rx="14" fill="#0b1020" fill-opacity=".85" stroke="#00b894" stroke-width="5"/>
+      <rect x="224" y="108" width="20" height="44" rx="4" fill="#00b894" opacity=".6"/>
+      <rect x="254" y="84" width="20" height="68" rx="4" fill="#00b894" opacity=".8"/>
+      <rect x="284" y="68" width="20" height="84" rx="4" fill="#00b894"/>
+      <text x="270" y="192" font-family="Space Mono,monospace" font-size="15" font-weight="700" fill="#00b894" text-anchor="middle">rata-rata = 82</text>
+    </svg>
+    <div class="materi-meta-row" data-aos="fade-up" data-aos-delay="180">
+      <span class="materi-chip"><i class="fa-solid fa-calendar"></i> Semester Genap</span>
+      <span class="materi-chip"><i class="fa-solid fa-clock"></i> Tanpa JP Khusus</span>
+      <span class="materi-chip"><i class="fa-solid fa-user"></i> Khalid Nabawi, S.Kom.</span>
+      <span class="materi-chip warn"><i class="fa-solid fa-bookmark"></i> Materi Pengingat Kelas VII–VIII</span>
+    </div>
+    <nav class="materi-toc" aria-label="Navigasi materi">
+      <a href="#cp"><i class="fa-solid fa-bullseye"></i> Capaian</a>
+      <a href="#materi1"><i class="fa-solid fa-database"></i> Data &amp; Informasi</a>
+      <a href="#materi2"><i class="fa-solid fa-circle-check"></i> Praktik Baik</a>
+      <a href="#aktivitas"><i class="fa-solid fa-flask"></i> Aktivitas</a>
+      <a href="#tambahan"><i class="fa-solid fa-link"></i> Materi Tambahan</a>
+      <a href="#quiz"><i class="fa-solid fa-clipboard-question"></i> Kuis</a>
+      <a href="#refleksi"><i class="fa-solid fa-comment-dots"></i> Refleksi</a>
+    </nav>
+  </section>
+
+  <!-- ============ Capaian Pembelajaran ============ -->
+  <section class="materi-section" id="cp">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num">i</span> Informasi Pembelajaran</span>
+      <h2>Apa yang Ingin Dicapai?</h2>
+    </div>
+
+    <div class="b6-box book" data-aos="fade-up">
+      <span class="b6-tag book"><i class="fa-solid fa-flag"></i> Capaian Pembelajaran (CP)</span>
+      <p class="b6-cp">“Siswa mampu membedakan data dan informasi serta mengenali praktik baik pengolahan data.”</p>
+    </div>
+
+    <div class="b6-grid" data-aos="fade-up">
+      <div class="b6-box" style="margin:0"><span class="b6-tag opt"><i class="fa-solid fa-book-open"></i> Apa yang Dipelajari</span>
+        <ul><li>Pengertian Data &amp; Informasi.</li><li>Praktik Baik Analisis Data Sehari-hari.</li></ul></div>
+      <div class="b6-box" style="margin:0"><span class="b6-tag opt"><i class="fa-solid fa-hourglass-half"></i> Alokasi Waktu</span>
+        <p style="margin:0">Tanpa JP Khusus – Semester Genap. Bab ini merupakan materi pengingat dan penguatan dari pembelajaran kelas VII–VIII, tanpa alokasi JP khusus di kelas IX.</p></div>
+    </div>
+
+    <h3 style="margin:18px 0 10px;color:var(--text-hi);font-size:1.05rem" data-aos="fade-up">Kompetensi yang Kamu Peroleh</h3>
+    <div class="b6-grid" id="b6-goals"></div>
+
+    <p class="b6-group"><i class="fa-solid fa-star"></i> Kotak berlabel <strong style="color:var(--accent-1-soft,#6c5ce7)">ungu</strong> adalah materi pengingat. Kotak berlabel <strong style="color:var(--accent-2-soft,#00b894)">hijau</strong> adalah penguatan dari guru. Kotak <strong style="color:#d98e00">kuning garis putus-putus</strong> berlabel “Materi Tambahan – Sumber Eksternal (Refresh &amp; Update)” adalah pengayaan dari luar buku.</p>
+  </section>
+
+  <!-- ============ Pengantar ============ -->
+  <section class="materi-section" id="penting">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-question" style="font-size:10px"></i></span> Pengantar</span>
+      <h2>Mengapa Kita Perlu Memahami Data?</h2>
+      <p>Data ada di sekitar kita. Jika <strong style="color:var(--text-hi)">diolah</strong> dan <strong style="color:var(--text-hi)">ditafsirkan dengan benar</strong>, data membantu kita memahami suatu keadaan dan mengambil keputusan.</p>
+    </div>
+    <div class="materi-grid-2" data-aos="fade-up">
+      <div class="info-card"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-pen-to-square"></i></div><h3>Nilai Hasil Ulangan</h3></div><p>Membantu kita tahu bagian materi mana yang sudah dikuasai.</p></div>
+      <div class="info-card cyan"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-user-check"></i></div><h3>Daftar Kehadiran</h3></div><p>Menunjukkan seberapa rajin siswa hadir di kelas.</p></div>
+      <div class="info-card"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-calendar-days"></i></div><h3>Jadwal Pelajaran</h3></div><p>Membantu kita menyiapkan buku dan tugas setiap hari.</p></div>
+      <div class="info-card cyan"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-square-poll-vertical"></i></div><h3>Hasil Survei Kelas</h3></div><p>Menunjukkan pilihan atau pendapat teman-teman sekelas.</p></div>
+      <div class="info-card"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-book-open-reader"></i></div><h3>Pengunjung Perpustakaan</h3></div><p>Menunjukkan seberapa ramai perpustakaan dikunjungi.</p></div>
+      <div class="info-card cyan"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-cloud-sun-rain"></i></div><h3>Informasi Cuaca</h3></div><p>Membantu kita memutuskan perlu membawa payung atau tidak.</p></div>
+      <div class="info-card"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-futbol"></i></div><h3>Hasil Pertandingan</h3></div><p>Menunjukkan skor dan tim yang menang.</p></div>
+      <div class="info-card cyan"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-store"></i></div><h3>Penjualan di Kantin</h3></div><p>Membantu pengelola tahu makanan apa yang paling laris.</p></div>
+    </div>
+    <div class="b6-ask"><i class="fa-solid fa-circle-question"></i> <strong>Pertanyaan pemantik:</strong> Data apa yang paling sering kamu lihat atau gunakan dalam sehari? Apa yang kamu lakukan setelah melihat data itu?</div>
+  </section>
+
+  <!-- ============ Materi 1 ============ -->
+  <section class="materi-section" id="materi1">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num">1</span> Materi Pertama</span>
+      <h2>Pengertian Data dan Informasi</h2>
+      <span class="b6-tag book"><i class="fa-solid fa-book"></i> Materi Pengingat (kelas VII–VIII)</span>
+    </div>
+
+    <div class="materi-grid-2" data-aos="fade-up">
+      <div class="info-card"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-database"></i></div><h3>1. Pengertian Data</h3></div>
+        <p><strong>Data</strong> adalah fakta atau catatan mentah, misalnya angka, teks, atau hasil pengamatan, yang belum diolah sehingga belum tentu langsung bermakna.</p>
+        <ul><li>Angka hasil ulangan.</li><li>Nama siswa.</li><li>Jumlah buku.</li><li>Tanggal kegiatan.</li><li>Hasil pengamatan.</li></ul></div>
+      <div class="info-card cyan"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-lightbulb"></i></div><h3>2. Pengertian Informasi</h3></div>
+        <p><strong>Informasi</strong> adalah hasil pengolahan data, atau data yang diberi konteks, sehingga memiliki makna dan berguna untuk memahami suatu keadaan.</p>
+        <div class="b6-case"><strong>Contoh:</strong> Dari lima nilai ulangan, kita bisa mengetahui rata-rata nilainya. Rata-rata itulah yang memberi gambaran tentang hasil belajar.</div></div>
+    </div>
+    <p class="b6-note">Rumusan di atas disusun ulang dengan bahasa sederhana sebagai pengingat materi kelas VII–VIII. Silakan cocokkan dengan Buku Siswa Informatika untuk redaksi lengkapnya.</p>
+
+    <div class="b6-box" data-aos="fade-up">
+      <h3>3. Perbedaan Data dan Informasi</h3>
+      <div style="overflow-x:auto">
+      <table class="b6-table">
+        <thead><tr><th>Aspek</th><th>Data</th><th>Informasi</th><th>Contoh</th></tr></thead>
+        <tbody>
+          <tr><td>Bentuk</td><td>Fakta atau angka mentah</td><td>Hasil olahan yang bermakna</td><td>80, 85, 90, 75, 80 → rata-rata 82</td></tr>
+          <tr><td>Makna</td><td>Belum tentu langsung dipahami</td><td>Mudah dipahami dan dipakai</td><td>Daftar kehadiran → tingkat kehadiran 95%</td></tr>
+          <tr><td>Fungsi</td><td>Bahan dasar</td><td>Dasar untuk memahami keadaan dan mengambil keputusan</td><td>Jumlah pengunjung → perpustakaan ramai di hari Senin</td></tr>
+        </tbody>
+      </table></div>
+      <div class="b6-case"><strong>Contoh perhitungan:</strong> Data: 80, 85, 90, 75, 80. Jumlah = 80 + 85 + 90 + 75 + 80 = 410. Dibagi 5 siswa → 410 ÷ 5 = 82.<br><strong>Informasi:</strong> “Rata-rata nilai dari lima siswa tersebut adalah 82.”</div>
+    </div>
+
+    <div class="b6-box" data-aos="fade-up">
+      <h3>4. Contoh Data Menjadi Informasi</h3>
+      <div class="b6-flow"><div class="d"><span>Data</span>Nilai ulangan: 80, 85, 90, 75, 80</div><i class="fa-solid fa-arrow-right"></i><div class="i"><span>Informasi</span>Rata-rata nilai kelas adalah 82.</div></div>
+      <div class="b6-flow"><div class="d"><span>Data</span>Daftar siswa hadir dan tidak hadir setiap hari</div><i class="fa-solid fa-arrow-right"></i><div class="i"><span>Informasi</span>Tingkat kehadiran kelas minggu ini.</div></div>
+      <div class="b6-flow"><div class="d"><span>Data</span>Jumlah pengunjung perpustakaan tiap hari</div><i class="fa-solid fa-arrow-right"></i><div class="i"><span>Informasi</span>Tingkat kunjungan perpustakaan (hari paling ramai).</div></div>
+    </div>
+  </section>
+
+  <!-- ============ Materi 2 ============ -->
+  <section class="materi-section" id="materi2">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num">2</span> Materi Kedua</span>
+      <h2>Praktik Baik Analisis Data Sehari-hari</h2>
+      <p>Menggunakan data tidak hanya berkaitan dengan komputer atau aplikasi. Kita juga bisa melakukannya dalam kehidupan sehari-hari.</p>
+      <span class="b6-tag opt"><i class="fa-solid fa-chalkboard-user"></i> Penguatan dari Guru (pengembangan sederhana)</span>
+    </div>
+    <div class="materi-grid-2" data-aos="fade-up">
+      <div class="info-card"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-magnifying-glass"></i></div><h3>1. Memahami Asal Data</h3></div>
+        <ul><li>Mengetahui dari mana data diperoleh.</li><li>Memastikan sumber data dapat dipercaya.</li><li>Tidak langsung menerima semua angka atau informasi.</li></ul>
+        <div class="b6-case"><strong>Contoh:</strong> Sebelum percaya pada angka “siswa paling rajin”, tanyakan dulu data kehadiran itu dicatat oleh siapa.</div></div>
+      <div class="info-card cyan"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-spell-check"></i></div><h3>2. Memeriksa Ketepatan Data</h3></div>
+        <ul><li>Memeriksa apakah data sesuai dengan fakta.</li><li>Memperhatikan kesalahan penulisan atau pencatatan.</li><li>Membandingkan data jika diperlukan.</li></ul>
+        <div class="b6-case"><strong>Contoh:</strong> Nilai “850” di daftar ulangan kemungkinan salah ketik. Seharusnya “85”.</div></div>
+      <div class="info-card"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-list-check"></i></div><h3>3. Memperhatikan Kelengkapan Data</h3></div>
+        <ul><li>Memeriksa apakah data yang dibutuhkan sudah tersedia.</li><li>Tidak mengambil kesimpulan jika informasi penting masih kurang.</li></ul>
+        <div class="b6-case"><strong>Contoh:</strong> Dari 5 nilai yang terkumpul, 3 siswa belum mengumpulkan. Jangan dulu menyimpulkan rata-rata kelas.</div></div>
+      <div class="info-card cyan"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-clock-rotate-left"></i></div><h3>4. Memahami Konteks Data</h3></div>
+        <ul><li>Memahami waktu, tempat, dan kondisi saat data dikumpulkan.</li><li>Tidak membandingkan data yang konteksnya berbeda secara sembarangan.</li></ul>
+        <div class="b6-case"><strong>Contoh:</strong> Pengunjung perpustakaan saat ujian tentu lebih ramai daripada saat libur. Keduanya tidak bisa dibandingkan begitu saja.</div></div>
+      <div class="info-card"><div class="ic-top"><div class="ic-icon"><i class="fa-solid fa-user-shield"></i></div><h3>5. Menggunakan Data secara Bertanggung Jawab</h3></div>
+        <ul><li>Tidak mengubah data untuk menyesatkan orang lain.</li><li>Menghargai privasi.</li><li>Tidak menyebarkan data pribadi tanpa izin.</li><li>Menggunakan data sesuai tujuan yang benar.</li></ul>
+        <div class="b6-case"><strong>Contoh:</strong> Nilai ulangan temanmu tidak diumumkan di grup tanpa izin.</div></div>
+    </div>
+    <p class="b6-note">Poin-poin praktik baik ini adalah penguatan dan pengembangan sederhana dari guru agar kualitas data lebih mudah dipahami. Poin-poin ini tidak dinyatakan sebagai kutipan Buku Siswa.</p>
+  </section>
+
+  <!-- ============ Aktivitas ============ -->
+  <section class="materi-section" id="aktivitas">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-flask" style="font-size:10px"></i></span> Aktivitas</span>
+      <h2>Coba Sendiri!</h2>
+      <p>Dua aktivitas ringan yang bisa dipakai di komputer maupun ponsel. Jawabanmu tidak dikirim ke mana pun.</p>
+    </div>
+
+    <div class="b6-box" data-aos="fade-up">
+      <h3>Aktivitas 1 — Data atau Informasi?</h3>
+      <p>Tentukan apakah pernyataan berikut termasuk <strong>DATA</strong> atau <strong>INFORMASI</strong>.</p>
+      <div id="tf-wrap"></div>
+      <div class="b6-score" id="tf-score" aria-live="polite">Skor: 0 / 5</div>
+      <div class="b6-row"><button class="btn btn-ghost" id="tf-reset"><i class="fa-solid fa-rotate-left"></i> Ulangi Aktivitas</button></div>
+    </div>
+
+    <div class="b6-box" data-aos="fade-up">
+      <h3>Aktivitas 2 — Temukan Data di Sekitarmu</h3>
+      <p>Amati lingkungan sekolah atau kehidupan sehari-hari. Temukan contoh data yang pernah kamu lihat atau gunakan.</p>
+      <div class="b6-chips"><span class="b6-chip">Jumlah siswa di kelas</span><span class="b6-chip">Jadwal pelajaran</span><span class="b6-chip">Nilai ulangan</span><span class="b6-chip">Jumlah buku yang dipinjam</span><span class="b6-chip">Jumlah peserta kegiatan sekolah</span></div>
+      <label class="b6-lbl" for="ob1">1. Data apa yang kamu temukan?</label>
+      <textarea class="b6-ta" id="ob1" maxlength="500"></textarea>
+      <label class="b6-lbl" for="ob2">2. Dari mana data tersebut berasal?</label>
+      <textarea class="b6-ta" id="ob2" maxlength="500"></textarea>
+      <label class="b6-lbl" for="ob3">3. Informasi apa yang bisa diperoleh dari data tersebut?</label>
+      <textarea class="b6-ta" id="ob3" maxlength="500"></textarea>
+      <label class="b6-lbl" for="ob4">4. Mengapa data tersebut perlu diperiksa kebenarannya?</label>
+      <textarea class="b6-ta" id="ob4" maxlength="500"></textarea>
+      <div class="b6-row"><button class="btn btn-primary" id="ob-save"><i class="fa-solid fa-floppy-disk"></i> Simpan di Perangkat</button><button class="btn btn-ghost" id="ob-clear"><i class="fa-solid fa-eraser"></i> Hapus</button></div>
+      <div class="b6-fb" id="ob-fb" aria-live="polite">Aktivitas ini cukup berupa latihan mengamati dan berpikir.</div>
+    </div>
+  </section>
+
+  <!-- ============ Materi Tambahan Eksternal ============ -->
+  <section class="materi-section" id="tambahan">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-link" style="font-size:10px"></i></span> Pengayaan</span>
+      <h2>Wawasan Data di Dunia Digital</h2>
+    </div>
+    <div class="b6-ext" data-aos="fade-up">
+      <div class="b6-ext-banner"><i class="fa-solid fa-lightbulb"></i> MATERI TAMBAHAN – SUMBER EKSTERNAL (REFRESH &amp; UPDATE)</div>
+      <p style="font-size:14px;line-height:1.65">Bagian ini <strong>bukan kutipan dari Buku Siswa Kelas IX</strong>. Isinya pengayaan umum, diringkas dengan bahasa sendiri, tentang topik literasi digital dan data yang lazim dibahas lembaga edukasi tepercaya.</p>
+      <div class="b6-grid">
+        <div class="b6-box plus" style="margin:0"><span class="b6-tag plus">Eksternal</span><h3>Data Pribadi &amp; Privasi Digital</h3><p>Nama lengkap, alamat, nomor telepon, dan foto identitas adalah data pribadi. Bagikan seperlunya dan periksa pengaturan privasi akunmu.</p></div>
+        <div class="b6-box plus" style="margin:0"><span class="b6-tag plus">Eksternal</span><h3>Periksa Sumber Informasi</h3><p>Cek siapa penulisnya, kapan dibuat, dan apakah media tepercaya melaporkan hal yang sama sebelum percaya atau membagikan.</p></div>
+        <div class="b6-box plus" style="margin:0"><span class="b6-tag plus">Eksternal</span><h3>Informasi Palsu &amp; Kesalahan Data</h3><p>Angka bisa salah catat, salah baca, atau sengaja diubah. Grafik atau angka yang tampak meyakinkan tetap perlu ditanya asal-usulnya.</p></div>
+        <div class="b6-box plus" style="margin:0"><span class="b6-tag plus">Eksternal</span><h3>Data di Media Sosial &amp; Aplikasi</h3><p>Aplikasi sering mengumpulkan data penggunaannya, misalnya jumlah suka, riwayat pencarian, atau lokasi. Baca izin aplikasi sebelum menyetujui.</p></div>
+        <div class="b6-box plus" style="margin:0"><span class="b6-tag plus">Eksternal</span><h3>Penggunaan Data secara Bertanggung Jawab</h3><p>Gunakan data sesuai tujuannya, mintalah izin sebelum memakai data orang lain, dan sebutkan sumbernya.</p></div>
+        <div class="b6-box plus" style="margin:0"><span class="b6-tag plus">Eksternal</span><h3>Literasi Data</h3><p>Literasi data adalah kemampuan membaca, memahami, dan menilai data secara kritis. Biasakan bertanya: dari mana, kapan, dan untuk apa data ini dikumpulkan?</p></div>
+      </div>
+      <div class="b6-box plus" style="margin:16px 0 0">
+        <span class="b6-tag plus">Daftar Sumber Referensi</span>
+        <p style="margin-top:0">Untuk membaca lebih lanjut, cari materi dari lembaga tepercaya berikut melalui situs resminya:</p>
+        <ol class="b6-src">
+          <li><strong>Badan Pusat Statistik (BPS)</strong> — contoh data dan statistik resmi di Indonesia.</li>
+          <li><strong>Kementerian Komunikasi dan Digital Republik Indonesia (Komdigi)</strong> — literasi digital dan pelindungan data pribadi.</li>
+          <li><strong>Siberkreasi</strong> — gerakan nasional literasi digital.</li>
+        </ol>
+        <p class="b6-note">Tautan langsung tidak dicantumkan karena belum diverifikasi saat halaman ini disusun. Cari nama lembaga di mesin pencari dan pilih situs resminya. Guru dapat menambahkan tautan terverifikasi di bagian ini.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Kuis ============ -->
+  <section class="materi-section" id="quiz">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-clipboard-question" style="font-size:10px"></i></span> Evaluasi</span>
+      <h2>Kuis Pemahaman Bab 6</h2>
+      <p>7 soal pilihan ganda, satu soal per layar. Pilih jawaban lalu klik <strong style="color:var(--text-hi)">Periksa Jawaban</strong>.</p>
+    </div>
+    <div class="qz-card" id="qz-main" aria-live="polite"></div>
+    <div class="b6-row">
+      <button class="btn btn-primary" id="qz-check" disabled><i class="fa-solid fa-check-double"></i> Periksa Jawaban</button>
+      <button class="btn btn-ghost" id="qz-next" hidden>Soal Berikutnya <i class="fa-solid fa-arrow-right"></i></button>
+      <button class="btn btn-ghost" id="qz-reset" hidden><i class="fa-solid fa-rotate-left"></i> Ulangi Kuis</button>
+    </div>
+  </section>
+
+  <!-- ============ Refleksi ============ -->
+  <section class="materi-section" id="refleksi">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num"><i class="fa-solid fa-comment-dots" style="font-size:10px"></i></span> Refleksi Diri</span>
+      <h2>Yuk, Refleksikan!</h2>
+    </div>
+    <div class="refleksi-card" data-aos="fade-up"><div class="rf-icon"><i class="fa-solid fa-lightbulb"></i></div>
+      <div class="rf-body">
+        <label class="b6-lbl" for="rf1">1. Data apa saja yang sering saya temui dalam kehidupan sehari-hari?</label>
+        <textarea class="b6-ta" id="rf1" maxlength="600"></textarea>
+        <label class="b6-lbl" for="rf2">2. Apa perbedaan data dan informasi menurut pemahaman saya?</label>
+        <textarea class="b6-ta" id="rf2" maxlength="600"></textarea>
+        <label class="b6-lbl" for="rf3s">3. Mengapa kita perlu memeriksa kebenaran suatu data?</label>
+        <select class="b6-ta" id="rf3s" style="min-height:0;margin-bottom:8px">
+          <option value="">— Pilih alasan utama —</option>
+          <option>Agar tidak salah mengambil kesimpulan</option>
+          <option>Agar tidak menyebarkan informasi yang keliru</option>
+          <option>Agar keputusan yang diambil lebih tepat</option>
+        </select>
+        <textarea class="b6-ta" id="rf3" maxlength="600" placeholder="Tambahkan alasanmu (opsional)"></textarea>
+        <label class="b6-lbl" for="rf4">4. Bagaimana cara saya menggunakan data secara bertanggung jawab?</label>
+        <textarea class="b6-ta" id="rf4" maxlength="600"></textarea>
+        <div class="b6-row"><button class="btn btn-primary" id="rf-save"><i class="fa-solid fa-floppy-disk"></i> Simpan di Perangkat</button><button class="btn btn-ghost" id="rf-clear"><i class="fa-solid fa-eraser"></i> Hapus</button></div>
+        <div class="b6-fb" id="rf-fb" aria-live="polite">Jawabanmu hanya tersimpan di perangkat ini.</div>
+      </div></div>
+  </section>
+
+  <!-- ============ Ringkasan ============ -->
+  <section class="materi-section" id="ringkasan">
+    <div class="materi-section-head" data-aos="fade-up">
+      <span class="eyebrow"><span class="step-num">∑</span> Ringkasan</span>
+      <h2>Yang Perlu Kamu Ingat</h2>
+    </div>
+    <div class="b6-sum" data-aos="fade-up">
+      <div><i class="fa-solid fa-check"></i> Data adalah bahan dasar yang dapat digunakan untuk memperoleh informasi.</div>
+      <div><i class="fa-solid fa-check"></i> Informasi memiliki makna dan membantu memahami suatu keadaan.</div>
+      <div><i class="fa-solid fa-check"></i> Data dan informasi memiliki perbedaan.</div>
+      <div><i class="fa-solid fa-check"></i> Kualitas data perlu diperhatikan.</div>
+      <div><i class="fa-solid fa-check"></i> Sumber, ketepatan, kelengkapan, dan konteks data perlu dipahami.</div>
+      <div><i class="fa-solid fa-check"></i> Data harus digunakan secara bertanggung jawab.</div>
+    </div>
+  </section>
+
+  <!-- ============ Navigasi ============ -->
+  <nav class="materi-bottom-nav" aria-label="Navigasi antar bab">
+    <a href="bab5.html" class="bn-link prev"><span class="bn-arrow"><i class="fa-solid fa-arrow-left"></i></span><span class="bn-txt"><span>Bab Sebelumnya</span><strong>Bab 5</strong></span></a>
+    <a href="index.html" class="bn-link"><span class="bn-arrow"><i class="fa-solid fa-map"></i></span><span class="bn-txt"><span>← Kembali ke</span><strong>Roadmap</strong></span></a>
+    <a href="bab7.html" class="bn-link next"><span class="bn-arrow"><i class="fa-solid fa-arrow-right"></i></span><span class="bn-txt"><span>Bab Selanjutnya</span><strong>Bab 7</strong></span></a>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <p class="footer-quote">"Jangan hanya menjadi <span>pengguna</span> teknologi.<br>Belajarlah menjadi <span>pencipta</span> teknologi."</p>
+  <p class="footer-sub">— Semangat belajar Informatika Kelas IX —</p>
+  <div class="footer-links"><a href="index.html">Roadmap</a><a href="bab1.html">Bab 1</a><a href="bab7.html">Bab 7</a><a href="bab9.html">Bab 9</a></div>
+  <p class="footer-meta">Materi pengingat kelas VII–VIII (rujuk Buku Siswa Informatika SMP/MTs, Kemendikbudristek) · Materi tambahan: lihat daftar sumber</p>
+</footer>
+<button class="fab" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="js/main.js"></script>
+<script src="js/materi.js"></script>
+<script>
+if (window.AOS) AOS.init({ duration: 700, once: true, offset: 60 });
+setTimeout(function(){var l=document.getElementById('loading-screen');if(l)l.style.display='none';},3000);
+</script>
+<script>
+(function(){
+'use strict';
+function el(tag, cls, text){var e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e;}
+function $(id){return document.getElementById(id);}
+
+/* ---------- Kompetensi ---------- */
+var goals=['Membedakan data dan informasi.','Memiliki kepekaan terhadap kualitas data.','Mengenali penggunaan data dalam kehidupan sehari-hari.','Memahami pentingnya mengolah data secara tepat dan bertanggung jawab.'];
+(function(){var w=$('b6-goals');if(!w)return;goals.forEach(function(g,i){var b=el('div','b6-box b6-goal');b.style.margin='0';b.appendChild(el('span','n',String(i+1)));b.appendChild(el('p','',g));w.appendChild(b);});})();
+
+/* ---------- Aktivitas 1: Data atau Informasi ---------- */
+var stm=[
+  {t:'“Jumlah siswa kelas IX adalah 28 orang.”',ans:'D',why:'Ini fakta mentah berupa angka jumlah siswa. Belum diolah menjadi gambaran tertentu, sehingga termasuk data.'},
+  {t:'“Daftar nilai ulangan: 80, 75, 90, 85.”',ans:'D',why:'Deretan nilai ini masih mentah dan belum diolah, sehingga termasuk data.'},
+  {t:'“Rata-rata nilai ulangan kelas adalah 82,5.”',ans:'I',why:'Rata-rata diperoleh dari mengolah deretan nilai (80 + 75 + 90 + 85 = 330, dibagi 4 = 82,5) dan memberi gambaran hasil kelas, sehingga termasuk informasi.'},
+  {t:'“Nama siswa yang hadir hari ini.”',ans:'D',why:'Daftar nama adalah catatan mentah kehadiran, sehingga termasuk data.'},
+  {t:'“Persentase kehadiran kelas minggu ini mencapai 95%.”',ans:'I',why:'Persentase ini hasil olahan dari data kehadiran dan langsung memberi makna, sehingga termasuk informasi.'}
+];
+var tfAns=0,tfRight=0;
+function buildTF(){
+  var w=$('tf-wrap');if(!w)return;w.textContent='';tfAns=0;tfRight=0;$('tf-score').textContent='Skor: 0 / '+stm.length;
+  stm.forEach(function(s,i){
+    var box=el('div','b6-tf');box.appendChild(el('p','st',(i+1)+'. '+s.t));
+    var btns=el('div','btns');var fb=el('div','b6-fb','Pilih jawabanmu.');fb.setAttribute('aria-live','polite');
+    [['DATA','D'],['INFORMASI','I']].forEach(function(p){
+      var b=el('button','b6-opt',p[0]);b.type='button';
+      b.addEventListener('click',function(){
+        btns.querySelectorAll('button').forEach(function(x){x.disabled=true;});
+        var ok=(p[1]===s.ans);b.classList.add(ok?'correct':'wrong');
+        fb.className='b6-fb '+(ok?'good':'bad');fb.textContent=(ok?'Benar! ':'Kurang tepat. ')+s.why;
+        tfAns++;if(ok)tfRight++;
+        $('tf-score').textContent='Skor: '+tfRight+' / '+stm.length+(tfAns===stm.length?' — Selesai!':'');
+      });
+      btns.appendChild(b);
+    });
+    box.appendChild(btns);box.appendChild(fb);w.appendChild(box);
+  });
+}
+buildTF();
+$('tf-reset').addEventListener('click',buildTF);
+
+/* ---------- Simpan lokal (localStorage, dengan try/catch) ---------- */
+function bindSave(key,ids,saveBtn,clearBtn,fbId,okMsg,clearMsg){
+  try{var d=JSON.parse(localStorage.getItem(key)||'null');if(d)ids.forEach(function(i){if(d[i]!=null)$(i).value=d[i];});}catch(e){}
+  $(saveBtn).addEventListener('click',function(){
+    var d={};ids.forEach(function(i){d[i]=$(i).value;});var fb=$(fbId);
+    try{localStorage.setItem(key,JSON.stringify(d));fb.className='b6-fb good';fb.textContent=okMsg;}
+    catch(e){fb.className='b6-fb bad';fb.textContent='Penyimpanan tidak tersedia di browser ini. Salin jawabanmu secara manual.';}
+  });
+  $(clearBtn).addEventListener('click',function(){
+    ids.forEach(function(i){$(i).value='';});
+    try{localStorage.removeItem(key);}catch(e){}
+    var fb=$(fbId);fb.className='b6-fb';fb.textContent=clearMsg;
+  });
+}
+bindSave('b6-observasi-v1',['ob1','ob2','ob3','ob4'],'ob-save','ob-clear','ob-fb','Tersimpan di perangkat ini.','Jawaban dihapus.');
+bindSave('b6-refleksi-v1',['rf1','rf2','rf3s','rf3','rf4'],'rf-save','rf-clear','rf-fb','Tersimpan di perangkat ini. Ingat: belum terkirim kepada guru.','Jawaban dihapus.');
+
+/* ---------- Kuis ---------- */
+var quiz=[
+  {q:'Data adalah…',o:['Fakta atau catatan mentah yang belum diolah.','Hasil olahan yang sudah bermakna.','Kesimpulan akhir dari sebuah penelitian.','Gambar yang selalu berwarna.'],c:0,why:'Data adalah bahan mentah, seperti angka, nama, atau hasil pengamatan, yang belum diolah.'},
+  {q:'Informasi adalah…',o:['Angka yang baru dicatat tanpa diolah.','Hasil pengolahan data sehingga memiliki makna.','Daftar nama tanpa keterangan.','Data yang salah tulis.'],c:1,why:'Informasi diperoleh dari data yang diolah atau diberi konteks sehingga bermakna.'},
+  {q:'Pernyataan berikut yang termasuk INFORMASI adalah…',o:['75, 80, 90, 85','Nama siswa: Rani','Rata-rata nilai kelas adalah 82','Jumlah buku: 40'],c:2,why:'Rata-rata adalah hasil olahan dari sekumpulan nilai, sehingga bermakna dan termasuk informasi.'},
+  {q:'Data nilai lima siswa: 80, 85, 90, 75, 80. Rata-ratanya adalah…',o:['80','82','84','410'],c:1,why:'Jumlah = 410. Dibagi 5 siswa, hasilnya 82.'},
+  {q:'Sebelum memakai data dari suatu tempat, langkah awal yang baik adalah…',o:['Langsung memercayainya karena angkanya terlihat rapi.','Mengetahui asal data dan memastikan sumbernya dapat dipercaya.','Mengubah angkanya agar lebih bagus.','Membagikannya dulu ke teman-teman.'],c:1,why:'Memahami asal dan sumber data adalah praktik baik agar kita tidak mudah tertipu.'},
+  {q:'Data pengunjung perpustakaan saat ujian dan saat libur tidak boleh dibandingkan begitu saja karena…',o:['Angkanya selalu sama.','Konteks waktu dan kondisinya berbeda.','Perpustakaan tidak menyimpan data.','Data libur tidak penting.'],c:1,why:'Konteks, yaitu waktu, tempat, dan kondisi saat data dikumpulkan, perlu dipahami sebelum membandingkan data.'},
+  {q:'Tindakan yang menunjukkan penggunaan data secara bertanggung jawab adalah…',o:['Mengumumkan nilai teman di grup tanpa izin.','Mengubah angka agar terlihat meyakinkan.','Tidak menyebarkan data pribadi teman tanpa izin.','Memakai data apa saja untuk tujuan apa saja.'],c:2,why:'Menghargai privasi dan tidak menyebarkan data pribadi tanpa izin adalah bagian dari menggunakan data secara bertanggung jawab.'}
+];
+var qi=0,qSel=-1,qScore=0,qChecked=false,qLog=[];
+var qMain=$('qz-main'),qCheck=$('qz-check'),qNext=$('qz-next'),qReset=$('qz-reset');
+function renderQ(){
+  qMain.textContent='';qSel=-1;qChecked=false;
+  qCheck.disabled=true;qCheck.hidden=false;qNext.hidden=true;qReset.hidden=true;
+  var Q=quiz[qi];
+  qMain.appendChild(el('div','b6-qn','SOAL '+(qi+1)+' DARI '+quiz.length));
+  qMain.appendChild(el('p','qz-text',Q.q));
+  var opts=el('div','b6-opts');
+  Q.o.forEach(function(t,i){
+    var b=el('button','b6-opt',String.fromCharCode(65+i)+'. '+t);b.type='button';
+    b.addEventListener('click',function(){
+      if(qChecked)return;
+      qSel=i;opts.querySelectorAll('button').forEach(function(x){x.classList.remove('selected');});b.classList.add('selected');qCheck.disabled=false;
+    });
+    opts.appendChild(b);
+  });
+  qMain.appendChild(opts);
+  var fb=el('div','b6-fb','Pilih jawaban, lalu klik Periksa Jawaban.');fb.id='qz-fb';qMain.appendChild(fb);
+}
+function checkQ(){
+  if(qSel<0||qChecked)return;qChecked=true;
+  var Q=quiz[qi],bs=qMain.querySelectorAll('.b6-opt'),ok=(qSel===Q.c);
+  bs.forEach(function(x,i){x.disabled=true;if(i===Q.c)x.classList.add('correct');});
+  if(!ok)bs[qSel].classList.add('wrong');else qScore++;
+  qLog.push({n:qi+1,ok:ok});
+  var fb=$('qz-fb');fb.className='b6-fb '+(ok?'good':'bad');fb.textContent=(ok?'Benar! ':'Belum tepat. ')+Q.why;
+  qCheck.hidden=true;qNext.hidden=false;
+  qNext.innerHTML=(qi===quiz.length-1?'Lihat Skor <i class="fa-solid fa-flag-checkered"></i>':'Soal Berikutnya <i class="fa-solid fa-arrow-right"></i>');
+}
+function finishQ(){
+  qMain.textContent='';qCheck.hidden=true;qNext.hidden=true;qReset.hidden=false;
+  var pct=Math.round(qScore/quiz.length*100);
+  qMain.appendChild(el('div','b6-qn','HASIL KUIS'));
+  qMain.appendChild(el('p','qz-text','Skor akhir: '+qScore+' / '+quiz.length+' ('+pct+'%)'));
+  var msg=pct>=80?'Hebat! Kamu sudah paham data, informasi, dan praktik baik mengolah data.':(pct>=60?'Bagus! Baca lagi bagian yang masih keliru.':'Ayo pelajari lagi materi di atas, lalu coba ulangi kuis.');
+  qMain.appendChild(el('div','b6-fb good',msg));
+  var res=el('div','b6-qres');qLog.forEach(function(r){res.appendChild(el('div','','Soal '+r.n+': '+(r.ok?'✔ Benar':'✘ Salah')));});qMain.appendChild(res);
+}
+qCheck.addEventListener('click',checkQ);
+qNext.addEventListener('click',function(){if(qi===quiz.length-1)finishQ();else{qi++;renderQ();}});
+qReset.addEventListener('click',function(){qi=0;qScore=0;qLog=[];renderQ();});
+renderQ();
+})();
+</script>
+</body>
+</html>
